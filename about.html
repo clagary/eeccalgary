@@ -61,6 +61,10 @@
       opacity: 1;
       pointer-events: auto;
     }
+    /* Smooth crossfade for the grayscale <-> color swap, on both desktop hover and mobile scroll-focus */
+    .leader-photo img {
+      transition: filter 0.4s ease-out, transform 0.4s ease-out;
+    }
   </style>
 </head>
 <body class="font-sans antialiased selection:bg-tc-crimson selection:text-white overflow-x-hidden">
@@ -292,7 +296,7 @@
           <!-- Senior Pastor -->
           <div class="p-6 sm:p-8 rounded-2xl border border-tc-border bg-white flex flex-col justify-between hover:border-tc-black transition group">
             <div>
-              <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl overflow-hidden bg-zinc-100 border border-zinc-200 mb-6 relative">
+              <div class="leader-photo w-24 h-24 sm:w-28 sm:h-28 rounded-2xl overflow-hidden bg-zinc-100 border border-zinc-200 mb-6 relative">
                 <img 
                   src="pastor-chalachew.jpg" 
                   alt="Pastor Chalachew Eshetu" 
@@ -313,7 +317,7 @@
           <!-- Associate Pastor -->
           <div class="p-6 sm:p-8 rounded-2xl border border-tc-border bg-white flex flex-col justify-between hover:border-tc-black transition group">
             <div>
-              <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl overflow-hidden bg-zinc-100 border border-zinc-200 mb-6 relative">
+              <div class="leader-photo w-24 h-24 sm:w-28 sm:h-28 rounded-2xl overflow-hidden bg-zinc-100 border border-zinc-200 mb-6 relative">
                 <img 
                   src="pastor-roman.jpg" 
                   alt="Pastor Roman Mirkano" 
@@ -342,7 +346,7 @@
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-6">
           <div class="p-5 rounded-2xl border border-tc-border bg-zinc-50/50 hover:bg-white hover:shadow-md transition text-center group">
-            <div class="w-20 h-20 mx-auto rounded-full overflow-hidden bg-zinc-200 border border-zinc-300 mb-3.5">
+            <div class="leader-photo w-20 h-20 mx-auto rounded-full overflow-hidden bg-zinc-200 border border-zinc-300 mb-3.5">
               <img src="elder-dr-getu.jpg" alt="Dr. Getu Biftu" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition" />
             </div>
             <span class="text-[10px] font-mono uppercase text-tc-crimson font-bold block">Elder</span>
@@ -351,7 +355,7 @@
           </div>
 
           <div class="p-5 rounded-2xl border border-tc-border bg-zinc-50/50 hover:bg-white hover:shadow-md transition text-center group">
-            <div class="w-20 h-20 mx-auto rounded-full overflow-hidden bg-zinc-200 border border-zinc-300 mb-3.5">
+            <div class="leader-photo w-20 h-20 mx-auto rounded-full overflow-hidden bg-zinc-200 border border-zinc-300 mb-3.5">
               <img src="elder-yohannes.jpg" alt="Yohannes Debele" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition" />
             </div>
             <span class="text-[10px] font-mono uppercase text-tc-crimson font-bold block">Elder</span>
@@ -360,7 +364,7 @@
           </div>
 
           <div class="p-5 rounded-2xl border border-tc-border bg-zinc-50/50 hover:bg-white hover:shadow-md transition text-center group">
-            <div class="w-20 h-20 mx-auto rounded-full overflow-hidden bg-zinc-200 border border-zinc-300 mb-3.5">
+            <div class="leader-photo w-20 h-20 mx-auto rounded-full overflow-hidden bg-zinc-200 border border-zinc-300 mb-3.5">
               <img src="pastor-roman.jpg" alt="Pastor Roman Mirkano" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition" />
             </div>
             <span class="text-[10px] font-mono uppercase text-tc-crimson font-bold block">Elder & Pastor</span>
@@ -369,7 +373,7 @@
           </div>
 
           <div class="p-5 rounded-2xl border border-tc-border bg-zinc-50/50 hover:bg-white hover:shadow-md transition text-center group">
-            <div class="w-20 h-20 mx-auto rounded-full overflow-hidden bg-zinc-200 border border-zinc-300 mb-3.5">
+            <div class="leader-photo w-20 h-20 mx-auto rounded-full overflow-hidden bg-zinc-200 border border-zinc-300 mb-3.5">
               <img src="pastor-chalachew.jpg" alt="Pastor Chalachew Eshetu" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition" />
             </div>
             <span class="text-[10px] font-mono uppercase text-tc-crimson font-bold block">Elder & Pastor</span>
@@ -378,7 +382,7 @@
           </div>
 
           <div class="p-5 rounded-2xl border border-tc-border bg-zinc-50/50 hover:bg-white hover:shadow-md transition text-center group sm:col-span-2 lg:col-span-1">
-            <div class="w-20 h-20 mx-auto rounded-full overflow-hidden bg-zinc-200 border border-zinc-300 mb-3.5">
+            <div class="leader-photo w-20 h-20 mx-auto rounded-full overflow-hidden bg-zinc-200 border border-zinc-300 mb-3.5">
               <img src="elder-teddy.jpg" alt="Brother Teddy" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition" />
             </div>
             <span class="text-[10px] font-mono uppercase text-tc-crimson font-bold block">Elder</span>
@@ -396,7 +400,7 @@
         </div>
 
         <div class="max-w-md p-6 sm:p-7 rounded-2xl border border-tc-border bg-white flex items-center gap-5 hover:border-tc-black transition group">
-          <div class="w-20 h-20 rounded-2xl overflow-hidden bg-zinc-100 border border-zinc-200 flex-shrink-0">
+          <div class="leader-photo w-20 h-20 rounded-2xl overflow-hidden bg-zinc-100 border border-zinc-200 flex-shrink-0">
             <img src="leader-eyerusalem.jpg" alt="Eyerusalem Tadese" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition" />
           </div>
           <div>
@@ -549,6 +553,73 @@
         if (navMenu.classList.contains('menu-open')) toggleMenu();
       });
     });
+
+    /* =========================================================
+       MOBILE SCROLL-CENTER FOCUS COLOR EFFECT
+       On desktop, hover already colors a photo (group-hover:grayscale-0)
+       while the rest stay grayscale.
+       On mobile/touch screens there's no hover, so instead: whichever
+       leader photo is nearest the vertical center of the screen turns
+       colored automatically as the user scrolls; every other photo
+       stays grayscale. Uses a thin "center band" via rootMargin so
+       only one card is active at a time.
+    ========================================================= */
+    (function () {
+      const photos = Array.from(document.querySelectorAll('.leader-photo'));
+      if (!photos.length) return;
+
+      const mobileQuery = window.matchMedia('(max-width: 767px)');
+      let observer = null;
+
+      function setColored(el, colored) {
+        const img = el.querySelector('img');
+        if (!img) return;
+        if (colored) {
+          img.classList.remove('grayscale');
+          img.classList.add('grayscale-0');
+        } else {
+          img.classList.add('grayscale');
+          img.classList.remove('grayscale-0');
+        }
+      }
+
+      function enableScrollFocus() {
+        if (observer) return; // already running
+        photos.forEach(el => setColored(el, false)); // start all grayscale
+
+        observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => setColored(entry.target, entry.isIntersecting));
+        }, {
+          root: null,
+          // Shrinks the effective viewport to a thin horizontal band around
+          // the vertical center of the screen, so only the card crossing
+          // dead-center gets marked as intersecting/colored.
+          rootMargin: '-42% 0px -42% 0px',
+          threshold: 0
+        });
+
+        photos.forEach(el => observer.observe(el));
+      }
+
+      function disableScrollFocus() {
+        if (!observer) return;
+        observer.disconnect();
+        observer = null;
+        // Back to default state: grayscale, desktop hover takes over via CSS
+        photos.forEach(el => setColored(el, false));
+      }
+
+      function handleViewportChange(e) {
+        if (e.matches) {
+          enableScrollFocus();
+        } else {
+          disableScrollFocus();
+        }
+      }
+
+      mobileQuery.addEventListener('change', handleViewportChange);
+      if (mobileQuery.matches) enableScrollFocus();
+    })();
   </script>
 </body>
 </html>
