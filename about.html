@@ -61,7 +61,6 @@
       opacity: 1;
       pointer-events: auto;
     }
-    /* Smooth crossfade for the grayscale <-> color swap, on both desktop hover and mobile scroll-focus */
     .leader-photo img {
       transition: filter 0.4s ease-out, transform 0.4s ease-out;
     }
@@ -86,8 +85,8 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 h-16 sm:h-20 flex items-center justify-between">
       
       <!-- Wordmark Logo + logo.png -->
-      <a href="index.html" class="flex items-center gap-2.5 sm:gap-3 min-w-0">
-        <img src="logo.png" alt="EEC Logo" class="w-8 h-8 sm:w-9 sm:h-9 object-contain rounded-full flex-shrink-0" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+      <a href="/home" class="flex items-center gap-2.5 sm:gap-3 min-w-0">
+        <img src="/logo.png" alt="EEC Logo" class="w-8 h-8 sm:w-9 sm:h-9 object-contain rounded-full flex-shrink-0" onerror="this.src='logo.png'; this.onerror=function(){this.style.display='none'; this.nextElementSibling.style.display='flex';};" />
         <div class="hidden w-8 h-8 sm:w-9 sm:h-9 flex-shrink-0 bg-tc-black text-white items-center justify-center font-display text-lg sm:text-xl tracking-wider rounded-sm">
           EEC
         </div>
@@ -99,20 +98,20 @@
 
       <!-- Desktop Links -->
       <nav class="hidden md:flex items-center gap-6 lg:gap-8 text-xs font-bold uppercase tracking-widest text-zinc-600">
-        <a href="index.html" class="hover:text-tc-crimson transition py-2">Home</a>
-        <a href="about.html" class="text-tc-crimson font-bold transition py-2">About</a>
-        <a href="index.html#service" class="hover:text-tc-black transition py-2">Gathering</a>
-        <a href="index.html#sermons" class="hover:text-tc-black transition py-2">Messages</a>
-        <a href="index.html#ministries" class="hover:text-tc-black transition py-2">Ministries</a>
-        <a href="index.html#impact" class="hover:text-tc-black transition py-2">Impact</a>
+        <a href="/home" class="hover:text-tc-crimson transition py-2">Home</a>
+        <a href="/about" class="text-tc-crimson font-bold transition py-2">About</a>
+        <a href="/home#service" class="hover:text-tc-black transition py-2">Gathering</a>
+        <a href="/home#sermons" class="hover:text-tc-black transition py-2">Messages</a>
+        <a href="/home#ministries" class="hover:text-tc-black transition py-2">Ministries</a>
+        <a href="/home#impact" class="hover:text-tc-black transition py-2">Impact</a>
       </nav>
 
       <!-- Desktop Action -->
       <div class="hidden sm:flex items-center gap-2.5 lg:gap-3">
-        <a href="index.html#service" class="text-xs font-bold uppercase tracking-widest px-4 lg:px-5 py-2.5 rounded-full border border-zinc-300 hover:border-black transition">
+        <a href="/home#service" class="text-xs font-bold uppercase tracking-widest px-4 lg:px-5 py-2.5 rounded-full border border-zinc-300 hover:border-black transition">
           Visit
         </a>
-        <a href="index.html#give" class="text-xs font-bold uppercase tracking-widest px-4 lg:px-5 py-2.5 rounded-full bg-tc-crimson hover:bg-tc-crimsonDark text-white transition shadow-sm">
+        <a href="/home#give" class="text-xs font-bold uppercase tracking-widest px-4 lg:px-5 py-2.5 rounded-full bg-tc-crimson hover:bg-tc-crimsonDark text-white transition shadow-sm">
           Give Online
         </a>
       </div>
@@ -126,16 +125,16 @@
     <!-- Mobile Drawer Menu -->
     <div id="navMenu" class="menu-closed md:hidden bg-white border-b border-tc-border px-5 py-4">
       <div class="flex flex-col space-y-1 text-sm font-bold uppercase tracking-widest text-zinc-700">
-        <a href="index.html" class="mobile-nav-link py-3 px-2 border-b border-zinc-100 hover:text-tc-crimson">Home</a>
-        <a href="about.html" class="mobile-nav-link py-3 px-2 border-b border-zinc-100 text-tc-crimson">About</a>
-        <a href="index.html#service" class="mobile-nav-link py-3 px-2 border-b border-zinc-100 hover:text-tc-crimson">Gathering</a>
-        <a href="index.html#sermons" class="mobile-nav-link py-3 px-2 border-b border-zinc-100 hover:text-tc-crimson">Messages</a>
-        <a href="index.html#ministries" class="mobile-nav-link py-3 px-2 border-b border-zinc-100 hover:text-tc-crimson">Ministries</a>
-        <a href="index.html#impact" class="mobile-nav-link py-3 px-2 border-b border-zinc-100 hover:text-tc-crimson">Impact</a>
+        <a href="/home" class="mobile-nav-link py-3 px-2 border-b border-zinc-100 hover:text-tc-crimson">Home</a>
+        <a href="/about" class="mobile-nav-link py-3 px-2 border-b border-zinc-100 text-tc-crimson">About</a>
+        <a href="/home#service" class="mobile-nav-link py-3 px-2 border-b border-zinc-100 hover:text-tc-crimson">Gathering</a>
+        <a href="/home#sermons" class="mobile-nav-link py-3 px-2 border-b border-zinc-100 hover:text-tc-crimson">Messages</a>
+        <a href="/home#ministries" class="mobile-nav-link py-3 px-2 border-b border-zinc-100 hover:text-tc-crimson">Ministries</a>
+        <a href="/home#impact" class="mobile-nav-link py-3 px-2 border-b border-zinc-100 hover:text-tc-crimson">Impact</a>
       </div>
       <div class="pt-4 pb-2 flex flex-col gap-2.5">
-        <a href="index.html#service" class="mobile-nav-link w-full text-center py-3.5 border border-zinc-300 text-zinc-900 font-bold uppercase text-xs tracking-widest rounded-xl active:bg-zinc-100">Plan Visit</a>
-        <a href="index.html#give" class="mobile-nav-link w-full text-center py-3.5 bg-tc-crimson text-white font-bold uppercase text-xs tracking-widest rounded-xl shadow-md active:bg-tc-crimsonDark">Give Online</a>
+        <a href="/home#service" class="mobile-nav-link w-full text-center py-3.5 border border-zinc-300 text-zinc-900 font-bold uppercase text-xs tracking-widest rounded-xl active:bg-zinc-100">Plan Visit</a>
+        <a href="/home#give" class="mobile-nav-link w-full text-center py-3.5 bg-tc-crimson text-white font-bold uppercase text-xs tracking-widest rounded-xl shadow-md active:bg-tc-crimsonDark">Give Online</a>
       </div>
     </div>
   </header>
@@ -146,7 +145,7 @@
       
       <div class="flex items-center gap-2.5 text-[11px] font-mono uppercase tracking-wider sm:tracking-widest text-zinc-500 mb-4 sm:mb-6">
         <span class="w-2 h-2 rounded-full bg-tc-crimson flex-shrink-0"></span>
-        <span>WHO WE ARE • ስለ እኛ</span>
+        <span>ESTABLISHED MAY 1991 • WHO WE ARE • ስለ እኛ</span>
       </div>
 
       <h1 class="font-tc text-5xl sm:text-7xl md:text-8xl lg:text-9xl text-tc-black uppercase tracking-tight break-words">
@@ -160,11 +159,11 @@
 
       <div class="mt-8 sm:mt-10 pt-6 sm:pt-8 border-t border-tc-border flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
         <p class="text-zinc-600 text-sm sm:text-base max-w-xl font-normal leading-relaxed">
-          The Ethiopian Evangelical Church in Calgary brings together a multi-generational community committed to authentic biblical discipleship, intentional prayer, and active service across Calgary.
+          Established in Calgary in May 1991, the Ethiopian Evangelical Church brings together a multi-generational community of believers committed to authentic biblical discipleship, intentional prayer, and active service across Calgary[cite: 1].
         </p>
 
         <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full md:w-auto">
-          <a href="index.html" class="w-full sm:w-auto text-center px-7 py-3.5 sm:py-4 rounded-xl sm:rounded-full bg-tc-black text-white text-xs font-bold uppercase tracking-widest hover:bg-zinc-800 active:bg-zinc-900 transition shadow-sm">
+          <a href="/home" class="w-full sm:w-auto text-center px-7 py-3.5 sm:py-4 rounded-xl sm:rounded-full bg-tc-black text-white text-xs font-bold uppercase tracking-widest hover:bg-zinc-800 active:bg-zinc-900 transition shadow-sm">
             <i class="fa-solid fa-arrow-left mr-2"></i> Return to Home
           </a>
           <a href="#leadership" class="w-full sm:w-auto text-center px-7 py-3.5 sm:py-4 rounded-xl sm:rounded-full border border-zinc-300 text-zinc-900 text-xs font-bold uppercase tracking-widest hover:border-black active:bg-zinc-100 transition">
@@ -176,7 +175,92 @@
     </div>
   </section>
 
-  <!-- ================= SECTION 2: VISION & MISSION ================= -->
+  <!-- ================= SECTION 2: MILESTONES & COMMUNITY GROWTH ================= -->
+  <section class="bg-zinc-50 py-16 sm:py-24 px-4 sm:px-6 lg:px-12 border-b border-tc-border">
+    <div class="max-w-7xl mx-auto">
+      
+      <div class="mb-10 sm:mb-14">
+        <span class="text-xs font-mono text-tc-crimson uppercase tracking-widest font-semibold">Growth & Community Impact</span>
+        <h2 class="font-tc text-4xl sm:text-6xl lg:text-7xl text-tc-black mt-1 sm:mt-2">OUR JOURNEY & VISION</h2>
+        <p class="font-ethiopic text-xs text-zinc-500 font-semibold mt-0.5">ያለፍንባቸው ምዕራፎች እና የወደፊቱ ራዕያችን</p>
+      </div>
+
+      <!-- Statistics Counters -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mb-12 sm:mb-16">
+        <div class="p-6 rounded-2xl bg-white border border-tc-border shadow-xs">
+          <div class="font-tc text-4xl sm:text-5xl text-tc-black leading-none">220+</div>
+          <div class="text-xs font-bold uppercase tracking-wider text-zinc-600 mt-2">Active Family</div>
+          <div class="text-[11px] text-zinc-400 mt-0.5">120 Adults • 100 Children</div>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white border border-tc-border shadow-xs">
+          <div class="font-tc text-4xl sm:text-5xl text-tc-crimson leading-none">80+</div>
+          <div class="text-xs font-bold uppercase tracking-wider text-zinc-600 mt-2">Newcomers Welcomed</div>
+          <div class="text-[11px] text-zinc-400 mt-0.5">Transition & settlement care</div>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white border border-tc-border shadow-xs">
+          <div class="font-tc text-4xl sm:text-5xl text-tc-black leading-none">35+</div>
+          <div class="text-xs font-bold uppercase tracking-wider text-zinc-600 mt-2">Years of Ministry</div>
+          <div class="text-[11px] text-zinc-400 mt-0.5">Faithfully serving since 1991</div>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white border border-tc-border shadow-xs">
+          <div class="font-tc text-4xl sm:text-5xl text-tc-crimson leading-none">100+</div>
+          <div class="text-xs font-bold uppercase tracking-wider text-zinc-600 mt-2">Mobilized Volunteers</div>
+          <div class="text-[11px] text-zinc-400 mt-0.5">Serving across all ministries</div>
+        </div>
+      </div>
+
+      <!-- Milestones & Goals Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+        <div class="p-6 sm:p-8 rounded-2xl bg-white border border-tc-border shadow-sm">
+          <span class="text-[11px] font-mono uppercase tracking-widest text-tc-crimson font-bold block mb-2">Major Milestones</span>
+          <h3 class="font-tc text-2xl sm:text-3xl text-tc-black">RECENT ACHIEVEMENTS</h3>
+          <ul class="mt-4 space-y-3 text-xs sm:text-sm text-zinc-600">
+            <li class="flex items-start gap-2.5">
+              <i class="fa-solid fa-check text-tc-crimson mt-1 flex-shrink-0"></i>
+              <span><strong>Church Property Acquisition:</strong> Successfully purchased dedicated church property to secure a permanent home for the congregation[cite: 1].</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <i class="fa-solid fa-check text-tc-crimson mt-1 flex-shrink-0"></i>
+              <span><strong>Pastoral Team Expansion:</strong> Hired an Assistant Pastor to strengthen pastoral care, discipleship, and family counseling[cite: 1].</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <i class="fa-solid fa-check text-tc-crimson mt-1 flex-shrink-0"></i>
+              <span><strong>Community Partnerships:</strong> Established close collaboration with grassroots organizations, outreach societies, and youth networks across Calgary[cite: 1].</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="p-6 sm:p-8 rounded-2xl bg-white border border-tc-border border-l-4 border-l-tc-crimson shadow-sm">
+          <span class="text-[11px] font-mono uppercase tracking-widest text-tc-crimson font-bold block mb-2">Strategic Vision</span>
+          <h3 class="font-tc text-2xl sm:text-3xl text-tc-black">WHERE WE ARE HEADED</h3>
+          <ul class="mt-4 space-y-3 text-xs sm:text-sm text-zinc-600">
+            <li class="flex items-start gap-2.5">
+              <i class="fa-solid fa-arrow-right text-zinc-400 mt-1 flex-shrink-0"></i>
+              <span><strong>Facility Completion:</strong> Finalizing the ongoing building and facility project for enhanced community use[cite: 2].</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <i class="fa-solid fa-arrow-right text-zinc-400 mt-1 flex-shrink-0"></i>
+              <span><strong>Pastoral Visitation:</strong> Reconnecting with inactive members through systematic house-to-house visitations and personal care[cite: 2].</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <i class="fa-solid fa-arrow-right text-zinc-400 mt-1 flex-shrink-0"></i>
+              <span><strong>Investing in Next-Gen:</strong> Launching life skills sharing workshops and youth leadership capacity programs[cite: 2].</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <i class="fa-solid fa-arrow-right text-zinc-400 mt-1 flex-shrink-0"></i>
+              <span><strong>Women’s Ministry Empowerment:</strong> Expanding targeted empowerment initiatives and mentorship for women[cite: 2].</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= SECTION 3: VISION & MISSION ================= -->
   <section id="vision" class="bg-white py-16 sm:py-24 px-4 sm:px-6 lg:px-12 border-b border-tc-border">
     <div class="max-w-7xl mx-auto">
       
@@ -248,7 +332,7 @@
     </div>
   </section>
 
-  <!-- ================= SECTION 3: LEADERSHIP ================= -->
+  <!-- ================= SECTION 4: LEADERSHIP ================= -->
   <section id="leadership" class="bg-white py-16 sm:py-24 px-4 sm:px-6 lg:px-12 border-b border-tc-border">
     <div class="max-w-7xl mx-auto">
       
@@ -258,11 +342,12 @@
         <p class="font-ethiopic text-xs text-zinc-500 font-semibold mt-0.5">የአመራር እና የአገልጋዮች ቡድን</p>
       </div>
 
-      <!-- FULL TEAM PHOTO (leadership-team.jpg) -->
+      <!-- FULL TEAM PHOTO -->
       <div class="mb-16 sm:mb-20 rounded-2xl sm:rounded-3xl overflow-hidden border border-tc-border bg-zinc-950 shadow-lg relative group">
         <div class="relative aspect-[16/9] sm:aspect-[21/9] w-full overflow-hidden">
           <img 
-            src="leadership-team.jpg" 
+            src="/leadership-team.jpg" 
+            onerror="this.src='leadership-team.jpg'"
             alt="EEC Calgary Pastors and Elder Board" 
             class="w-full h-full object-cover grayscale contrast-110 group-hover:grayscale-0 group-hover:scale-105 transition duration-700 ease-out"
           />
@@ -285,7 +370,7 @@
         </div>
       </div>
 
-      <!-- PASTORAL TEAM (pastor-chalachew.jpg & pastor-roman.jpg) -->
+      <!-- PASTORAL TEAM -->
       <div class="mb-16 sm:mb-20">
         <div class="text-[11px] font-mono uppercase tracking-widest text-zinc-400 mb-6 sm:mb-8 flex items-center gap-3">
           <span>PASTORAL TEAM</span>
@@ -293,51 +378,59 @@
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 max-w-4xl">
-          <!-- Senior Pastor -->
+          <!-- Senior Pastor Chalachew Eshetu -->
           <div class="p-6 sm:p-8 rounded-2xl border border-tc-border bg-white flex flex-col justify-between hover:border-tc-black transition group">
             <div>
-              <div class="leader-photo w-24 h-24 sm:w-28 sm:h-28 rounded-2xl overflow-hidden bg-zinc-100 border border-zinc-200 mb-6 relative">
+              <a href="mailto:chale.eshetu@gmail.com" title="Click to email Pastor Chalachew" class="leader-photo block w-24 h-24 sm:w-28 sm:h-28 rounded-2xl overflow-hidden bg-zinc-100 border border-zinc-200 mb-6 relative">
                 <img 
-                  src="pastor-chalachew.jpg" 
+                  src="/pastor-chalachew.jpg" 
+                  onerror="this.src='pastor-chalachew.jpg'"
                   alt="Pastor Chalachew Eshetu" 
-                  class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-300"
+                  class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition duration-300"
                 />
-              </div>
+              </a>
               <span class="text-[10px] font-mono uppercase tracking-widest text-tc-crimson font-bold block">Senior Pastor</span>
-              <h3 class="font-tc text-3xl sm:text-4xl text-tc-black mt-0.5 group-hover:text-tc-crimson transition">Chalachew Eshetu</h3>
+              <a href="mailto:chale.eshetu@gmail.com" class="block font-tc text-3xl sm:text-4xl text-tc-black mt-0.5 group-hover:text-tc-crimson transition">
+                Chalachew Eshetu
+              </a>
               <p class="text-xs sm:text-sm text-zinc-600 mt-2.5 leading-relaxed">
                 Pulpit ministry, biblical exposition, and pastoral leadership for the congregation and vision of EEC Calgary.
               </p>
             </div>
-            <div class="mt-6 pt-4 border-t border-zinc-100 flex items-center gap-2 text-xs text-zinc-400 font-mono">
-              <i class="fa-regular fa-envelope"></i> eeccalgary@gmail.com
+            <div class="mt-6 pt-4 border-t border-zinc-100 flex items-center gap-2 text-xs text-zinc-500 font-mono">
+              <i class="fa-regular fa-envelope text-tc-crimson"></i>
+              <a href="mailto:chale.eshetu@gmail.com" class="hover:text-tc-black hover:underline truncate">chale.eshetu@gmail.com</a>
             </div>
           </div>
 
-          <!-- Associate Pastor -->
+          <!-- Associate Pastor Roman Mirkano -->
           <div class="p-6 sm:p-8 rounded-2xl border border-tc-border bg-white flex flex-col justify-between hover:border-tc-black transition group">
             <div>
-              <div class="leader-photo w-24 h-24 sm:w-28 sm:h-28 rounded-2xl overflow-hidden bg-zinc-100 border border-zinc-200 mb-6 relative">
+              <a href="mailto:romanmirkano@gmail.com" title="Click to email Pastor Roman" class="leader-photo block w-24 h-24 sm:w-28 sm:h-28 rounded-2xl overflow-hidden bg-zinc-100 border border-zinc-200 mb-6 relative">
                 <img 
-                  src="pastor-roman.jpg" 
+                  src="/pastor-roman.jpg" 
+                  onerror="this.src='pastor-roman.jpg'"
                   alt="Pastor Roman Mirkano" 
-                  class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-300"
+                  class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition duration-300"
                 />
-              </div>
+              </a>
               <span class="text-[10px] font-mono uppercase tracking-widest text-zinc-500 font-bold block">Associate Pastor</span>
-              <h3 class="font-tc text-3xl sm:text-4xl text-tc-black mt-0.5 group-hover:text-tc-crimson transition">Roman Mirkano</h3>
+              <a href="mailto:romanmirkano@gmail.com" class="block font-tc text-3xl sm:text-4xl text-tc-black mt-0.5 group-hover:text-tc-crimson transition">
+                Roman Mirkano
+              </a>
               <p class="text-xs sm:text-sm text-zinc-600 mt-2.5 leading-relaxed">
                 Congregational pastoral care, family counseling, and coordinating cell groups and discipleship programs.
               </p>
             </div>
-            <div class="mt-6 pt-4 border-t border-zinc-100 flex items-center gap-2 text-xs text-zinc-400 font-mono">
-              <i class="fa-regular fa-envelope"></i> eeccalgary@gmail.com
+            <div class="mt-6 pt-4 border-t border-zinc-100 flex items-center gap-2 text-xs text-zinc-500 font-mono">
+              <i class="fa-regular fa-envelope text-tc-crimson"></i>
+              <a href="mailto:romanmirkano@gmail.com" class="hover:text-tc-black hover:underline truncate">romanmirkano@gmail.com</a>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- ELDER BOARD (elder-dr-getu.jpg, elder-yohannes.jpg, elder-teddy.jpg) -->
+      <!-- ELDER BOARD -->
       <div class="mb-16 sm:mb-20">
         <div class="text-[11px] font-mono uppercase tracking-widest text-zinc-400 mb-6 sm:mb-8 flex items-center gap-3">
           <span>THE ELDER BOARD</span>
@@ -345,54 +438,66 @@
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-6">
+          
+          <!-- Dr. Getu Biftu -->
           <div class="p-5 rounded-2xl border border-tc-border bg-zinc-50/50 hover:bg-white hover:shadow-md transition text-center group">
-            <div class="leader-photo w-20 h-20 mx-auto rounded-full overflow-hidden bg-zinc-200 border border-zinc-300 mb-3.5">
-              <img src="elder-dr-getu.jpg" alt="Dr. Getu Biftu" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition" />
-            </div>
+            <a href="mailto:gbiftu@yahoo.ca" title="Click to email Dr. Getu" class="leader-photo block w-20 h-20 mx-auto rounded-full overflow-hidden bg-zinc-200 border border-zinc-300 mb-3.5">
+              <img src="/elder-dr-getu.jpg" onerror="this.src='elder-dr-getu.jpg'" alt="Dr. Getu Biftu" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition" />
+            </a>
             <span class="text-[10px] font-mono uppercase text-tc-crimson font-bold block">Elder</span>
-            <h4 class="font-tc text-xl text-tc-black mt-0.5">Dr. Getu Biftu</h4>
+            <a href="mailto:gbiftu@yahoo.ca" class="block font-tc text-xl text-tc-black mt-0.5 group-hover:text-tc-crimson transition">Dr. Getu Biftu</a>
             <p class="text-[11px] text-zinc-500 mt-1">Board Governance</p>
+            <a href="mailto:gbiftu@yahoo.ca" class="text-[10px] font-mono text-zinc-400 hover:text-zinc-700 block mt-2 truncate">gbiftu@yahoo.ca</a>
           </div>
 
+          <!-- Yohannes Debele -->
           <div class="p-5 rounded-2xl border border-tc-border bg-zinc-50/50 hover:bg-white hover:shadow-md transition text-center group">
-            <div class="leader-photo w-20 h-20 mx-auto rounded-full overflow-hidden bg-zinc-200 border border-zinc-300 mb-3.5">
-              <img src="elder-yohannes.jpg" alt="Yohannes Debele" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition" />
-            </div>
+            <a href="mailto:yohannes_debele@yahoo.com" title="Click to email Yohannes Debele" class="leader-photo block w-20 h-20 mx-auto rounded-full overflow-hidden bg-zinc-200 border border-zinc-300 mb-3.5">
+              <img src="/elder-yohannes.jpg" onerror="this.src='elder-yohannes.jpg'" alt="Yohannes Debele" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition" />
+            </a>
             <span class="text-[10px] font-mono uppercase text-tc-crimson font-bold block">Elder</span>
-            <h4 class="font-tc text-xl text-tc-black mt-0.5">Yohannes Debele</h4>
+            <a href="mailto:yohannes_debele@yahoo.com" class="block font-tc text-xl text-tc-black mt-0.5 group-hover:text-tc-crimson transition">Yohannes Debele</a>
             <p class="text-[11px] text-zinc-500 mt-1">Spiritual Stewardship</p>
+            <a href="mailto:yohannes_debele@yahoo.com" class="text-[10px] font-mono text-zinc-400 hover:text-zinc-700 block mt-2 truncate">yohannes_debele@yahoo.com</a>
           </div>
 
+          <!-- Pastor Roman Mirkano -->
           <div class="p-5 rounded-2xl border border-tc-border bg-zinc-50/50 hover:bg-white hover:shadow-md transition text-center group">
-            <div class="leader-photo w-20 h-20 mx-auto rounded-full overflow-hidden bg-zinc-200 border border-zinc-300 mb-3.5">
-              <img src="pastor-roman.jpg" alt="Pastor Roman Mirkano" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition" />
-            </div>
+            <a href="mailto:romanmirkano@gmail.com" title="Click to email Pastor Roman" class="leader-photo block w-20 h-20 mx-auto rounded-full overflow-hidden bg-zinc-200 border border-zinc-300 mb-3.5">
+              <img src="/pastor-roman.jpg" onerror="this.src='pastor-roman.jpg'" alt="Pastor Roman Mirkano" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition" />
+            </a>
             <span class="text-[10px] font-mono uppercase text-tc-crimson font-bold block">Elder & Pastor</span>
-            <h4 class="font-tc text-xl text-tc-black mt-0.5">P. Roman Mirkano</h4>
+            <a href="mailto:romanmirkano@gmail.com" class="block font-tc text-xl text-tc-black mt-0.5 group-hover:text-tc-crimson transition">P. Roman Mirkano</a>
             <p class="text-[11px] text-zinc-500 mt-1">Pastoral Elder</p>
+            <a href="mailto:romanmirkano@gmail.com" class="text-[10px] font-mono text-zinc-400 hover:text-zinc-700 block mt-2 truncate">romanmirkano@gmail.com</a>
           </div>
 
+          <!-- Pastor Chalachew Eshetu -->
           <div class="p-5 rounded-2xl border border-tc-border bg-zinc-50/50 hover:bg-white hover:shadow-md transition text-center group">
-            <div class="leader-photo w-20 h-20 mx-auto rounded-full overflow-hidden bg-zinc-200 border border-zinc-300 mb-3.5">
-              <img src="pastor-chalachew.jpg" alt="Pastor Chalachew Eshetu" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition" />
-            </div>
+            <a href="mailto:chale.eshetu@gmail.com" title="Click to email Pastor Chalachew" class="leader-photo block w-20 h-20 mx-auto rounded-full overflow-hidden bg-zinc-200 border border-zinc-300 mb-3.5">
+              <img src="/pastor-chalachew.jpg" onerror="this.src='pastor-chalachew.jpg'" alt="Pastor Chalachew Eshetu" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition" />
+            </a>
             <span class="text-[10px] font-mono uppercase text-tc-crimson font-bold block">Elder & Pastor</span>
-            <h4 class="font-tc text-xl text-tc-black mt-0.5">P. Chalachew Eshetu</h4>
+            <a href="mailto:chale.eshetu@gmail.com" class="block font-tc text-xl text-tc-black mt-0.5 group-hover:text-tc-crimson transition">P. Chalachew Eshetu</a>
             <p class="text-[11px] text-zinc-500 mt-1">Senior Elder</p>
+            <a href="mailto:chale.eshetu@gmail.com" class="text-[10px] font-mono text-zinc-400 hover:text-zinc-700 block mt-2 truncate">chale.eshetu@gmail.com</a>
           </div>
 
+          <!-- Brother Teddy (Tewodros Kinfe) -->
           <div class="p-5 rounded-2xl border border-tc-border bg-zinc-50/50 hover:bg-white hover:shadow-md transition text-center group sm:col-span-2 lg:col-span-1">
-            <div class="leader-photo w-20 h-20 mx-auto rounded-full overflow-hidden bg-zinc-200 border border-zinc-300 mb-3.5">
-              <img src="elder-teddy.jpg" alt="Brother Teddy" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition" />
-            </div>
+            <a href="mailto:tkinfe@yahoo.com" title="Click to email Brother Teddy" class="leader-photo block w-20 h-20 mx-auto rounded-full overflow-hidden bg-zinc-200 border border-zinc-300 mb-3.5">
+              <img src="/elder-teddy.jpg" onerror="this.src='elder-teddy.jpg'" alt="Brother Teddy" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition" />
+            </a>
             <span class="text-[10px] font-mono uppercase text-tc-crimson font-bold block">Elder</span>
-            <h4 class="font-tc text-xl text-tc-black mt-0.5">Brother Teddy</h4>
+            <a href="mailto:tkinfe@yahoo.com" class="block font-tc text-xl text-tc-black mt-0.5 group-hover:text-tc-crimson transition">Tewodros Kinfe</a>
             <p class="text-[11px] text-zinc-500 mt-1">Care & Ministries</p>
+            <a href="mailto:tkinfe@yahoo.com" class="text-[10px] font-mono text-zinc-400 hover:text-zinc-700 block mt-2 truncate">tkinfe@yahoo.com</a>
           </div>
+
         </div>
       </div>
 
-      <!-- KIDS LEADERSHIP (leader-eyerusalem.jpg) -->
+      <!-- KIDS LEADERSHIP -->
       <div>
         <div class="text-[11px] font-mono uppercase tracking-widest text-zinc-400 mb-6 sm:mb-8 flex items-center gap-3">
           <span>KIDS & NEXT-GEN LEADERSHIP</span>
@@ -400,15 +505,18 @@
         </div>
 
         <div class="max-w-md p-6 sm:p-7 rounded-2xl border border-tc-border bg-white flex items-center gap-5 hover:border-tc-black transition group">
-          <div class="leader-photo w-20 h-20 rounded-2xl overflow-hidden bg-zinc-100 border border-zinc-200 flex-shrink-0">
-            <img src="leader-eyerusalem.jpg" alt="Eyerusalem Tadese" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition" />
-          </div>
+          <a href="mailto:yohannes_debele@yahoo.com" title="Click to email Sunday School Ministry" class="leader-photo w-20 h-20 rounded-2xl overflow-hidden bg-zinc-100 border border-zinc-200 flex-shrink-0 block">
+            <img src="/leader-eyerusalem.jpg" onerror="this.src='leader-eyerusalem.jpg'" alt="Eyerusalem Tadese" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition" />
+          </a>
           <div>
             <span class="text-[10px] font-mono uppercase tracking-widest text-tc-crimson font-bold block">Sunday School Teacher</span>
-            <h4 class="font-tc text-2xl text-tc-black mt-0.5">Eyerusalem Tadese</h4>
+            <a href="mailto:yohannes_debele@yahoo.com" class="font-tc text-2xl text-tc-black mt-0.5 group-hover:text-tc-crimson transition block">Eyerusalem Tadese</a>
             <p class="text-xs text-zinc-600 mt-1.5 leading-relaxed">
               Teaching Sunday school lessons, bible scripture songs, and discipleship for growing children.
             </p>
+            <a href="mailto:yohannes_debele@yahoo.com" class="text-[11px] font-mono text-zinc-400 hover:text-zinc-700 block mt-2">
+              <i class="fa-regular fa-envelope text-tc-crimson mr-1"></i> yohannes_debele@yahoo.com
+            </a>
           </div>
         </div>
       </div>
@@ -416,7 +524,7 @@
     </div>
   </section>
 
-  <!-- ================= SECTION 4: AFFILIATIONS ================= -->
+  <!-- ================= SECTION 5: AFFILIATIONS ================= -->
   <section id="affiliations" class="bg-tc-black text-white py-16 sm:py-24 px-4 sm:px-6 lg:px-12 border-b border-tc-borderDark">
     <div class="max-w-7xl mx-auto">
       
@@ -457,7 +565,7 @@
     </div>
   </section>
 
-  <!-- ================= SECTION 5: MEMBERSHIP ================= -->
+  <!-- ================= SECTION 6: MEMBERSHIP ================= -->
   <section class="bg-white py-16 sm:py-24 px-4 sm:px-6 lg:px-12 border-b border-tc-border">
     <div class="max-w-4xl mx-auto text-center">
       <span class="text-xs font-mono text-tc-crimson uppercase tracking-widest font-semibold">Join the Family</span>
@@ -469,10 +577,10 @@
       </p>
 
       <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
-        <a href="mailto:eeccalgary@gmail.com?subject=Church%20Membership" class="w-full sm:w-auto px-8 py-3.5 rounded-full bg-tc-crimson hover:bg-tc-crimsonDark text-white text-xs font-bold uppercase tracking-widest transition shadow-sm">
+        <a href="mailto:chale.eshetu@gmail.com?subject=Church%20Membership%20Application" class="w-full sm:w-auto px-8 py-3.5 rounded-full bg-tc-crimson hover:bg-tc-crimsonDark text-white text-xs font-bold uppercase tracking-widest transition shadow-sm">
           Apply For Membership
         </a>
-        <a href="index.html#contact" class="w-full sm:w-auto px-8 py-3.5 rounded-full border border-zinc-300 text-zinc-900 text-xs font-bold uppercase tracking-widest hover:border-black transition">
+        <a href="mailto:chale.eshetu@gmail.com?subject=Pastoral%20Inquiry" class="w-full sm:w-auto px-8 py-3.5 rounded-full border border-zinc-300 text-zinc-900 text-xs font-bold uppercase tracking-widest hover:border-black transition">
           Contact Pastoral Team
         </a>
       </div>
@@ -493,7 +601,24 @@
         <div class="mt-4 sm:mt-6 text-xs text-zinc-400 space-y-1 font-mono">
           <p class="break-words">Mailing: P.O. Box 29018 Sage Hill PO, Calgary AB, T3R 1X5</p>
           <p>Phone: <a href="tel:4038309528" class="hover:text-white">403-830-9528</a></p>
-          <p>Email: <a href="mailto:eeccalgary@gmail.com" class="hover:text-white break-all">eeccalgary@gmail.com</a></p>
+          <p>Church Email: <a href="mailto:eeccalgary@gmail.com" class="hover:text-white break-all">eeccalgary@gmail.com</a></p>
+          <p>Media & Inquiries: <a href="mailto:eeccalgary.media@gmail.com" class="hover:text-white break-all">eeccalgary.media@gmail.com</a></p>
+        </div>
+
+        <!-- Social Icons Bar -->
+        <div class="mt-5 flex items-center gap-4 text-base">
+          <a href="https://www.youtube.com/@eec.calgary" target="_blank" rel="noopener noreferrer" class="hover:text-red-500 transition" aria-label="YouTube">
+            <i class="fa-brands fa-youtube"></i>
+          </a>
+          <a href="https://www.instagram.com/eec.calgary/" target="_blank" rel="noopener noreferrer" class="hover:text-pink-500 transition" aria-label="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a href="https://www.tiktok.com/@eec.calgary" target="_blank" rel="noopener noreferrer" class="hover:text-white transition" aria-label="TikTok">
+            <i class="fa-brands fa-tiktok"></i>
+          </a>
+          <a href="https://www.facebook.com/people/Ethiopian-Evangelical-Church-in-Calgary/61578639421371/" target="_blank" rel="noopener noreferrer" class="hover:text-blue-500 transition" aria-label="Facebook">
+            <i class="fa-brands fa-facebook"></i>
+          </a>
         </div>
       </div>
 
@@ -508,12 +633,12 @@
       <div>
         <h4 class="text-xs font-mono uppercase tracking-widest text-zinc-200 mb-3 sm:mb-4">Navigation</h4>
         <ul class="text-xs space-y-2.5 font-semibold uppercase tracking-wider">
-          <li><a href="index.html" class="hover:text-white transition py-1 block">Home</a></li>
-          <li><a href="about.html" class="text-white font-bold transition py-1 block">About</a></li>
-          <li><a href="index.html#service" class="hover:text-white transition py-1 block">Gathering</a></li>
-          <li><a href="index.html#sermons" class="hover:text-white transition py-1 block">Messages</a></li>
-          <li><a href="index.html#ministries" class="hover:text-white transition py-1 block">Ministries</a></li>
-          <li><a href="index.html#impact" class="hover:text-white transition py-1 block">Impact</a></li>
+          <li><a href="/home" class="hover:text-white transition py-1 block">Home</a></li>
+          <li><a href="/about" class="text-white font-bold transition py-1 block">About</a></li>
+          <li><a href="/home#service" class="hover:text-white transition py-1 block">Gathering</a></li>
+          <li><a href="/home#sermons" class="hover:text-white transition py-1 block">Messages</a></li>
+          <li><a href="/home#ministries" class="hover:text-white transition py-1 block">Ministries</a></li>
+          <li><a href="/home#impact" class="hover:text-white transition py-1 block">Impact</a></li>
         </ul>
       </div>
 
@@ -554,16 +679,6 @@
       });
     });
 
-    /* =========================================================
-       MOBILE SCROLL-CENTER FOCUS COLOR EFFECT
-       On desktop, hover already colors a photo (group-hover:grayscale-0)
-       while the rest stay grayscale.
-       On mobile/touch screens there's no hover, so instead: whichever
-       leader photo is nearest the vertical center of the screen turns
-       colored automatically as the user scrolls; every other photo
-       stays grayscale. Uses a thin "center band" via rootMargin so
-       only one card is active at a time.
-    ========================================================= */
     (function () {
       const photos = Array.from(document.querySelectorAll('.leader-photo'));
       if (!photos.length) return;
@@ -584,16 +699,13 @@
       }
 
       function enableScrollFocus() {
-        if (observer) return; // already running
-        photos.forEach(el => setColored(el, false)); // start all grayscale
+        if (observer) return;
+        photos.forEach(el => setColored(el, false));
 
         observer = new IntersectionObserver((entries) => {
           entries.forEach(entry => setColored(entry.target, entry.isIntersecting));
         }, {
           root: null,
-          // Shrinks the effective viewport to a thin horizontal band around
-          // the vertical center of the screen, so only the card crossing
-          // dead-center gets marked as intersecting/colored.
           rootMargin: '-42% 0px -42% 0px',
           threshold: 0
         });
@@ -605,7 +717,6 @@
         if (!observer) return;
         observer.disconnect();
         observer = null;
-        // Back to default state: grayscale, desktop hover takes over via CSS
         photos.forEach(el => setColored(el, false));
       }
 
