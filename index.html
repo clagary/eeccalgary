@@ -115,9 +115,9 @@
   <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-tc-border">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 h-16 sm:h-20 flex items-center justify-between">
       
-      <!-- Wordmark Logo + logo.png -->
-      <a href="index.html" class="flex items-center gap-2.5 sm:gap-3 min-w-0">
-        <img src="logo.png" alt="EEC Logo" class="w-8 h-8 sm:w-9 sm:h-9 object-contain rounded-full flex-shrink-0" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+      <!-- Wordmark Logo + logo.png -> redirects to /home -->
+      <a href="/home" class="flex items-center gap-2.5 sm:gap-3 min-w-0">
+        <img src="/logo.png" alt="EEC Logo" class="w-8 h-8 sm:w-9 sm:h-9 object-contain rounded-full flex-shrink-0" onerror="this.src='logo.png'; this.onerror=function(){this.style.display='none'; this.nextElementSibling.style.display='flex';};" />
         <div class="hidden w-8 h-8 sm:w-9 sm:h-9 flex-shrink-0 bg-tc-black text-white items-center justify-center font-display text-lg sm:text-xl tracking-wider rounded-sm">
           EEC
         </div>
@@ -129,8 +129,8 @@
 
       <!-- Desktop Navigation Links -->
       <nav class="hidden md:flex items-center gap-6 lg:gap-8 text-xs font-bold uppercase tracking-widest text-zinc-600">
-        <a href="index.html" class="text-tc-crimson font-bold transition py-2">Home</a>
-        <a href="about.html" class="hover:text-tc-black transition py-2">About</a>
+        <a href="/home" class="text-tc-crimson font-bold transition py-2">Home</a>
+        <a href="/about" class="hover:text-tc-black transition py-2">About</a>
         <a href="#service" class="hover:text-tc-black transition py-2">Gathering</a>
         <a href="#sermons" class="hover:text-tc-black transition py-2">Messages</a>
         <a href="#ministries" class="hover:text-tc-black transition py-2">Ministries</a>
@@ -156,8 +156,8 @@
     <!-- Mobile Drawer Menu -->
     <div id="navMenu" class="menu-closed md:hidden bg-white border-b border-tc-border px-5 py-4">
       <div class="flex flex-col space-y-1 text-sm font-bold uppercase tracking-widest text-zinc-700">
-        <a href="index.html" class="mobile-nav-link py-3 px-2 border-b border-zinc-100 text-tc-crimson">Home</a>
-        <a href="about.html" class="mobile-nav-link py-3 px-2 border-b border-zinc-100 hover:text-tc-crimson">About</a>
+        <a href="/home" class="mobile-nav-link py-3 px-2 border-b border-zinc-100 text-tc-crimson">Home</a>
+        <a href="/about" class="mobile-nav-link py-3 px-2 border-b border-zinc-100 hover:text-tc-crimson">About</a>
         <a href="#service" class="mobile-nav-link py-3 px-2 border-b border-zinc-100 hover:text-tc-crimson">Gathering</a>
         <a href="#sermons" class="mobile-nav-link py-3 px-2 border-b border-zinc-100 hover:text-tc-crimson">Messages</a>
         <a href="#ministries" class="mobile-nav-link py-3 px-2 border-b border-zinc-100 hover:text-tc-crimson">Ministries</a>
@@ -176,7 +176,7 @@
       
       <div class="flex items-center gap-2.5 text-[11px] font-mono uppercase tracking-wider sm:tracking-widest text-zinc-500 mb-4 sm:mb-6">
         <span class="w-2 h-2 rounded-full bg-tc-crimson flex-shrink-0"></span>
-        <span class="truncate">CALGARY, AB • REGISTERED CHARITY</span>
+        <span class="truncate">CALGARY, AB • REGISTERED CHARITY • EST. MAY 1991</span>
       </div>
 
       <h1 class="font-tc text-5xl sm:text-7xl md:text-8xl lg:text-9xl text-tc-black uppercase tracking-tight break-words">
@@ -190,25 +190,25 @@
 
       <div class="mt-8 sm:mt-10 pt-6 sm:pt-8 border-t border-tc-border flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
         <p class="text-zinc-600 text-sm sm:text-base max-w-xl font-normal leading-relaxed">
-          Ethiopian Evangelical Church in Calgary brings together a multi-generational community grounded in Christ, mutual accountability, and intentional service across the city.
+          We are a Christ-centered church family in Calgary, Alberta, serving the Ethiopian community and sharing the love of Jesus with all people across generations.
         </p>
 
         <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full md:w-auto">
           <a href="#service" class="w-full sm:w-auto text-center px-7 py-3.5 sm:py-4 rounded-xl sm:rounded-full bg-tc-black text-white text-xs font-bold uppercase tracking-widest hover:bg-zinc-800 active:bg-zinc-900 transition shadow-sm">
             Join This Sunday
           </a>
-          <!-- Green Text: About Our Church -->
-          <a href="about.html" class="w-full sm:w-auto text-center px-7 py-3.5 sm:py-4 rounded-xl sm:rounded-full border border-emerald-600 text-emerald-600 hover:border-emerald-700 hover:text-emerald-700 text-xs font-bold uppercase tracking-widest active:bg-emerald-50 transition">
+          <a href="/about" class="w-full sm:w-auto text-center px-7 py-3.5 sm:py-4 rounded-xl sm:rounded-full border border-emerald-600 text-emerald-600 hover:border-emerald-700 hover:text-emerald-700 text-xs font-bold uppercase tracking-widest active:bg-emerald-50 transition">
             About Our Church
           </a>
         </div>
       </div>
 
-      <!-- MASTER SANCTUARY PHOTO (sanctuary-master.jpg) -->
+      <!-- MASTER SANCTUARY PHOTO -->
       <div class="mt-10 sm:mt-14 rounded-2xl sm:rounded-3xl overflow-hidden border border-tc-border bg-zinc-950 shadow-xl relative group">
         <div class="relative aspect-[16/9] sm:aspect-[21/9] w-full overflow-hidden">
           <img 
-            src="sanctuary-master.jpg" 
+            src="/sanctuary-master.jpg" 
+            onerror="this.src='sanctuary-master.jpg'"
             alt="EEC Calgary Sanctuary & Interior" 
             class="smart-color-img w-full h-full object-cover contrast-115 group-hover:scale-105"
           />
@@ -245,7 +245,6 @@
           <p class="font-ethiopic text-xs text-zinc-500 font-semibold mt-0.5">የአምልኮ እና የጸሎት ፕሮግራሞች</p>
         </div>
         <div>
-          <!-- Green Text: View Full Calendar Schedule -->
           <button onclick="openCalendarModal()" class="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-zinc-100 hover:bg-zinc-200 text-emerald-600 text-xs font-bold uppercase tracking-widest transition border border-emerald-600/30 shadow-xs cursor-pointer">
             <i class="fa-regular fa-calendar-days text-emerald-600"></i>
             <span>View Full Calendar Schedule</span>
@@ -285,7 +284,7 @@
           </div>
         </div>
 
-        <!-- Location with Green Text Button: Open in Google Maps -->
+        <!-- Location -->
         <div class="p-6 sm:p-8 border border-tc-border rounded-2xl bg-zinc-50/60 flex flex-col justify-between">
           <div>
             <span class="text-[11px] font-mono text-tc-crimson uppercase tracking-widest block font-semibold">Gathering Facility</span>
@@ -344,22 +343,22 @@
     </div>
   </div>
 
-  <!-- ================= SECTION 3: DARK MEDIA & BROADCAST (OFFICIAL CHANNELS) ================= -->
+  <!-- ================= SECTION 3: BROADCAST & SOCIAL MEDIA ================= -->
   <section id="sermons" class="bg-tc-black text-white py-16 sm:py-24 px-4 sm:px-6 lg:px-12 border-b border-tc-borderDark">
     <div class="max-w-7xl mx-auto">
       
       <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-12 gap-3 sm:gap-4">
         <div>
-          <span class="text-xs font-mono text-tc-crimson uppercase tracking-widest font-semibold">Broadcast & Sermons</span>
-          <h2 class="font-tc text-4xl sm:text-6xl lg:text-7xl text-white mt-1 sm:mt-2">WATCH ONLINE</h2>
-          <p class="font-ethiopic text-xs text-zinc-400 font-semibold mt-0.5">የቀጥታ ስርጭት እና የስብከቶች መዝገብ</p>
+          <span class="text-xs font-mono text-tc-crimson uppercase tracking-widest font-semibold">Broadcast & Community</span>
+          <h2 class="font-tc text-4xl sm:text-6xl lg:text-7xl text-white mt-1 sm:mt-2">WATCH & CONNECT</h2>
+          <p class="font-ethiopic text-xs text-zinc-400 font-semibold mt-0.5">የቀጥታ ስርጭት እና ማህበራዊ ትስስር ገጾች</p>
         </div>
         <p class="text-zinc-400 text-xs sm:text-sm max-w-sm leading-relaxed">
-          Stream live every Sunday at 3:00 PM or view previous message series online.
+          Subscribe for weekly worship videos, sermons, live services, and community fellowship updates.
         </p>
       </div>
 
-      <!-- Featured Video from @eec.calgary -->
+      <!-- Featured Video -->
       <div class="rounded-xl sm:rounded-2xl overflow-hidden border border-tc-borderDark bg-black aspect-video shadow-2xl w-full">
         <iframe 
           class="w-full h-full"
@@ -372,31 +371,57 @@
         </iframe>
       </div>
 
-      <!-- Verified Social Buttons -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mt-4 sm:mt-6">
-        <!-- Official YouTube: @eec.calgary -->
-        <a href="https://www.youtube.com/@eec.calgary" target="_blank" rel="noopener noreferrer" class="p-4 sm:p-5 rounded-xl bg-tc-charcoal border border-tc-borderDark hover:border-zinc-500 active:bg-zinc-800 transition flex items-center justify-between group">
+      <!-- Verified Social Buttons (YouTube, Instagram, TikTok, Facebook) -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mt-6">
+        
+        <!-- YouTube -->
+        <a href="https://www.youtube.com/@eec.calgary" target="_blank" rel="noopener noreferrer" class="p-4 rounded-xl bg-tc-charcoal border border-tc-borderDark hover:border-zinc-500 active:bg-zinc-800 transition flex items-center justify-between group">
           <div class="flex items-center gap-3">
             <i class="fa-brands fa-youtube text-red-500 text-2xl flex-shrink-0 group-hover:scale-110 transition-transform"></i>
             <div>
-              <span class="block font-bold text-xs uppercase tracking-wider text-white">EEC Calgary YouTube</span>
-              <span class="block text-[11px] text-zinc-400">@eec.calgary • Full sermons & praise</span>
+              <span class="block font-bold text-xs uppercase tracking-wider text-white">YouTube</span>
+              <span class="block text-[11px] text-zinc-400 truncate">@eec.calgary</span>
             </div>
           </div>
-          <i class="fa-solid fa-arrow-up-right-from-square text-xs text-zinc-500 ml-2 group-hover:text-white transition-colors"></i>
+          <i class="fa-solid fa-arrow-up-right-from-square text-xs text-zinc-500 group-hover:text-white transition-colors"></i>
         </a>
 
-        <!-- Official Facebook Page -->
-        <a href="https://www.facebook.com/people/Ethiopian-Evangelical-Church-in-Calgary/61578639421371/" target="_blank" rel="noopener noreferrer" class="p-4 sm:p-5 rounded-xl bg-tc-charcoal border border-tc-borderDark hover:border-zinc-500 active:bg-zinc-800 transition flex items-center justify-between group">
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/eec.calgary/" target="_blank" rel="noopener noreferrer" class="p-4 rounded-xl bg-tc-charcoal border border-tc-borderDark hover:border-zinc-500 active:bg-zinc-800 transition flex items-center justify-between group">
+          <div class="flex items-center gap-3">
+            <i class="fa-brands fa-instagram text-pink-500 text-2xl flex-shrink-0 group-hover:scale-110 transition-transform"></i>
+            <div>
+              <span class="block font-bold text-xs uppercase tracking-wider text-white">Instagram</span>
+              <span class="block text-[11px] text-zinc-400 truncate">@eec.calgary</span>
+            </div>
+          </div>
+          <i class="fa-solid fa-arrow-up-right-from-square text-xs text-zinc-500 group-hover:text-white transition-colors"></i>
+        </a>
+
+        <!-- TikTok -->
+        <a href="https://www.tiktok.com/@eec.calgary" target="_blank" rel="noopener noreferrer" class="p-4 rounded-xl bg-tc-charcoal border border-tc-borderDark hover:border-zinc-500 active:bg-zinc-800 transition flex items-center justify-between group">
+          <div class="flex items-center gap-3">
+            <i class="fa-brands fa-tiktok text-white text-2xl flex-shrink-0 group-hover:scale-110 transition-transform"></i>
+            <div>
+              <span class="block font-bold text-xs uppercase tracking-wider text-white">TikTok</span>
+              <span class="block text-[11px] text-zinc-400 truncate">@eec.calgary</span>
+            </div>
+          </div>
+          <i class="fa-solid fa-arrow-up-right-from-square text-xs text-zinc-500 group-hover:text-white transition-colors"></i>
+        </a>
+
+        <!-- Facebook -->
+        <a href="https://www.facebook.com/people/Ethiopian-Evangelical-Church-in-Calgary/61578639421371/" target="_blank" rel="noopener noreferrer" class="p-4 rounded-xl bg-tc-charcoal border border-tc-borderDark hover:border-zinc-500 active:bg-zinc-800 transition flex items-center justify-between group">
           <div class="flex items-center gap-3">
             <i class="fa-brands fa-facebook text-blue-500 text-2xl flex-shrink-0 group-hover:scale-110 transition-transform"></i>
             <div>
-              <span class="block font-bold text-xs uppercase tracking-wider text-white">Facebook Community</span>
-              <span class="block text-[11px] text-zinc-400">Official page • Announcements & Live</span>
+              <span class="block font-bold text-xs uppercase tracking-wider text-white">Facebook</span>
+              <span class="block text-[11px] text-zinc-400 truncate">EEC Calgary</span>
             </div>
           </div>
-          <i class="fa-solid fa-arrow-up-right-from-square text-xs text-zinc-500 ml-2 group-hover:text-white transition-colors"></i>
+          <i class="fa-solid fa-arrow-up-right-from-square text-xs text-zinc-500 group-hover:text-white transition-colors"></i>
         </a>
+
       </div>
 
     </div>
@@ -414,11 +439,12 @@
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
         
-        <!-- 1. Youth: ministry-youth.jpg -->
+        <!-- 1. Youth -->
         <div class="border border-tc-border rounded-2xl overflow-hidden flex flex-col justify-between hover:shadow-lg transition group">
           <div class="h-48 sm:h-52 bg-zinc-900 overflow-hidden relative">
             <img 
-              src="ministry-youth.jpg" 
+              src="/ministry-youth.jpg" 
+              onerror="this.src='ministry-youth.jpg'"
               alt="Youth & Young Adults" 
               class="smart-color-img w-full h-full object-cover contrast-125 group-hover:scale-105"
             />
@@ -429,7 +455,7 @@
               <h3 class="font-tc text-2xl sm:text-3xl text-tc-black mt-1">YOUTH & YOUNG ADULTS</h3>
               <p class="font-ethiopic text-xs text-zinc-500 font-semibold mt-0.5">የወጣቶች አገልግሎት</p>
               <p class="text-xs sm:text-sm text-zinc-600 mt-3 leading-relaxed">
-                Empowering the next generation with biblical truth, authentic fellowship, and practical life mentorship.
+                Empowering the next generation with biblical truth, life skill training, and leadership capacity building[cite: 2].
               </p>
             </div>
             <button onclick="openMinistryModal('youth')" class="mt-5 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-tc-black hover:text-tc-crimson transition py-1 text-left cursor-pointer">
@@ -438,18 +464,19 @@
           </div>
         </div>
 
-        <!-- 2. Children: ministry-children.jpg -->
+        <!-- 2. Children -->
         <div class="border border-tc-border rounded-2xl overflow-hidden flex flex-col justify-between hover:shadow-lg transition group">
           <div class="h-48 sm:h-52 bg-zinc-900 overflow-hidden relative">
             <img 
-              src="ministry-children.jpg" 
+              src="/ministry-children.jpg" 
+              onerror="this.src='ministry-children.jpg'"
               alt="Kids Ministry" 
               class="smart-color-img w-full h-full object-cover contrast-125 group-hover:scale-105"
             />
           </div>
           <div class="p-6 sm:p-7 flex-grow flex flex-col justify-between">
             <div>
-              <span class="text-[10px] font-mono uppercase tracking-widest text-zinc-500 font-bold">Ages 2–12</span>
+              <span class="text-[10px] font-mono uppercase tracking-widest text-zinc-500 font-bold">Ages 2–12 • 100+ Children</span>
               <h3 class="font-tc text-2xl sm:text-3xl text-tc-black mt-1">CHILDREN'S MINISTRY</h3>
               <p class="font-ethiopic text-xs text-zinc-500 font-semibold mt-0.5">የልጆች አገልግሎት</p>
               <p class="text-xs sm:text-sm text-zinc-600 mt-3 leading-relaxed">
@@ -462,11 +489,12 @@
           </div>
         </div>
 
-        <!-- 3. Small Groups: ministry-smallgroups.jpg -->
+        <!-- 3. Small Groups -->
         <div class="border border-tc-border rounded-2xl overflow-hidden flex flex-col justify-between hover:shadow-lg transition group">
           <div class="h-48 sm:h-52 bg-zinc-900 overflow-hidden relative">
             <img 
-              src="ministry-smallgroups.jpg" 
+              src="/ministry-smallgroups.jpg" 
+              onerror="this.src='ministry-smallgroups.jpg'"
               alt="Small Groups" 
               class="smart-color-img w-full h-full object-cover contrast-125 group-hover:scale-105"
             />
@@ -486,22 +514,23 @@
           </div>
         </div>
 
-        <!-- 4. Women: ministry-women.jpg -->
+        <!-- 4. Women -->
         <div class="border border-tc-border rounded-2xl overflow-hidden flex flex-col justify-between hover:shadow-lg transition group">
           <div class="h-48 sm:h-52 bg-zinc-900 overflow-hidden relative">
             <img 
-              src="ministry-women.jpg" 
+              src="/ministry-women.jpg" 
+              onerror="this.src='ministry-women.jpg'"
               alt="Women's Ministry" 
               class="smart-color-img w-full h-full object-cover contrast-125 group-hover:scale-105"
             />
           </div>
           <div class="p-6 sm:p-7 flex-grow flex flex-col justify-between">
             <div>
-              <span class="text-[10px] font-mono uppercase tracking-widest text-tc-crimson font-bold">The King's Daughter</span>
+              <span class="text-[10px] font-mono uppercase tracking-widest text-tc-crimson font-bold">Empowerment & Fellowship</span>
               <h3 class="font-tc text-2xl sm:text-3xl text-tc-black mt-1">WOMEN'S MINISTRY</h3>
               <p class="font-ethiopic text-xs text-zinc-500 font-semibold mt-0.5">የሴቶች አገልግሎት</p>
               <p class="text-xs sm:text-sm text-zinc-600 mt-3 leading-relaxed">
-                Dedicated prayer, discipleship, and spiritual fellowship encouraging women to flourish in faith and family.
+                Dedicated discipleship and empowerment programs encouraging women to thrive in faith, career, and family[cite: 2].
               </p>
             </div>
             <button onclick="openMinistryModal('women')" class="mt-5 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-tc-black hover:text-tc-crimson transition py-1 text-left cursor-pointer">
@@ -510,11 +539,12 @@
           </div>
         </div>
 
-        <!-- 5. Men: ministry-men.jpg -->
+        <!-- 5. Men -->
         <div class="border border-tc-border rounded-2xl overflow-hidden flex flex-col justify-between hover:shadow-lg transition group">
           <div class="h-48 sm:h-52 bg-zinc-900 overflow-hidden relative">
             <img 
-              src="ministry-men.jpg" 
+              src="/ministry-men.jpg" 
+              onerror="this.src='ministry-men.jpg'"
               alt="Men's Ministry" 
               class="smart-color-img w-full h-full object-cover contrast-125 group-hover:scale-105"
             />
@@ -534,11 +564,12 @@
           </div>
         </div>
 
-        <!-- 6. Family: ministry-family.jpg -->
+        <!-- 6. Family -->
         <div class="border border-tc-border rounded-2xl overflow-hidden flex flex-col justify-between hover:shadow-lg transition group">
           <div class="h-48 sm:h-52 bg-zinc-900 overflow-hidden relative">
             <img 
-              src="ministry-family.jpg" 
+              src="/ministry-family.jpg" 
+              onerror="this.src='ministry-family.jpg'"
               alt="Family Ministry" 
               class="smart-color-img w-full h-full object-cover contrast-125 group-hover:scale-105"
             />
@@ -558,11 +589,11 @@
           </div>
         </div>
 
-        <!-- 7. Worship: ministry-worship.jpg with Green Text Button: Learn More & Join Team -->
+        <!-- 7. Worship -->
         <div class="border border-tc-border rounded-2xl overflow-hidden flex flex-col justify-between hover:shadow-lg transition md:col-span-2 lg:col-span-3 group">
           <div class="p-6 sm:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 bg-zinc-50">
             <div>
-              <span class="text-[10px] font-mono uppercase tracking-widest text-tc-crimson font-bold">House of Worshippers • 30+ Years</span>
+              <span class="text-[10px] font-mono uppercase tracking-widest text-tc-crimson font-bold">House of Worshippers • 35+ Years</span>
               <h3 class="font-tc text-3xl sm:text-4xl text-tc-black mt-1">WORSHIP & PRAISE MINISTRY</h3>
               <p class="font-ethiopic text-xs text-zinc-500 font-semibold mt-0.5">የአምልኮ እና የምስጋና አገልግሎት</p>
               <p class="text-xs sm:text-sm text-zinc-600 mt-2 max-w-2xl leading-relaxed">
@@ -623,7 +654,8 @@
             <div class="text-[11px] font-mono text-zinc-400">
               <i class="fa-solid fa-location-dot text-tc-crimson mr-1"></i> 128 Tache Ave. NW, Calgary
             </div>
-            <a id="modalActionLink" href="mailto:eeccalgary@gmail.com" class="w-full sm:w-auto text-center px-6 py-3 rounded-full bg-tc-crimson hover:bg-tc-crimsonDark text-white text-xs font-bold uppercase tracking-widest transition shadow-sm">
+            <!-- Connect With Leaders Button (Dynamic Mailto) -->
+            <a id="modalActionLink" href="mailto:chale.eshetu@gmail.com" class="w-full sm:w-auto text-center px-6 py-3 rounded-full bg-tc-crimson hover:bg-tc-crimsonDark text-white text-xs font-bold uppercase tracking-widest transition shadow-sm">
               Connect With Leaders
             </a>
           </div>
@@ -642,54 +674,64 @@
         <p class="font-ethiopic text-xs text-zinc-500 font-semibold mt-0.5">ማህበረሰባዊ አገልግሎት እና ኃላፊነት</p>
 
         <p class="text-zinc-600 text-sm sm:text-base mt-4 sm:mt-6 leading-relaxed">
-          EEC Calgary is an officially registered Canadian charity compliant with the Canada Revenue Agency (CRA). In addition to spiritual pastoral care, we actively partner with local granting bodies and community members to support newcomer settlement, language adaptation, and family resiliency across Calgary.
+          EEC Calgary is an officially registered Canadian charity serving Calgary since May 1991[cite: 1]. Beyond weekly worship, we partner with grassroots organizations and local outreach societies to support newcomer families, invest in youth life-skills, and build lasting community resiliency across Alberta[cite: 1, 2].
         </p>
 
         <div class="mt-6 sm:mt-8 space-y-3.5 text-xs sm:text-sm">
           <div class="flex items-start gap-3">
             <i class="fa-solid fa-circle-check text-tc-crimson mt-0.5 flex-shrink-0"></i>
             <div>
-              <strong class="text-zinc-900">CRA Registered Charity:</strong> Tax-deductible donation receipts issued annually.
+              <strong class="text-zinc-900">CRA Registered Charity:</strong> Official tax-deductible donation receipts issued annually.
             </div>
           </div>
           <div class="flex items-start gap-3">
             <i class="fa-solid fa-circle-check text-tc-crimson mt-0.5 flex-shrink-0"></i>
             <div>
-              <strong class="text-zinc-900">Newcomer Support:</strong> Ongoing transition and settlement assistance for Ethiopian families in Alberta.
+              <strong class="text-zinc-900">Dedicated Church Property:</strong> Blessed with purchasing our own church property to expand facilities and community ministries[cite: 1].
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <i class="fa-solid fa-circle-check text-tc-crimson mt-0.5 flex-shrink-0"></i>
+            <div>
+              <strong class="text-zinc-900">Grassroots Collaboration:</strong> Working hand-in-hand with local youth and family outreach societies[cite: 1].
             </div>
           </div>
         </div>
 
         <div class="mt-6 sm:mt-8">
-          <a href="mailto:eeccalgary@gmail.com?subject=Partnership%20Inquiry" class="w-full sm:w-auto text-center px-6 py-3 rounded-xl sm:rounded-full border border-black text-xs font-bold uppercase tracking-widest hover:bg-black hover:text-white transition inline-block">
+          <a href="mailto:chale.eshetu@gmail.com?subject=Partnership%20Inquiry" class="w-full sm:w-auto text-center px-6 py-3 rounded-xl sm:rounded-full border border-black text-xs font-bold uppercase tracking-widest hover:bg-black hover:text-white transition inline-block">
             Inquire For Partnerships
           </a>
         </div>
       </div>
 
       <div class="lg:col-span-5 grid grid-cols-2 gap-3 sm:gap-4">
+        <!-- 220+ Members (120 Adults + 100 Children) -->
         <div class="p-5 sm:p-6 rounded-2xl bg-white border border-tc-border">
-          <div class="font-tc text-4xl sm:text-5xl text-tc-black leading-none">300+</div>
-          <div class="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-zinc-500 mt-1">Families Served</div>
-          <div class="font-ethiopic text-[10px] text-zinc-400">የተደገፉ ቤተሰቦች</div>
+          <div class="font-tc text-4xl sm:text-5xl text-tc-black leading-none">220+</div>
+          <div class="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-zinc-500 mt-1">Church Members</div>
+          <div class="font-ethiopic text-[10px] text-zinc-400">120 አዋቂዎች • 100 ልጆች</div>
         </div>
 
+        <!-- 80+ Newcomer Families -->
         <div class="p-5 sm:p-6 rounded-2xl bg-white border border-tc-border">
-          <div class="font-tc text-4xl sm:text-5xl text-tc-crimson leading-none">52+</div>
-          <div class="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-zinc-500 mt-1">Annual Gatherings</div>
-          <div class="font-ethiopic text-[10px] text-zinc-400">ሳምንታዊ አገልግሎቶች</div>
+          <div class="font-tc text-4xl sm:text-5xl text-tc-crimson leading-none">80+</div>
+          <div class="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-zinc-500 mt-1">Newcomers Supported</div>
+          <div class="font-ethiopic text-[10px] text-zinc-400">አዲስ ገቢ ቤተሰቦች</div>
         </div>
 
+        <!-- 35+ Years in Calgary -->
         <div class="p-5 sm:p-6 rounded-2xl bg-white border border-tc-border">
-          <div class="font-tc text-4xl sm:text-5xl text-tc-black leading-none">100%</div>
-          <div class="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-zinc-500 mt-1">Volunteer Directed</div>
-          <div class="font-ethiopic text-[10px] text-zinc-400">በበጎ ፈቃደኞች የሚመራ</div>
+          <div class="font-tc text-4xl sm:text-5xl text-tc-black leading-none">35+</div>
+          <div class="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-zinc-500 mt-1">Years in Calgary</div>
+          <div class="font-ethiopic text-[10px] text-zinc-400">ከግንቦት 1991 ጀምሮ</div>
         </div>
 
+        <!-- Expanded Volunteer Base -->
         <div class="p-5 sm:p-6 rounded-2xl bg-white border border-tc-border">
-          <div class="font-tc text-4xl sm:text-5xl text-tc-black leading-none">YYC</div>
-          <div class="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-zinc-500 mt-1">Calgary Focus</div>
-          <div class="font-ethiopic text-[10px] text-zinc-400">ካልጋሪ፣ አልበርታ</div>
+          <div class="font-tc text-4xl sm:text-5xl text-tc-crimson leading-none">100+</div>
+          <div class="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-zinc-500 mt-1">Active Volunteers</div>
+          <div class="font-ethiopic text-[10px] text-zinc-400">በበጎ ፈቃድ የሚያገለግሉ</div>
         </div>
       </div>
 
@@ -704,7 +746,7 @@
       <p class="font-ethiopic text-xs text-zinc-500 font-semibold mt-0.5">የመስጠትና የድጋፍ መረጃ</p>
       
       <p class="text-zinc-600 text-sm sm:text-base max-w-xl mx-auto mt-4 leading-relaxed px-2">
-        Your financial gifts support weekly services, pastoral care, and charitable community outreach across Calgary.
+        Your financial gifts support weekly services, community pastoral care, church facility completion, and charitable outreach across Calgary[cite: 2].
       </p>
 
       <div class="mt-8 sm:mt-12 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 text-left">
@@ -756,7 +798,24 @@
         <div class="mt-4 sm:mt-6 text-xs text-zinc-400 space-y-1 font-mono">
           <p class="break-words">Mailing: P.O. Box 29018 Sage Hill PO, Calgary AB, T3R 1X5</p>
           <p>Phone: <a href="tel:4038309528" class="hover:text-white">403-830-9528</a></p>
-          <p>Email: <a href="mailto:eeccalgary@gmail.com" class="hover:text-white break-all">eeccalgary@gmail.com</a></p>
+          <p>Church Email: <a href="mailto:eeccalgary@gmail.com" class="hover:text-white break-all">eeccalgary@gmail.com</a></p>
+          <p>Media & Inquiries: <a href="mailto:eeccalgary.media@gmail.com" class="hover:text-white break-all">eeccalgary.media@gmail.com</a></p>
+        </div>
+        
+        <!-- Social Icons Bar -->
+        <div class="mt-5 flex items-center gap-4 text-base">
+          <a href="https://www.youtube.com/@eec.calgary" target="_blank" rel="noopener noreferrer" class="hover:text-red-500 transition" aria-label="YouTube">
+            <i class="fa-brands fa-youtube"></i>
+          </a>
+          <a href="https://www.instagram.com/eec.calgary/" target="_blank" rel="noopener noreferrer" class="hover:text-pink-500 transition" aria-label="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a href="https://www.tiktok.com/@eec.calgary" target="_blank" rel="noopener noreferrer" class="hover:text-white transition" aria-label="TikTok">
+            <i class="fa-brands fa-tiktok"></i>
+          </a>
+          <a href="https://www.facebook.com/people/Ethiopian-Evangelical-Church-in-Calgary/61578639421371/" target="_blank" rel="noopener noreferrer" class="hover:text-blue-500 transition" aria-label="Facebook">
+            <i class="fa-brands fa-facebook"></i>
+          </a>
         </div>
       </div>
 
@@ -771,8 +830,8 @@
       <div>
         <h4 class="text-xs font-mono uppercase tracking-widest text-zinc-200 mb-3 sm:mb-4">Navigation</h4>
         <ul class="text-xs space-y-2.5 font-semibold uppercase tracking-wider">
-          <li><a href="index.html" class="hover:text-white transition py-1 block">Home</a></li>
-          <li><a href="about.html" class="hover:text-white transition py-1 block">About Us</a></li>
+          <li><a href="/home" class="hover:text-white transition py-1 block">Home</a></li>
+          <li><a href="/about" class="hover:text-white transition py-1 block">About Us</a></li>
           <li><a href="#service" class="hover:text-white transition py-1 block">Gathering</a></li>
           <li><a href="#sermons" class="hover:text-white transition py-1 block">Messages</a></li>
           <li><a href="#ministries" class="hover:text-white transition py-1 block">Ministries</a></li>
@@ -837,6 +896,7 @@
 
     calendarBackdrop.addEventListener('click', closeCalendarModal);
 
+    // Ministry configurations & direct leader email routing
     const ministriesData = {
       youth: {
         tag: "Ages 13–28",
@@ -844,31 +904,33 @@
         image: "ministry-youth.jpg",
         title: "Youth & Young Adults",
         ethiopic: "የወጣቶች አገልግሎት",
+        email: "yohannes_debele@yahoo.com", // Yohannes Debele for Youth/Young Adults (Eyerusalem)
         content: `
           <p>Our Youth and Young Adults ministry provides an intentional, grounded community for high schoolers, university students, and young professionals across Calgary.</p>
           <div class="p-4 rounded-xl bg-zinc-50 border border-zinc-200/80">
             <strong class="text-zinc-900 block font-semibold mb-1">Our Mission</strong>
-            <p>To anchor youth firmly in God's Word, navigate contemporary cultural questions together, and raise bold servant leaders ready to impact their schools, campuses, and workplaces.</p>
+            <p>To anchor youth firmly in God's Word, provide practical life-skills programs, build leadership capacity, and raise bold servant leaders ready to impact their community.</p>
           </div>
           <p>We meet for weekly discussions, interactive devotionals, discipleship mentorship, and fellowship events that build genuine brotherhood and sisterhood.</p>
         `,
-        emailSubject: "Youth%20Ministry%20Inquiry"
+        emailSubject: "Youth%20Ministry%20Inquiry%20-%20EEC%20Calgary"
       },
       children: {
-        tag: "Ages 2–12",
+        tag: "Ages 2–12 • 100+ Children",
         badge: "Sunday School Classrooms",
         image: "ministry-children.jpg",
         title: "Children's Ministry",
         ethiopic: "የልጆች አገልግሎት",
+        email: "chale.eshetu@gmail.com", // Pastor Chalachew
         content: `
-          <p>Led by dedicated Sunday school teachers, our Children's Ministry creates a safe, fun, and scripture-filled environment where young minds encounter Jesus.</p>
+          <p>Led by dedicated Sunday school teachers, our Children's Ministry creates a safe, fun, and scripture-filled environment where over 100 young children encounter Jesus.</p>
           <div class="p-4 rounded-xl bg-zinc-50 border border-zinc-200/80">
             <strong class="text-zinc-900 block font-semibold mb-1">Weekly Gatherings</strong>
             <p>During the 3:00 PM main worship service, children experience interactive Bible storytelling, joyful praise songs, scripture memory challenges, and group crafts.</p>
           </div>
           <p>We partner with parents to help lay spiritual roots early, encouraging children to grow with confidence, prayer, and faith in God.</p>
         `,
-        emailSubject: "Children's%20Ministry%20Inquiry"
+        emailSubject: "Children's%20Ministry%20Inquiry%20-%20EEC%20Calgary"
       },
       smallgroups: {
         tag: "City-Wide Fellowships",
@@ -876,6 +938,7 @@
         image: "ministry-smallgroups.jpg",
         title: "Small Groups (Bible Studies)",
         ethiopic: "የህብረት ቡድኖች (የመጽሐፍ ቅዱስ ጥናት)",
+        email: "chale.eshetu@gmail.com", // Pastor Chalachew
         content: `
           <p>Grow in faith alongside believers living in your quadrant of Calgary through weekly home Bible studies and prayer cells.</p>
           <div class="p-4 rounded-xl bg-zinc-50 border border-zinc-200/80 space-y-2">
@@ -890,28 +953,29 @@
           </div>
           <p>Get in touch to be connected with a host home and small group leader in your area.</p>
         `,
-        emailSubject: "Small%20Group%20Connection%20Request"
+        emailSubject: "Small%20Group%20Connection%20Request%20-%20EEC%20Calgary"
       },
       women: {
-        tag: "The King's Daughter",
-        badge: "Prayer & Fellowship",
+        tag: "Empowerment & Faith",
+        badge: "Prayer & Mentorship",
         image: "ministry-women.jpg",
         title: "Women's Ministry",
         ethiopic: "የሴቶች አገልግሎት",
+        email: "chale.eshetu@gmail.com", // Pastor Chalachew
         content: `
-          <p>The Women's Ministry gathers sisters across all life stages to pray, study Scripture, and strengthen families in faith.</p>
+          <p>The Women's Ministry gathers sisters across all life stages to pray, study Scripture, and strengthen families and women's empowerment initiatives in our community.</p>
           <div class="p-4 rounded-xl bg-zinc-50 border border-zinc-200/80">
             <strong class="text-zinc-900 block font-semibold mb-1">Our Core Calling:</strong>
             <ul class="list-disc list-inside space-y-1 text-zinc-700">
               <li>Mutual encouragement through life's trials and blessings</li>
               <li>Consistent intercessory prayer for families and the church</li>
-              <li>Reaching women with the warmth of the Gospel</li>
-              <li>Encouraging active, joyful participation in ministry</li>
+              <li>Women empowerment and mentorship workshops</li>
+              <li>Reaching women with the warmth and love of the Gospel</li>
             </ul>
           </div>
-          <p>Join our Telegram communication hub — <em>The King's Daughter</em> — for weekly prayer points and event announcements.</p>
+          <p>Join our fellowship for weekly prayer points, Bible studies, and upcoming sisterhood conferences.</p>
         `,
-        emailSubject: "Women's%20Ministry%20Inquiry"
+        emailSubject: "Women's%20Ministry%20Inquiry%20-%20EEC%20Calgary"
       },
       men: {
         tag: "Brothers in Christ",
@@ -919,6 +983,7 @@
         image: "ministry-men.jpg",
         title: "Men's Ministry",
         ethiopic: "የወንዶች አገልግሎት",
+        email: "chale.eshetu@gmail.com", // Pastor Chalachew
         content: `
           <p>Dedicated to equipping brothers to be godly servants, husbands, fathers, and church leaders through authentic fellowship and accountability.</p>
           <div class="p-4 rounded-xl bg-zinc-50 border border-zinc-200/80">
@@ -931,7 +996,7 @@
           </div>
           <p>Contact our leadership team to attend the next Men's Fellowship breakfast and prayer gathering.</p>
         `,
-        emailSubject: "Men's%20Ministry%20Inquiry"
+        emailSubject: "Men's%20Ministry%20Inquiry%20-%20EEC%20Calgary"
       },
       family: {
         tag: "Led by Dr. Girma & Emu",
@@ -939,6 +1004,7 @@
         image: "ministry-family.jpg",
         title: "Family Ministry",
         ethiopic: "የቤተሰብ እና የጋብቻ አገልግሎት",
+        email: "chale.eshetu@gmail.com", // Pastor Chalachew
         content: `
           <p>Led by Dr. Girma and his wife Emu, our Family Ministry works to build resilient households and Christ-honoring marriages.</p>
           <div class="p-4 rounded-xl bg-zinc-50 border border-zinc-200/80">
@@ -954,14 +1020,15 @@
             የቤተሰብ አገልግሎት በቤተሰብ ግንኙነት እና በጋብቻ ላይ ያተኩራል። ሚኒስቴሩ በሁሉም ወቅቶች ጤናማና ዘላቂ ግንኙነቶችን ለመገንባት የተለያዩ የስልጠና መርሃ ግብሮችን ያዘጋጃል።
           </p>
         `,
-        emailSubject: "Family%20Ministry%20Inquiry"
+        emailSubject: "Family%20Ministry%20Inquiry%20-%20EEC%20Calgary"
       },
       worship: {
         tag: "House of Worshippers",
-        badge: "30+ Years of Praise",
+        badge: "35+ Years of Praise",
         image: "ministry-worship.jpg",
         title: "Worship Ministry",
         ethiopic: "የአምልኮ እና የምስጋና አገልግሎት",
+        email: "chale.eshetu@gmail.com", // Pastor Chalachew
         content: `
           <p>For over three decades, our worship team, vocalists, and instrumentalists have served the church by leading heartfelt worship in Spirit and Truth.</p>
           <div class="p-4 rounded-xl bg-zinc-50 border border-zinc-200/80">
@@ -971,7 +1038,7 @@
           </div>
           <p>If you have musical, vocal, or sound production gifts and a heart dedicated to humble service, we invite you to audition and connect with our team.</p>
         `,
-        emailSubject: "Worship%20Team%20Involvement"
+        emailSubject: "Worship%20Team%20Involvement%20-%20EEC%20Calgary"
       }
     };
 
@@ -992,12 +1059,13 @@
 
       modalSubhead.textContent = data.tag;
       modalBadge.textContent = data.badge;
-      modalImage.src = data.image;
+      modalImage.src = '/' + data.image;
+      modalImage.onerror = function() { this.src = data.image; };
       modalImage.alt = data.title;
       modalTitle.textContent = data.title;
       modalEthiopic.textContent = data.ethiopic;
       modalContent.innerHTML = data.content;
-      modalActionLink.href = `mailto:eeccalgary@gmail.com?subject=${data.emailSubject}`;
+      modalActionLink.href = `mailto:${data.email}?subject=${data.emailSubject}`;
 
       modal.classList.remove('modal-hidden');
       modal.classList.add('modal-visible');
