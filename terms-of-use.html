@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth bg-white text-zinc-900">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>Terms of Use | EEC CALGARY</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts: Bebas Neue, Inter, and Noto Sans Ethiopic -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=Noto+Sans+Ethiopic:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['"Bebas Neue"', 'sans-serif'],
+            sans: ['Inter', 'sans-serif'],
+            ethiopic: ['"Noto Sans Ethiopic"', 'sans-serif'],
+          },
+          colors: {
+            tc: {
+              black: '#0A0A0C',
+              charcoal: '#121215',
+              crimson: '#E11D48',
+              crimsonDark: '#BE123C',
+              border: '#E4E4E7',
+              borderDark: '#27272A',
+              muted: '#71717A'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    .font-tc {
+      font-family: 'Bebas Neue', sans-serif;
+      letter-spacing: 0.03em;
+      line-height: 0.94;
+    }
+    #navMenu {
+      transition: max-height 0.3s ease-in-out, opacity 0.25s ease-in-out;
+    }
+    #navMenu.menu-closed {
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+    #navMenu.menu-open {
+      max-height: 520px;
+      opacity: 1;
+      pointer-events: auto;
+    }
+  </style>
+</head>
+<body class="font-sans antialiased selection:bg-tc-crimson selection:text-white overflow-x-hidden flex flex-col min-h-screen">
+
+  <!-- ================= TOP TICKER ================= -->
+  <div class="bg-tc-black text-white text-[11px] sm:text-xs font-mono uppercase tracking-widest py-2 px-4 border-b border-tc-borderDark">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-1 sm:gap-2 text-center sm:text-left">
+      <div class="break-words">
+        <span class="text-tc-crimson font-bold">SUNDAY 3:00 PM</span> • 128 TACHE AVE. NW, CALGARY
+      </div>
+      <div class="text-zinc-400 font-ethiopic text-[11px] tracking-normal">
+        “አስቀድማችሁ የእግዚአብሔርን መንግሥት ፈልጉ” — ማቴ 6:33
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= NAVBAR ================= -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-tc-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 h-16 sm:h-20 flex items-center justify-between">
+      
+      <a href="/home" class="flex items-center gap-2.5 sm:gap-3 min-w-0">
+        <img src="/logo.png" alt="EEC Logo" class="w-8 h-8 sm:w-9 sm:h-9 object-contain rounded-full flex-shrink-0" onerror="this.src='logo.png'; this.onerror=function(){this.style.display='none'; this.nextElementSibling.style.display='flex';};" />
+        <div class="hidden w-8 h-8 sm:w-9 sm:h-9 flex-shrink-0 bg-tc-black text-white items-center justify-center font-display text-lg sm:text-xl tracking-wider rounded-sm">
+          EEC
+        </div>
+        <div class="truncate">
+          <span class="block font-display text-xl sm:text-2xl tracking-wider text-tc-black leading-none truncate">EEC CALGARY</span>
+          <span class="block font-ethiopic text-[10px] sm:text-[11px] text-zinc-500 leading-tight truncate">የኢትዮጵያ ወንጌላዊት ቤተክርስቲያን</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden md:flex items-center gap-6 lg:gap-8 text-xs font-bold uppercase tracking-widest text-zinc-600">
+        <a href="/home" class="hover:text-tc-black transition py-2">Home</a>
+        <a href="/about" class="hover:text-tc-black transition py-2">About</a>
+        <a href="/home#service" class="hover:text-tc-black transition py-2">Gathering</a>
+        <a href="/home#sermons" class="hover:text-tc-black transition py-2">Messages</a>
+        <a href="/home#ministries" class="hover:text-tc-black transition py-2">Ministries</a>
+        <a href="/home#impact" class="hover:text-tc-black transition py-2">Impact</a>
+      </nav>
+
+      <!-- Desktop Action Buttons -->
+      <div class="hidden sm:flex items-center gap-2.5 lg:gap-3">
+        <a href="/home#service" class="text-xs font-bold uppercase tracking-widest px-4 lg:px-5 py-2.5 rounded-full border border-zinc-300 hover:border-black transition">
+          Visit
+        </a>
+        <a href="/home#give" class="text-xs font-bold uppercase tracking-widest px-4 lg:px-5 py-2.5 rounded-full bg-tc-crimson hover:bg-tc-crimsonDark text-white transition shadow-sm">
+          Give Online
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <button id="navToggle" class="md:hidden w-12 h-12 flex items-center justify-center text-zinc-800 text-2xl focus:outline-none focus:ring-2 focus:ring-tc-crimson rounded-lg" aria-label="Toggle Menu" aria-expanded="false">
+        <i id="navIcon" class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div id="navMenu" class="menu-closed md:hidden bg-white border-b border-tc-border px-5 py-4">
+      <div class="flex flex-col space-y-1 text-sm font-bold uppercase tracking-widest text-zinc-700">
+        <a href="/home" class="mobile-nav-link py-3 px-2 border-b border-zinc-100 hover:text-tc-crimson">Home</a>
+        <a href="/about" class="mobile-nav-link py-3 px-2 border-b border-zinc-100 hover:text-tc-crimson">About</a>
+        <a href="/home#service" class="mobile-nav-link py-3 px-2 border-b border-zinc-100 hover:text-tc-crimson">Gathering</a>
+        <a href="/home#sermons" class="mobile-nav-link py-3 px-2 border-b border-zinc-100 hover:text-tc-crimson">Messages</a>
+        <a href="/home#ministries" class="mobile-nav-link py-3 px-2 border-b border-zinc-100 hover:text-tc-crimson">Ministries</a>
+        <a href="/home#impact" class="mobile-nav-link py-3 px-2 border-b border-zinc-100 hover:text-tc-crimson">Impact</a>
+      </div>
+      <div class="pt-4 pb-2 flex flex-col gap-2.5">
+        <a href="/home#service" class="mobile-nav-link w-full text-center py-3.5 border border-zinc-300 text-zinc-900 font-bold uppercase text-xs tracking-widest rounded-xl active:bg-zinc-100">Plan Visit</a>
+        <a href="/home#give" class="mobile-nav-link w-full text-center py-3.5 bg-tc-crimson text-white font-bold uppercase text-xs tracking-widest rounded-xl shadow-md active:bg-tc-crimsonDark">Give Online</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= MAIN CONTENT ================= -->
+  <main class="flex-grow bg-zinc-50 py-12 sm:py-20 px-4 sm:px-6 lg:px-12">
+    <div class="max-w-4xl mx-auto bg-white border border-tc-border rounded-2xl sm:rounded-3xl p-6 sm:p-12 shadow-sm">
+      
+      <div class="mb-8 pb-6 border-b border-zinc-200">
+        <div class="flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-tc-crimson font-bold mb-2">
+          <span>Legal &amp; Accountability</span>
+        </div>
+        <h1 class="font-tc text-4xl sm:text-6xl text-tc-black tracking-wide">TERMS OF USE</h1>
+        <p class="font-ethiopic text-xs sm:text-sm text-zinc-500 font-semibold mt-1">የአጠቃቀም ደንቦች እና መመሪያዎች</p>
+        <p class="text-xs font-mono text-zinc-400 mt-3">Last Updated: September 2026</p>
+      </div>
+
+      <div class="text-zinc-600 text-sm sm:text-base leading-relaxed space-y-8">
+        
+        <!-- Section 1 -->
+        <section class="space-y-3">
+          <h2 class="font-tc text-2xl sm:text-3xl text-tc-black">1. ACCEPTANCE OF TERMS</h2>
+          <p>
+            Welcome to the official website of the Ethiopian Evangelical Church in Calgary (&ldquo;EEC Calgary,&rdquo; &ldquo;we,&rdquo; &ldquo;our,&rdquo; or &ldquo;us&rdquo;). By accessing and using <strong>eeccalgary.org</strong>, you agree to comply with and be bound by these Terms of Use and all applicable municipal, provincial, and federal laws of Alberta and Canada. If you do not agree with any part of these terms, please discontinue use of this site.
+          </p>
+        </section>
+
+        <!-- Section 2 -->
+        <section class="space-y-3">
+          <h2 class="font-tc text-2xl sm:text-3xl text-tc-black">2. INTELLECTUAL PROPERTY &amp; CONTENT USAGE</h2>
+          <p>
+            All media, graphics, written content, audio recordings, video sermons, photographic materials, and logos displayed on this website are the intellectual property of EEC Calgary or are used under authorized license, fair dealing, or non-profit permissions.
+          </p>
+          <ul class="list-disc list-inside space-y-2 pl-1 text-zinc-700">
+            <li>You may view, listen to, download, or share sermon clips and church announcements solely for personal, non-commercial worship, faith study, or community sharing.</li>
+            <li>No content from this website may be sold, altered, redistributed, or incorporated into commercial advertising without prior written consent from EEC Calgary leadership.</li>
+          </ul>
+        </section>
+
+        <!-- Section 3 -->
+        <section class="space-y-3">
+          <h2 class="font-tc text-2xl sm:text-3xl text-tc-black">3. SCHEDULES &amp; SITE ACCURACY</h2>
+          <p>
+            We strive to provide current schedules for Sunday worship, mid-week prayer, small groups, and seasonal events. However, service times, guest speakers, ministry locations, and calendar details may occasionally change due to weather, facility operations, or administrative updates. EEC Calgary does not guarantee that website information is entirely free of typographical errors or omissions at all times.
+          </p>
+        </section>
+
+        <!-- Section 4 -->
+        <section class="space-y-3">
+          <h2 class="font-tc text-2xl sm:text-3xl text-tc-black">4. EXTERNAL LINKS &amp; THIRD-PARTY PLATFORMS</h2>
+          <p>
+            Our website integrates links and embeds connecting to external third-party services, including:
+          </p>
+          <ul class="list-disc list-inside space-y-1.5 pl-1 text-zinc-700">
+            <li><strong>YouTube:</strong> Weekly video messages and worship livestreams.</li>
+            <li><strong>Google Calendar &amp; Google Maps:</strong> Service schedules and directions.</li>
+            <li><strong>Social Media:</strong> Instagram, TikTok, and Facebook community groups.</li>
+            <li><strong>Online Giving:</strong> Secure non-profit donation processing via external processors.</li>
+          </ul>
+          <p class="text-xs text-zinc-500 mt-2">
+            These external platforms operate under their own independent terms of service and privacy policies. EEC Calgary holds no control over, nor liability for, the availability, content, or practices of external websites.
+          </p>
+        </section>
+
+        <!-- Section 5 -->
+        <section class="space-y-3">
+          <h2 class="font-tc text-2xl sm:text-3xl text-tc-black">5. CHARITABLE STATUS &amp; DONATIONS</h2>
+          <p>
+            EEC Calgary is a registered Canadian charity with the Canada Revenue Agency (CRA Charity No: <strong>871473740RR0001</strong>). All online giving and financial contributions are subject to Canada Revenue Agency guidelines and our <a href="/donation-policy.html" class="text-tc-crimson underline font-medium">Donation &amp; Tax Receipt Policy</a>.
+          </p>
+        </section>
+
+        <!-- Section 6 -->
+        <section class="space-y-3">
+          <h2 class="font-tc text-2xl sm:text-3xl text-tc-black">6. LIMITATION OF LIABILITY</h2>
+          <p>
+            EEC Calgary, its pastors, elders, officers, and volunteers provide this website on an &ldquo;as is&rdquo; and &ldquo;as available&rdquo; basis without warranties of any kind. Under no circumstances shall EEC Calgary be liable for any direct, indirect, incidental, or consequential damages resulting from the use or inability to use this site.
+          </p>
+        </section>
+
+        <!-- Section 7 -->
+        <section class="space-y-3">
+          <h2 class="font-tc text-2xl sm:text-3xl text-tc-black">7. GOVERNING LAW &amp; CONTACT</h2>
+          <p>
+            These Terms of Use shall be governed by and construed in accordance with the laws of the Province of Alberta and the federal laws of Canada applicable therein.
+          </p>
+          <div class="p-5 rounded-2xl bg-zinc-50 border border-zinc-200 font-mono text-xs sm:text-sm text-zinc-700 space-y-1">
+            <p><strong class="text-zinc-900">Ethiopian Evangelical Church in Calgary</strong></p>
+            <p>Mailing: P.O. Box 29018 Sage Hill PO, Calgary AB, T3R 1X5</p>
+            <p>Phone: 403-830-9528</p>
+            <p>Email: <a href="mailto:eeccalgary@gmail.com" class="text-tc-crimson hover:underline">eeccalgary@gmail.com</a></p>
+          </div>
+        </section>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer id="contact" class="bg-tc-black text-zinc-400 py-14 sm:py-20 px-4 sm:px-6 lg:px-12 border-t border-tc-borderDark">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-12 pb-12 sm:pb-16 border-b border-tc-borderDark">
+      
+      <div class="sm:col-span-2">
+        <h3 class="font-tc text-2xl sm:text-3xl text-white">EEC CALGARY</h3>
+        <p class="font-ethiopic text-xs text-zinc-400 mt-0.5">የኢትዮጵያ ወንጌላዊት ቤተክርስቲያን በካልጋሪ</p>
+        <p class="text-xs text-zinc-400 mt-3 sm:mt-4 leading-relaxed max-w-sm">
+          Physical Gathering: 128 Tache Ave. NW, Calgary AB T2K 3R5<br />
+          (Thornhill Baptist Church Facility)
+        </p>
+        <div class="mt-4 sm:mt-6 text-xs text-zinc-400 space-y-1 font-mono">
+          <p class="break-words">Mailing: P.O. Box 29018 Sage Hill PO, Calgary AB, T3R 1X5</p>
+          <p>Charity Registration No: <strong class="text-zinc-200">871473740RR0001</strong></p>
+          <p>Phone: <a href="tel:4038309528" class="hover:text-white">403-830-9528</a></p>
+          <p>Church Email: <a href="mailto:eeccalgary@gmail.com" class="hover:text-white break-all">eeccalgary@gmail.com</a></p>
+          <p>Media &amp; Inquiries: <a href="mailto:eeccalgary.media@gmail.com" class="hover:text-white break-all">eeccalgary.media@gmail.com</a></p>
+        </div>
+        
+        <!-- Social Icons Bar -->
+        <div class="mt-5 flex items-center gap-4 text-base">
+          <a href="https://www.youtube.com/@eec.calgary" target="_blank" rel="noopener noreferrer" class="hover:text-red-500 transition" aria-label="YouTube">
+            <i class="fa-brands fa-youtube"></i>
+          </a>
+          <a href="https://www.instagram.com/eec.calgary/" target="_blank" rel="noopener noreferrer" class="hover:text-pink-500 transition" aria-label="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a href="https://www.tiktok.com/@eec.calgary" target="_blank" rel="noopener noreferrer" class="hover:text-white transition" aria-label="TikTok">
+            <i class="fa-brands fa-tiktok"></i>
+          </a>
+          <a href="https://www.facebook.com/people/Ethiopian-Evangelical-Church-in-Calgary/61578639421371/" target="_blank" rel="noopener noreferrer" class="hover:text-blue-500 transition" aria-label="Facebook">
+            <i class="fa-brands fa-facebook"></i>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="text-xs font-mono uppercase tracking-widest text-zinc-200 mb-3 sm:mb-4">Schedules</h4>
+        <div class="text-xs space-y-3 leading-relaxed">
+          <p><strong class="text-white">SUNDAY</strong><br />2:30 PM Prayer<br />3:00 PM Service &amp; Kids</p>
+          <p><strong class="text-white">TUESDAY</strong><br />6:00 PM – 9:00 PM Prayer</p>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="text-xs font-mono uppercase tracking-widest text-zinc-200 mb-3 sm:mb-4">Navigation &amp; Legal</h4>
+        <ul class="text-xs space-y-2.5 font-semibold uppercase tracking-wider">
+          <li><a href="/home" class="hover:text-white transition py-1 block">Home</a></li>
+          <li><a href="/about" class="hover:text-white transition py-1 block">About Us</a></li>
+          <li><a href="/home#service" class="hover:text-white transition py-1 block">Gathering</a></li>
+          <li><a href="/home#sermons" class="hover:text-white transition py-1 block">Messages</a></li>
+          <li><a href="/home#ministries" class="hover:text-white transition py-1 block">Ministries</a></li>
+          <li><a href="/home#give" class="hover:text-white transition py-1 block">Give</a></li>
+          <li class="pt-2 border-t border-tc-borderDark"><a href="/privacy-policy.html" class="hover:text-white transition py-1 block text-zinc-400 font-normal">Privacy &amp; Cookies</a></li>
+          <li><a href="/terms-of-use.html" class="text-tc-crimson font-bold transition py-1 block">Terms of Use</a></li>
+          <li><a href="/donation-policy.html" class="hover:text-white transition py-1 block text-zinc-400 font-normal">Donations &amp; Receipts</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="max-w-7xl mx-auto pt-6 sm:pt-8 flex flex-col sm:flex-row items-center justify-between text-[11px] sm:text-xs text-zinc-500 font-mono gap-2 text-center sm:text-left">
+      <p>&copy; 2026 Ethiopian Evangelical Church in Calgary. Registered Canadian Charity No: 871473740RR0001.</p>
+      <p>CALGARY, AB, CANADA</p>
+    </div>
+  </footer>
+
+  <!-- ================= SCRIPTS ================= -->
+  <script>
+    const navToggle = document.getElementById('navToggle');
+    const navMenu = document.getElementById('navMenu');
+    const navIcon = document.getElementById('navIcon');
+    const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+
+    function toggleMenu() {
+      const isClosed = navMenu.classList.contains('menu-closed');
+      if (isClosed) {
+        navMenu.classList.remove('menu-closed');
+        navMenu.classList.add('menu-open');
+        navIcon.classList.replace('fa-bars', 'fa-xmark');
+        navToggle.setAttribute('aria-expanded', 'true');
+      } else {
+        navMenu.classList.add('menu-closed');
+        navMenu.classList.remove('menu-open');
+        navIcon.classList.replace('fa-xmark', 'fa-bars');
+        navToggle.setAttribute('aria-expanded', 'false');
+      }
+    }
+
+    if (navToggle) {
+      navToggle.addEventListener('click', toggleMenu);
+    }
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        if (navMenu.classList.contains('menu-open')) toggleMenu();
+      });
+    });
+  </script>
+</body>
+</html>
