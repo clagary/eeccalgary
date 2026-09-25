@@ -170,67 +170,70 @@
     </div>
   </header>
 
-  <!-- ================= SECTION 1: HERO ================= -->
-  <section id="hero" class="bg-white pt-10 sm:pt-14 pb-16 sm:pb-24 px-4 sm:px-6 lg:px-12 border-b border-tc-border">
-    <div class="max-w-7xl mx-auto">
+  <!-- ================= SECTION 1: HERO (CENTERED & FULL-BLEED) ================= -->
+  <section id="hero" class="bg-white pt-10 sm:pt-16 pb-12 sm:pb-20 border-b border-tc-border overflow-hidden">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
       
-      <div class="flex items-center gap-2.5 text-[11px] font-mono uppercase tracking-wider sm:tracking-widest text-zinc-500 mb-4 sm:mb-6">
-        <span class="w-2 h-2 rounded-full bg-tc-crimson flex-shrink-0"></span>
-        <span class="truncate">CALGARY, AB • REGISTERED CHARITY • EST. MAY 1991</span>
+      <!-- Top Badge -->
+      <div class="inline-flex items-center gap-2 text-[11px] font-mono uppercase tracking-wider sm:tracking-widest text-zinc-500 mb-4 sm:mb-6 bg-zinc-50 border border-zinc-200 px-4 py-1.5 rounded-full">
+        <span class="w-2 h-2 rounded-full bg-tc-crimson flex-shrink-0 animate-ping"></span>
+        <span class="truncate font-semibold">CALGARY, AB • REGISTERED CHARITY • EST. MAY 1991</span>
       </div>
 
-      <h1 class="font-tc text-5xl sm:text-7xl md:text-8xl lg:text-9xl text-tc-black uppercase tracking-tight break-words">
+      <!-- Centered Main Title -->
+      <h1 class="font-tc text-5xl sm:text-7xl md:text-8xl lg:text-9xl text-tc-black uppercase tracking-tight leading-none">
         FAITH. FAMILY.<br />
         <span class="text-tc-crimson">COMMUNITY.</span>
       </h1>
       
-      <p class="font-ethiopic text-base sm:text-lg md:text-xl text-zinc-600 font-medium mt-3 sm:mt-4 leading-snug">
+      <!-- Centered Ethiopic Script -->
+      <p class="font-ethiopic text-base sm:text-lg md:text-2xl text-zinc-600 font-semibold mt-4 sm:mt-6 leading-snug max-w-2xl">
         በአንድነት ማምለክ፣ በደቀመዝሙርነት ማደግ፣ እና ማህበረሰባችንን ማገልገል።
       </p>
 
-      <div class="mt-8 sm:mt-10 pt-6 sm:pt-8 border-t border-tc-border flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-        <p class="text-zinc-600 text-sm sm:text-base max-w-xl font-normal leading-relaxed">
-          We are a Christ-centered church family in Calgary, Alberta, serving the Ethiopian community and sharing the love of Jesus with all people across generations.
-        </p>
+      <!-- Centered Mission Statement -->
+      <p class="text-zinc-600 text-sm sm:text-base max-w-2xl font-normal leading-relaxed mt-4 sm:mt-6">
+        We are a Christ-centered church family in Calgary, Alberta, serving the Ethiopian community and sharing the love of Jesus with all people across generations.
+      </p>
 
-        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full md:w-auto">
-          <a href="#service" class="w-full sm:w-auto text-center px-7 py-3.5 sm:py-4 rounded-xl sm:rounded-full bg-tc-black text-white text-xs font-bold uppercase tracking-widest hover:bg-zinc-800 active:bg-zinc-900 transition shadow-sm">
-            Join This Sunday
-          </a>
-          <a href="/about" class="w-full sm:w-auto text-center px-7 py-3.5 sm:py-4 rounded-xl sm:rounded-full border border-emerald-600 text-emerald-600 hover:border-emerald-700 hover:text-emerald-700 text-xs font-bold uppercase tracking-widest active:bg-emerald-50 transition">
-            About Our Church
-          </a>
-        </div>
+      <!-- Centered Action Buttons -->
+      <div class="mt-8 sm:mt-10 flex flex-col sm:flex-row items-center justify-center gap-3.5 w-full sm:w-auto">
+        <a href="#service" class="w-full sm:w-auto text-center px-8 py-3.5 sm:py-4 rounded-xl sm:rounded-full bg-tc-black text-white text-xs font-bold uppercase tracking-widest hover:bg-zinc-800 active:bg-zinc-900 transition shadow-sm">
+          Join This Sunday
+        </a>
+        <a href="/about" class="w-full sm:w-auto text-center px-8 py-3.5 sm:py-4 rounded-xl sm:rounded-full border border-emerald-600 text-emerald-600 hover:border-emerald-700 hover:text-emerald-700 text-xs font-bold uppercase tracking-widest active:bg-emerald-50 transition">
+          About Our Church
+        </a>
       </div>
 
-      <!-- MASTER SANCTUARY PHOTO -->
-      <div class="mt-10 sm:mt-14 rounded-2xl sm:rounded-3xl overflow-hidden border border-tc-border bg-zinc-950 shadow-xl relative group">
-        <div class="relative aspect-[16/9] sm:aspect-[21/9] w-full overflow-hidden">
-          <img 
-            src="/sanctuary-master.jpg" 
-            onerror="this.src='sanctuary-master.jpg'"
-            alt="EEC Calgary Sanctuary & Interior" 
-            class="smart-color-img w-full h-full object-cover contrast-115 group-hover:scale-105"
-          />
-          <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent"></div>
+    </div>
 
-          <div class="absolute bottom-0 left-0 right-0 p-6 sm:p-10 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
-            <div>
-              <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[10px] font-mono font-bold uppercase tracking-wider bg-tc-crimson text-white mb-2">
-                Our Sanctuary • Thornhill Baptist Facility
-              </span>
-              <h3 class="font-tc text-3xl sm:text-5xl text-white tracking-wide">A HOUSE OF PRAYER & PRAISE</h3>
-              <p class="font-ethiopic text-xs sm:text-sm text-zinc-300 mt-1">
-                የሕያው አምላክ ማደሪያ እና የአማኞች አንድነት ሥፍራ
-              </p>
-            </div>
-            <div class="flex items-center gap-2 text-xs font-mono text-zinc-300">
-              <i class="fa-solid fa-location-dot text-tc-crimson"></i> 128 Tache Ave. NW, Calgary
-            </div>
+    <!-- Master Sanctuary Visual (Full-Bleed Across Viewport) -->
+    <div class="w-full mt-10 sm:mt-14 px-0">
+      <div class="relative w-full aspect-[16/9] sm:aspect-[24/9] max-h-[640px] overflow-hidden bg-zinc-950 shadow-2xl group border-y border-tc-border">
+        <img 
+          src="/sanctuary-master.jpg" 
+          onerror="this.src='sanctuary-master.jpg'"
+          alt="EEC Calgary Sanctuary & Interior" 
+          class="smart-color-img w-full h-full object-cover contrast-115 group-hover:scale-105"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
+
+        <div class="max-w-7xl mx-auto absolute bottom-0 left-0 right-0 p-6 sm:p-12 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+          <div>
+            <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[10px] font-mono font-bold uppercase tracking-wider bg-tc-crimson text-white mb-2 shadow-sm">
+              Our Sanctuary • Thornhill Baptist Facility
+            </span>
+            <h3 class="font-tc text-3xl sm:text-5xl lg:text-6xl text-white tracking-wide">A HOUSE OF PRAYER &amp; PRAISE</h3>
+            <p class="font-ethiopic text-xs sm:text-sm text-zinc-300 mt-1">
+              የሕያው አምላክ ማደሪያ እና የአማኞች አንድነት ሥፍራ
+            </p>
+          </div>
+          <div class="flex items-center gap-2 text-xs font-mono text-zinc-300 bg-black/40 backdrop-blur-md px-4 py-2 rounded-xl border border-white/10 w-fit">
+            <i class="fa-solid fa-location-dot text-tc-crimson"></i> 128 Tache Ave. NW, Calgary
           </div>
         </div>
       </div>
-
     </div>
   </section>
 
@@ -322,7 +325,7 @@
         <div class="flex items-center gap-2.5">
           <span class="w-2.5 h-2.5 rounded-full bg-tc-crimson"></span>
           <div>
-            <h3 class="font-tc text-2xl text-tc-black leading-none">CHURCH CALENDAR & EVENTS</h3>
+            <h3 class="font-tc text-2xl text-tc-black leading-none">CHURCH CALENDAR &amp; EVENTS</h3>
             <span class="font-ethiopic text-[11px] text-zinc-500 font-semibold block mt-0.5">የፕሮግራሞች እና ሁነቶች መርሃ ግብር</span>
           </div>
         </div>
@@ -350,7 +353,7 @@
       <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-12 gap-3 sm:gap-4">
         <div>
           <span class="text-xs font-mono text-tc-crimson uppercase tracking-widest font-semibold">Broadcast & Community</span>
-          <h2 class="font-tc text-4xl sm:text-6xl lg:text-7xl text-white mt-1 sm:mt-2">WATCH & CONNECT</h2>
+          <h2 class="font-tc text-4xl sm:text-6xl lg:text-7xl text-white mt-1 sm:mt-2">WATCH &amp; CONNECT</h2>
           <p class="font-ethiopic text-xs text-zinc-400 font-semibold mt-0.5">የቀጥታ ስርጭት እና ማህበራዊ ትስስር ገጾች</p>
         </div>
         <p class="text-zinc-400 text-xs sm:text-sm max-w-sm leading-relaxed">
@@ -358,11 +361,11 @@
         </p>
       </div>
 
-      <!-- Featured Video -->
+      <!-- Featured Video (Dynamic Live Uploads Playlist Embed) -->
       <div class="rounded-xl sm:rounded-2xl overflow-hidden border border-tc-borderDark bg-black aspect-video shadow-2xl w-full">
         <iframe 
           class="w-full h-full"
-          src="https://www.youtube.com/embed/jjHbMpIzV5k?rel=0" 
+          src="https://www.youtube.com/embed/videoseries?list=UUUKhJDAlEf3WAW25X7LKB1w" 
           title="Ethiopian Evangelical Church in Calgary Worship" 
           frameborder="0" 
           loading="lazy"
@@ -371,7 +374,7 @@
         </iframe>
       </div>
 
-      <!-- Verified Social Buttons (YouTube, Instagram, TikTok, Facebook) -->
+      <!-- Verified Social Buttons -->
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mt-6">
         
         <!-- YouTube -->
@@ -432,7 +435,7 @@
     <div class="max-w-7xl mx-auto">
       
       <div class="mb-10 sm:mb-14">
-        <span class="text-xs font-mono text-tc-crimson uppercase tracking-widest font-semibold">Connect & Grow</span>
+        <span class="text-xs font-mono text-tc-crimson uppercase tracking-widest font-semibold">Connect &amp; Grow</span>
         <h2 class="font-tc text-4xl sm:text-6xl lg:text-7xl text-tc-black mt-1 sm:mt-2">OUR MINISTRIES</h2>
         <p class="font-ethiopic text-xs text-zinc-500 font-semibold mt-0.5">የትውልድ፣ የቤተሰብ እና የህብረት አገልግሎቶች</p>
       </div>
@@ -445,17 +448,17 @@
             <img 
               src="/ministry-youth.jpg" 
               onerror="this.src='ministry-youth.jpg'"
-              alt="Youth & Young Adults" 
+              alt="Youth &amp; Young Adults" 
               class="smart-color-img w-full h-full object-cover contrast-125 group-hover:scale-105"
             />
           </div>
           <div class="p-6 sm:p-7 flex-grow flex flex-col justify-between">
             <div>
               <span class="text-[10px] font-mono uppercase tracking-widest text-tc-crimson font-bold">Ages 13–28</span>
-              <h3 class="font-tc text-2xl sm:text-3xl text-tc-black mt-1">YOUTH & YOUNG ADULTS</h3>
+              <h3 class="font-tc text-2xl sm:text-3xl text-tc-black mt-1">YOUTH &amp; YOUNG ADULTS</h3>
               <p class="font-ethiopic text-xs text-zinc-500 font-semibold mt-0.5">የወጣቶች አገልግሎት</p>
               <p class="text-xs sm:text-sm text-zinc-600 mt-3 leading-relaxed">
-                Empowering the next generation with biblical truth, life skill training, and leadership capacity building[cite: 2].
+                Empowering the next generation with biblical truth, life skill training, and leadership capacity building.
               </p>
             </div>
             <button onclick="openMinistryModal('youth')" class="mt-5 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-tc-black hover:text-tc-crimson transition py-1 text-left cursor-pointer">
@@ -526,11 +529,11 @@
           </div>
           <div class="p-6 sm:p-7 flex-grow flex flex-col justify-between">
             <div>
-              <span class="text-[10px] font-mono uppercase tracking-widest text-tc-crimson font-bold">Empowerment & Fellowship</span>
+              <span class="text-[10px] font-mono uppercase tracking-widest text-tc-crimson font-bold">Empowerment &amp; Fellowship</span>
               <h3 class="font-tc text-2xl sm:text-3xl text-tc-black mt-1">WOMEN'S MINISTRY</h3>
               <p class="font-ethiopic text-xs text-zinc-500 font-semibold mt-0.5">የሴቶች አገልግሎት</p>
               <p class="text-xs sm:text-sm text-zinc-600 mt-3 leading-relaxed">
-                Dedicated discipleship and empowerment programs encouraging women to thrive in faith, career, and family[cite: 2].
+                Dedicated discipleship and empowerment programs encouraging women to thrive in faith, career, and family.
               </p>
             </div>
             <button onclick="openMinistryModal('women')" class="mt-5 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-tc-black hover:text-tc-crimson transition py-1 text-left cursor-pointer">
@@ -576,7 +579,7 @@
           </div>
           <div class="p-6 sm:p-7 flex-grow flex flex-col justify-between">
             <div>
-              <span class="text-[10px] font-mono uppercase tracking-widest text-zinc-500 font-bold">Led by Dr. Girma & Emu</span>
+              <span class="text-[10px] font-mono uppercase tracking-widest text-zinc-500 font-bold">Led by Dr. Girma &amp; Emu</span>
               <h3 class="font-tc text-2xl sm:text-3xl text-tc-black mt-1">FAMILY MINISTRY</h3>
               <p class="font-ethiopic text-xs text-zinc-500 font-semibold mt-0.5">የቤተሰብ እና የጋብቻ አገልግሎት</p>
               <p class="text-xs sm:text-sm text-zinc-600 mt-3 leading-relaxed">
@@ -594,7 +597,7 @@
           <div class="p-6 sm:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 bg-zinc-50">
             <div>
               <span class="text-[10px] font-mono uppercase tracking-widest text-tc-crimson font-bold">House of Worshippers • 35+ Years</span>
-              <h3 class="font-tc text-3xl sm:text-4xl text-tc-black mt-1">WORSHIP & PRAISE MINISTRY</h3>
+              <h3 class="font-tc text-3xl sm:text-4xl text-tc-black mt-1">WORSHIP &amp; PRAISE MINISTRY</h3>
               <p class="font-ethiopic text-xs text-zinc-500 font-semibold mt-0.5">የአምልኮ እና የምስጋና አገልግሎት</p>
               <p class="text-xs sm:text-sm text-zinc-600 mt-2 max-w-2xl leading-relaxed">
                 Leading the congregation into God's presence each Sunday through heartfelt praise, traditional and modern gospel songs, and musical excellence.
@@ -654,7 +657,6 @@
             <div class="text-[11px] font-mono text-zinc-400">
               <i class="fa-solid fa-location-dot text-tc-crimson mr-1"></i> 128 Tache Ave. NW, Calgary
             </div>
-            <!-- Connect With Leaders Button (Dynamic Mailto) -->
             <a id="modalActionLink" href="mailto:chale.eshetu@gmail.com" class="w-full sm:w-auto text-center px-6 py-3 rounded-full bg-tc-crimson hover:bg-tc-crimsonDark text-white text-xs font-bold uppercase tracking-widest transition shadow-sm">
               Connect With Leaders
             </a>
@@ -669,31 +671,31 @@
     <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
       
       <div class="lg:col-span-7">
-        <span class="text-xs font-mono text-tc-crimson uppercase tracking-widest font-semibold">Accountability & Community</span>
+        <span class="text-xs font-mono text-tc-crimson uppercase tracking-widest font-semibold">Accountability &amp; Community</span>
         <h2 class="font-tc text-4xl sm:text-6xl lg:text-7xl text-tc-black mt-1 sm:mt-2">COMMUNITY IMPACT</h2>
         <p class="font-ethiopic text-xs text-zinc-500 font-semibold mt-0.5">ማህበረሰባዊ አገልግሎት እና ኃላፊነት</p>
 
         <p class="text-zinc-600 text-sm sm:text-base mt-4 sm:mt-6 leading-relaxed">
-          EEC Calgary is an officially registered Canadian charity serving Calgary since May 1991[cite: 1]. Beyond weekly worship, we partner with grassroots organizations and local outreach societies to support newcomer families, invest in youth life-skills, and build lasting community resiliency across Alberta[cite: 1, 2].
+          EEC Calgary is an officially registered Canadian charity serving Calgary since May 1991. Beyond weekly worship, we partner with grassroots organizations and local outreach societies to support newcomer families, invest in youth life-skills, and build lasting community resiliency across Alberta.
         </p>
 
         <div class="mt-6 sm:mt-8 space-y-3.5 text-xs sm:text-sm">
           <div class="flex items-start gap-3">
             <i class="fa-solid fa-circle-check text-tc-crimson mt-0.5 flex-shrink-0"></i>
             <div>
-              <strong class="text-zinc-900">CRA Registered Charity:</strong> Official tax-deductible donation receipts issued annually.
+              <strong class="text-zinc-900">CRA Registered Charity:</strong> Official tax-deductible donation receipts issued annually (Registration No: <strong>871473740RR0001</strong>).
             </div>
           </div>
           <div class="flex items-start gap-3">
             <i class="fa-solid fa-circle-check text-tc-crimson mt-0.5 flex-shrink-0"></i>
             <div>
-              <strong class="text-zinc-900">Dedicated Church Property:</strong> Blessed with purchasing our own church property to expand facilities and community ministries[cite: 1].
+              <strong class="text-zinc-900">Dedicated Church Property:</strong> Blessed with purchasing our own church property to expand facilities and community ministries.
             </div>
           </div>
           <div class="flex items-start gap-3">
             <i class="fa-solid fa-circle-check text-tc-crimson mt-0.5 flex-shrink-0"></i>
             <div>
-              <strong class="text-zinc-900">Grassroots Collaboration:</strong> Working hand-in-hand with local youth and family outreach societies[cite: 1].
+              <strong class="text-zinc-900">Grassroots Collaboration:</strong> Working hand-in-hand with local youth and family outreach societies.
             </div>
           </div>
         </div>
@@ -706,7 +708,7 @@
       </div>
 
       <div class="lg:col-span-5 grid grid-cols-2 gap-3 sm:gap-4">
-        <!-- 220+ Members (120 Adults + 100 Children) -->
+        <!-- 220+ Members -->
         <div class="p-5 sm:p-6 rounded-2xl bg-white border border-tc-border">
           <div class="font-tc text-4xl sm:text-5xl text-tc-black leading-none">220+</div>
           <div class="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-zinc-500 mt-1">Church Members</div>
@@ -746,10 +748,11 @@
       <p class="font-ethiopic text-xs text-zinc-500 font-semibold mt-0.5">የመስጠትና የድጋፍ መረጃ</p>
       
       <p class="text-zinc-600 text-sm sm:text-base max-w-xl mx-auto mt-4 leading-relaxed px-2">
-        Your financial gifts support weekly services, community pastoral care, church facility completion, and charitable outreach across Calgary[cite: 2].
+        Your financial gifts support weekly services, community pastoral care, church facility completion, and charitable outreach across Calgary.
       </p>
 
       <div class="mt-8 sm:mt-12 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 text-left">
+        <!-- Option 1: Interac E-Transfer -->
         <div class="p-6 sm:p-8 rounded-2xl border border-tc-border bg-zinc-50/50 flex flex-col justify-between">
           <div>
             <div class="w-10 h-10 rounded-lg bg-zinc-200 text-zinc-800 flex items-center justify-center text-lg mb-4 sm:mb-6">
@@ -765,19 +768,28 @@
           </div>
         </div>
 
-        <div class="p-6 sm:p-8 rounded-2xl border border-tc-border bg-zinc-50/50 flex flex-col justify-between">
-          <div>
-            <div class="w-10 h-10 rounded-lg bg-zinc-200 text-zinc-800 flex items-center justify-center text-lg mb-4 sm:mb-6">
-              <i class="fa-regular fa-credit-card"></i>
+        <!-- Option 2: Scan to Give (QR Code Placeholder) -->
+        <div class="p-6 sm:p-8 rounded-2xl border border-tc-border bg-zinc-50/50 flex flex-col items-center justify-between text-center">
+          <div class="w-full">
+            <div class="w-10 h-10 rounded-lg bg-zinc-200 text-zinc-800 flex items-center justify-center text-lg mb-4 sm:mb-6 mx-auto sm:mx-0">
+              <i class="fa-solid fa-qrcode"></i>
             </div>
-            <h3 class="font-tc text-2xl sm:text-3xl text-tc-black">CARD / RECURRING</h3>
-            <p class="text-xs sm:text-sm text-zinc-600 mt-2 leading-relaxed">
-              Give securely online with any major debit or credit card.
+            <h3 class="font-tc text-2xl sm:text-3xl text-tc-black text-center sm:text-left">SCAN TO GIVE</h3>
+            <p class="text-xs sm:text-sm text-zinc-600 mt-2 leading-relaxed text-center sm:text-left">
+              Scan with your mobile camera or banking app to complete your donation quickly and securely.
             </p>
           </div>
-          <a href="https://www.zeffy.com/en-CA/donation-form/tithes-offerings-and-donations-6" target="_blank" rel="noopener noreferrer" class="mt-6 block text-center py-3.5 sm:py-4 rounded-xl bg-tc-black hover:bg-zinc-800 active:bg-zinc-900 text-white font-bold uppercase text-xs tracking-widest transition shadow-sm">
-            Give Online Now
-          </a>
+
+          <!-- QR Code Image Frame -->
+          <div class="mt-6 w-full max-w-[200px] aspect-square rounded-2xl bg-white border border-zinc-200 p-3 shadow-xs flex items-center justify-center relative overflow-hidden group">
+            <img 
+              src="/giving-qr.png" 
+              onerror="this.src='giving-qr.png'" 
+              alt="Scan QR code to donate to EEC Calgary" 
+              class="w-full h-full object-contain transition group-hover:scale-105"
+            />
+          </div>
+          <span class="text-[11px] font-mono text-zinc-400 mt-3 uppercase tracking-wider">Point camera to scan</span>
         </div>
       </div>
 
@@ -797,9 +809,10 @@
         </p>
         <div class="mt-4 sm:mt-6 text-xs text-zinc-400 space-y-1 font-mono">
           <p class="break-words">Mailing: P.O. Box 29018 Sage Hill PO, Calgary AB, T3R 1X5</p>
+          <p>Charity Registration No: <strong class="text-zinc-200">871473740RR0001</strong></p>
           <p>Phone: <a href="tel:4038309528" class="hover:text-white">403-830-9528</a></p>
           <p>Church Email: <a href="mailto:eeccalgary@gmail.com" class="hover:text-white break-all">eeccalgary@gmail.com</a></p>
-          <p>Media & Inquiries: <a href="mailto:eeccalgary.media@gmail.com" class="hover:text-white break-all">eeccalgary.media@gmail.com</a></p>
+          <p>Media &amp; Inquiries: <a href="mailto:eeccalgary.media@gmail.com" class="hover:text-white break-all">eeccalgary.media@gmail.com</a></p>
         </div>
         
         <!-- Social Icons Bar -->
@@ -822,13 +835,13 @@
       <div>
         <h4 class="text-xs font-mono uppercase tracking-widest text-zinc-200 mb-3 sm:mb-4">Schedules</h4>
         <div class="text-xs space-y-3 leading-relaxed">
-          <p><strong class="text-white">SUNDAY</strong><br />2:30 PM Prayer<br />3:00 PM Service & Kids</p>
+          <p><strong class="text-white">SUNDAY</strong><br />2:30 PM Prayer<br />3:00 PM Service &amp; Kids</p>
           <p><strong class="text-white">TUESDAY</strong><br />6:00 PM – 9:00 PM Prayer</p>
         </div>
       </div>
 
       <div>
-        <h4 class="text-xs font-mono uppercase tracking-widest text-zinc-200 mb-3 sm:mb-4">Navigation</h4>
+        <h4 class="text-xs font-mono uppercase tracking-widest text-zinc-200 mb-3 sm:mb-4">Navigation &amp; Legal</h4>
         <ul class="text-xs space-y-2.5 font-semibold uppercase tracking-wider">
           <li><a href="/home" class="hover:text-white transition py-1 block">Home</a></li>
           <li><a href="/about" class="hover:text-white transition py-1 block">About Us</a></li>
@@ -836,13 +849,16 @@
           <li><a href="#sermons" class="hover:text-white transition py-1 block">Messages</a></li>
           <li><a href="#ministries" class="hover:text-white transition py-1 block">Ministries</a></li>
           <li><a href="#give" class="hover:text-white transition py-1 block">Give</a></li>
+          <li class="pt-2 border-t border-tc-borderDark"><a href="/privacy-policy.html" class="hover:text-white transition py-1 block text-zinc-400 font-normal">Privacy &amp; Cookies</a></li>
+          <li><a href="/terms-of-use.html" class="hover:text-white transition py-1 block text-zinc-400 font-normal">Terms of Use</a></li>
+          <li><a href="/donation-policy.html" class="hover:text-white transition py-1 block text-zinc-400 font-normal">Donations &amp; Receipts</a></li>
         </ul>
       </div>
 
     </div>
 
-    <div class="max-w-7xl mx-auto pt-6 sm:pt-8 flex flex-col sm:flex-row items-center justify-between text-[11px] sm:text-xs text-zinc-600 font-mono gap-2 text-center sm:text-left">
-      <p>© 2026 Ethiopian Evangelical Church in Calgary. Registered Canadian Charity.</p>
+    <div class="max-w-7xl mx-auto pt-6 sm:pt-8 flex flex-col sm:flex-row items-center justify-between text-[11px] sm:text-xs text-zinc-500 font-mono gap-2 text-center sm:text-left">
+      <p>&copy; 2026 Ethiopian Evangelical Church in Calgary. Registered Canadian Charity No: 871473740RR0001.</p>
       <p>CALGARY, AB, CANADA</p>
     </div>
   </footer>
@@ -904,7 +920,7 @@
         image: "ministry-youth.jpg",
         title: "Youth & Young Adults",
         ethiopic: "የወጣቶች አገልግሎት",
-        email: "yohannes_debele@yahoo.com", // Yohannes Debele for Youth/Young Adults (Eyerusalem)
+        email: "yohannes_debele@yahoo.com",
         content: `
           <p>Our Youth and Young Adults ministry provides an intentional, grounded community for high schoolers, university students, and young professionals across Calgary.</p>
           <div class="p-4 rounded-xl bg-zinc-50 border border-zinc-200/80">
@@ -921,7 +937,7 @@
         image: "ministry-children.jpg",
         title: "Children's Ministry",
         ethiopic: "የልጆች አገልግሎት",
-        email: "chale.eshetu@gmail.com", // Pastor Chalachew
+        email: "chale.eshetu@gmail.com",
         content: `
           <p>Led by dedicated Sunday school teachers, our Children's Ministry creates a safe, fun, and scripture-filled environment where over 100 young children encounter Jesus.</p>
           <div class="p-4 rounded-xl bg-zinc-50 border border-zinc-200/80">
@@ -938,7 +954,7 @@
         image: "ministry-smallgroups.jpg",
         title: "Small Groups (Bible Studies)",
         ethiopic: "የህብረት ቡድኖች (የመጽሐፍ ቅዱስ ጥናት)",
-        email: "chale.eshetu@gmail.com", // Pastor Chalachew
+        email: "chale.eshetu@gmail.com",
         content: `
           <p>Grow in faith alongside believers living in your quadrant of Calgary through weekly home Bible studies and prayer cells.</p>
           <div class="p-4 rounded-xl bg-zinc-50 border border-zinc-200/80 space-y-2">
@@ -961,7 +977,7 @@
         image: "ministry-women.jpg",
         title: "Women's Ministry",
         ethiopic: "የሴቶች አገልግሎት",
-        email: "chale.eshetu@gmail.com", // Pastor Chalachew
+        email: "chale.eshetu@gmail.com",
         content: `
           <p>The Women's Ministry gathers sisters across all life stages to pray, study Scripture, and strengthen families and women's empowerment initiatives in our community.</p>
           <div class="p-4 rounded-xl bg-zinc-50 border border-zinc-200/80">
@@ -983,7 +999,7 @@
         image: "ministry-men.jpg",
         title: "Men's Ministry",
         ethiopic: "የወንዶች አገልግሎት",
-        email: "chale.eshetu@gmail.com", // Pastor Chalachew
+        email: "chale.eshetu@gmail.com",
         content: `
           <p>Dedicated to equipping brothers to be godly servants, husbands, fathers, and church leaders through authentic fellowship and accountability.</p>
           <div class="p-4 rounded-xl bg-zinc-50 border border-zinc-200/80">
@@ -1004,7 +1020,7 @@
         image: "ministry-family.jpg",
         title: "Family Ministry",
         ethiopic: "የቤተሰብ እና የጋብቻ አገልግሎት",
-        email: "chale.eshetu@gmail.com", // Pastor Chalachew
+        email: "chale.eshetu@gmail.com",
         content: `
           <p>Led by Dr. Girma and his wife Emu, our Family Ministry works to build resilient households and Christ-honoring marriages.</p>
           <div class="p-4 rounded-xl bg-zinc-50 border border-zinc-200/80">
@@ -1028,7 +1044,7 @@
         image: "ministry-worship.jpg",
         title: "Worship Ministry",
         ethiopic: "የአምልኮ እና የምስጋና አገልግሎት",
-        email: "chale.eshetu@gmail.com", // Pastor Chalachew
+        email: "chale.eshetu@gmail.com",
         content: `
           <p>For over three decades, our worship team, vocalists, and instrumentalists have served the church by leading heartfelt worship in Spirit and Truth.</p>
           <div class="p-4 rounded-xl bg-zinc-50 border border-zinc-200/80">
