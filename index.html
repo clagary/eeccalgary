@@ -57,7 +57,7 @@
       pointer-events: none;
     }
     #navMenu.menu-open {
-      max-height: 520px;
+      max-height: 580px;
       opacity: 1;
       pointer-events: auto;
     }
@@ -145,6 +145,11 @@
         <a href="#give" class="text-xs font-bold uppercase tracking-widest px-4 lg:px-5 py-2.5 rounded-full bg-tc-crimson hover:bg-tc-crimsonDark text-white transition shadow-sm">
           Give Online
         </a>
+        <!-- Admin Portal Desktop Button -->
+        <a href="/admin.html" class="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest px-3.5 lg:px-4 py-2.5 rounded-full bg-zinc-900 hover:bg-black text-zinc-200 hover:text-white transition border border-zinc-700 shadow-sm" title="Church Leadership & Admin Portal">
+          <i class="fa-solid fa-lock text-[10px] text-zinc-400"></i>
+          <span>Admin</span>
+        </a>
       </div>
 
       <!-- Mobile Hamburger Button -->
@@ -166,6 +171,11 @@
       <div class="pt-4 pb-2 flex flex-col gap-2.5">
         <a href="#service" class="mobile-nav-link w-full text-center py-3.5 border border-zinc-300 text-zinc-900 font-bold uppercase text-xs tracking-widest rounded-xl active:bg-zinc-100">Plan Visit</a>
         <a href="#give" class="mobile-nav-link w-full text-center py-3.5 bg-tc-crimson text-white font-bold uppercase text-xs tracking-widest rounded-xl shadow-md active:bg-tc-crimsonDark">Give Online</a>
+        <!-- Admin Portal Mobile Drawer Button -->
+        <a href="/admin.html" class="mobile-nav-link w-full flex items-center justify-center gap-2 py-3 bg-zinc-900 hover:bg-black text-zinc-200 font-bold uppercase text-xs tracking-widest rounded-xl border border-zinc-800 transition active:bg-zinc-800">
+          <i class="fa-solid fa-lock text-[11px] text-zinc-400"></i>
+          <span>Admin Portal Login</span>
+        </a>
       </div>
     </div>
   </header>
@@ -340,7 +350,7 @@
         <iframe 
           src="https://www.google.com/calendar/embed?color=%2342d692&src=mht55nbpbemjb03calri76ncdo%40group.calendar.google.com&ctz=America%2FEdmonton" 
           style="border: 0" 
-          class="w-full h-full rounded-2xl shadow-inner bg-white"
+          class="w-full h-full rounded-2xl shadow-inner bg-white" 
           frameborder="0" 
           scrolling="no">
         </iframe>
@@ -370,7 +380,7 @@
           src="https://www.youtube.com/embed/videoseries?list=UUUKhJDAlEf3WAW25X7LKB1w" 
           title="Ethiopian Evangelical Church in Calgary Worship" 
           frameborder="0" 
-          loading="lazy"
+          loading="lazy" 
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
           allowfullscreen>
         </iframe>
@@ -851,6 +861,8 @@
           <li><a href="#sermons" class="hover:text-white transition py-1 block">Messages</a></li>
           <li><a href="#ministries" class="hover:text-white transition py-1 block">Ministries</a></li>
           <li><a href="#give" class="hover:text-white transition py-1 block">Give</a></li>
+          <!-- Admin Portal Footer Link -->
+          <li><a href="/admin.html" class="inline-flex items-center gap-1.5 text-zinc-300 hover:text-tc-crimson transition py-1"><i class="fa-solid fa-lock text-[10px]"></i> Admin Portal</a></li>
           <li class="pt-2 border-t border-tc-borderDark"><a href="/privacy-policy.html" class="hover:text-white transition py-1 block text-zinc-400 font-normal">Privacy &amp; Cookies</a></li>
           <li><a href="/terms-of-use.html" class="hover:text-white transition py-1 block text-zinc-400 font-normal">Terms of Use</a></li>
           <li><a href="/donation-policy.html" class="hover:text-white transition py-1 block text-zinc-400 font-normal">Donations &amp; Receipts</a></li>
