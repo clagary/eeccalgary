@@ -5,18 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
   <title>Admin &amp; Leadership Portal | EEC CALGARY</title>
 
-  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Google Fonts: Bebas Neue, Inter, and Noto Sans Ethiopic -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=Noto+Sans+Ethiopic:wght@400;600;700&display=swap" rel="stylesheet">
-  
-  <!-- FontAwesome -->
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
-  <!-- Supabase JS Client -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
   <script>
@@ -45,30 +41,16 @@
   </script>
 
   <style>
-    .font-tc {
-      font-family: 'Bebas Neue', sans-serif;
-      letter-spacing: 0.03em;
-      line-height: 0.94;
-    }
-    ::-webkit-scrollbar {
-      width: 6px;
-      height: 6px;
-    }
-    ::-webkit-scrollbar-track {
-      background: #121215;
-    }
-    ::-webkit-scrollbar-thumb {
-      background: #27272A;
-      border-radius: 9999px;
-    }
-    ::-webkit-scrollbar-thumb:hover {
-      background: #3F3F46;
-    }
+    .font-tc { font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.03em; line-height: 0.94; }
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: #121215; }
+    ::-webkit-scrollbar-thumb { background: #27272A; border-radius: 9999px; }
+    ::-webkit-scrollbar-thumb:hover { background: #3F3F46; }
   </style>
 </head>
 <body class="font-sans antialiased min-h-screen bg-[#0E0E11] text-zinc-200 flex flex-col justify-between selection:bg-tc-crimson selection:text-white">
 
-  <!-- ================= TOP HEADER BAR ================= -->
+  <!-- HEADER -->
   <header class="border-b border-tc-borderDark bg-tc-charcoal/80 backdrop-blur-md sticky top-0 z-30">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 h-16 sm:h-20 flex items-center justify-between">
       <a href="/home" class="flex items-center gap-2.5 sm:gap-3">
@@ -98,13 +80,13 @@
     </div>
   </header>
 
-  <!-- ================= STATE 1: LOADING SCREEN ================= -->
+  <!-- STATE 1: LOADING -->
   <main id="loadingView" class="flex-1 flex flex-col items-center justify-center p-8 text-center">
     <div class="w-10 h-10 border-2 border-tc-crimson border-t-transparent rounded-full animate-spin mb-4"></div>
     <p class="font-mono text-xs uppercase tracking-widest text-zinc-400">Connecting to EECCalgary Portal...</p>
   </main>
 
-  <!-- ================= STATE 2: LOGIN REQUIRED ================= -->
+  <!-- STATE 2: LOGIN -->
   <main id="loginView" class="hidden flex-1 flex flex-col items-center justify-center p-6 text-center">
     <div class="max-w-md w-full p-8 rounded-3xl bg-tc-charcoal border border-tc-borderDark shadow-2xl space-y-6">
       <div class="w-14 h-14 rounded-2xl bg-zinc-900 border border-zinc-700 mx-auto flex items-center justify-center text-tc-crimson text-2xl">
@@ -119,13 +101,12 @@
       </div>
 
       <div class="space-y-3 pt-2">
-        <!-- Email Magic Link Form -->
         <form onsubmit="handleEmailSignIn(event)" class="space-y-2.5">
-          <input 
-            type="email" 
-            id="emailInput" 
-            placeholder="Enter your church email (e.g. eeccalgary@gmail.com)" 
-            required 
+          <input
+            type="email"
+            id="emailInput"
+            placeholder="Enter your church email (e.g. eeccalgary@gmail.com)"
+            required
             class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-3 text-xs text-white placeholder:text-zinc-600 focus:outline-none focus:border-tc-crimson"
           />
           <button type="submit" id="emailSubmitBtn" class="w-full py-3.5 rounded-xl bg-tc-crimson hover:bg-tc-crimsonDark text-white text-xs font-bold uppercase tracking-widest transition flex items-center justify-center gap-2 cursor-pointer">
@@ -143,7 +124,6 @@
           <div class="h-px bg-zinc-800 flex-1"></div>
         </div>
 
-        <!-- Google OAuth Button -->
         <button onclick="handleGoogleSignIn()" class="w-full flex items-center justify-center gap-3 px-5 py-3 rounded-xl bg-white hover:bg-zinc-100 text-zinc-900 text-xs font-bold uppercase tracking-widest transition shadow-md cursor-pointer">
           <svg class="w-4 h-4" viewBox="0 0 24 24">
             <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
@@ -161,7 +141,7 @@
     </div>
   </main>
 
-  <!-- ================= STATE 3: PENDING APPROVAL ================= -->
+  <!-- STATE 3: PENDING -->
   <main id="pendingView" class="hidden flex-1 flex flex-col items-center justify-center p-6 text-center">
     <div class="max-w-md w-full p-8 rounded-3xl bg-tc-charcoal border border-amber-600/30 shadow-2xl space-y-5">
       <div class="w-14 h-14 rounded-2xl bg-amber-500/10 border border-amber-500/30 mx-auto flex items-center justify-center text-amber-500 text-2xl">
@@ -183,10 +163,9 @@
     </div>
   </main>
 
-  <!-- ================= STATE 4: APPROVED ADMIN HUB ================= -->
+  <!-- STATE 4: DASHBOARD -->
   <main id="adminDashboardView" class="hidden flex-1 max-w-7xl w-full mx-auto p-4 sm:p-6 lg:p-8 flex flex-col gap-6">
-    
-    <!-- Tab Controls & Header -->
+
     <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-tc-borderDark pb-4">
       <div>
         <h1 class="font-tc text-3xl sm:text-5xl text-white">PORTAL DASHBOARD</h1>
@@ -206,7 +185,7 @@
       </div>
     </div>
 
-    <!-- TAB 1: REALTIME CHAT -->
+    <!-- TAB 1: CHAT -->
     <section id="chatSection" class="flex-1 grid grid-cols-1 lg:grid-cols-4 gap-6 min-h-[560px]">
       <div class="lg:col-span-3 flex flex-col bg-tc-charcoal border border-tc-borderDark rounded-3xl overflow-hidden shadow-2xl">
         <div class="px-6 py-3.5 bg-zinc-900/60 border-b border-tc-borderDark flex items-center justify-between">
@@ -217,15 +196,13 @@
           <span class="text-[11px] font-mono text-zinc-500">Encrypted Leadership Stream</span>
         </div>
 
-        <div id="chatMessages" class="flex-1 p-4 sm:p-6 overflow-y-auto space-y-4 max-h-[500px]">
-          <!-- Injected via JavaScript -->
-        </div>
+        <div id="chatMessages" class="flex-1 p-4 sm:p-6 overflow-y-auto space-y-4 max-h-[500px]"></div>
 
         <form id="chatForm" onsubmit="handleSendMessage(event)" class="p-4 bg-zinc-900/80 border-t border-tc-borderDark flex gap-2 sm:gap-3">
-          <input 
-            type="text" 
-            id="chatInput" 
-            placeholder="Write a message to fellow church admins..." 
+          <input
+            type="text"
+            id="chatInput"
+            placeholder="Write a message to fellow church admins..."
             class="flex-1 bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-3 text-xs sm:text-sm text-white focus:outline-none focus:border-tc-crimson transition placeholder:text-zinc-600"
             autocomplete="off"
             required
@@ -237,16 +214,13 @@
         </form>
       </div>
 
-      <!-- Active Members List -->
       <div class="bg-tc-charcoal border border-tc-borderDark rounded-3xl p-5 flex flex-col">
         <h3 class="font-tc text-2xl text-white pb-3 border-b border-zinc-800">COUNCIL MEMBERS</h3>
-        <div id="membersList" class="flex-1 overflow-y-auto space-y-3 mt-3 pr-1">
-          <!-- Injected via JavaScript -->
-        </div>
+        <div id="membersList" class="flex-1 overflow-y-auto space-y-3 mt-3 pr-1"></div>
       </div>
     </section>
 
-    <!-- TAB 2: FILES & DOCUMENTS -->
+    <!-- TAB 2: FILES -->
     <section id="filesSection" class="hidden flex flex-col gap-6">
       <div class="p-6 sm:p-8 rounded-3xl bg-tc-charcoal border-2 border-dashed border-zinc-800 hover:border-tc-crimson transition text-center flex flex-col items-center justify-center">
         <div class="w-12 h-12 rounded-full bg-zinc-900 text-zinc-400 flex items-center justify-center text-xl mb-3">
@@ -274,15 +248,13 @@
                 <th class="pb-3 text-right">Action</th>
               </tr>
             </thead>
-            <tbody id="filesTableBody" class="divide-y divide-zinc-800/60 font-mono text-zinc-300">
-              <!-- Injected via JS -->
-            </tbody>
+            <tbody id="filesTableBody" class="divide-y divide-zinc-800/60 font-mono text-zinc-300"></tbody>
           </table>
         </div>
       </div>
     </section>
 
-    <!-- TAB 3: USER APPROVAL MANAGEMENT -->
+    <!-- TAB 3: USER APPROVAL -->
     <section id="usersSection" class="hidden flex flex-col gap-6">
       <div class="p-6 rounded-3xl bg-tc-charcoal border border-tc-borderDark">
         <div class="flex items-center justify-between mb-4">
@@ -305,9 +277,7 @@
                 <th class="pb-3 text-right">Decision</th>
               </tr>
             </thead>
-            <tbody id="candidatesTableBody" class="divide-y divide-zinc-800/60 text-zinc-300">
-              <!-- Injected via JS -->
-            </tbody>
+            <tbody id="candidatesTableBody" class="divide-y divide-zinc-800/60 text-zinc-300"></tbody>
           </table>
         </div>
       </div>
@@ -315,20 +285,22 @@
 
   </main>
 
-  <!-- ================= FOOTER ================= -->
+  <!-- FOOTER -->
   <footer class="border-t border-tc-borderDark bg-tc-black text-zinc-600 py-6 px-4 text-center text-xs font-mono">
     EECCalgary Secure Leadership Gateway • Calgary, AB, Canada
   </footer>
 
-  <!-- ================= LOGIC & REALTIME ENGINE ================= -->
+  <!-- LOGIC -->
   <script>
     const SUPABASE_URL = "https://avukvosilxmlsqkqtvwm.supabase.co";
     const SUPABASE_ANON_KEY = "sb_publishable_9pdBak024D7TSWwhSANU0A_FN3i7y57";
 
-    const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+    // FIX 1: renamed from "supabase" to "sb" so it no longer shadows the library global
+    const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
     let currentUser = null;
     let currentProfile = null;
+    let dashboardStarted = false;
 
     const loadingView = document.getElementById('loadingView');
     const loginView = document.getElementById('loginView');
@@ -343,23 +315,25 @@
     const membersList = document.getElementById('membersList');
 
     function showView(view) {
-      if (loadingView) loadingView.classList.add('hidden');
-      if (loginView) loginView.classList.add('hidden');
-      if (pendingView) pendingView.classList.add('hidden');
-      if (adminDashboardView) adminDashboardView.classList.add('hidden');
+      loadingView.classList.add('hidden');
+      loginView.classList.add('hidden');
+      pendingView.classList.add('hidden');
+      adminDashboardView.classList.add('hidden');
 
-      if (view === 'login' && loginView) loginView.classList.remove('hidden');
-      if (view === 'pending' && pendingView) pendingView.classList.remove('hidden');
-      if (view === 'dashboard' && adminDashboardView) adminDashboardView.classList.remove('hidden');
+      if (view === 'login') loginView.classList.remove('hidden');
+      if (view === 'pending') pendingView.classList.remove('hidden');
+      if (view === 'dashboard') adminDashboardView.classList.remove('hidden');
     }
 
     async function syncUserProfile(user) {
       try {
-        const { data: profile, error } = await supabase
+        const { data: profile, error } = await sb
           .from('profiles')
           .select('*')
           .eq('id', user.id)
           .maybeSingle();
+
+        if (error) console.error("Profile fetch error:", error);
 
         if (error || !profile) {
           document.getElementById('pendingUserName').textContent = user.email;
@@ -400,30 +374,45 @@
       userAvatar.src = profile.avatar_url || `https://ui-avatars.com/api/?name=${encodeURIComponent(profile.full_name || 'Admin')}&background=E11D48&color=fff`;
     }
 
-    // Direct Auth State Listener
-    supabase.auth.onAuthStateChange(async (event, session) => {
-      if (session && session.user) {
-        currentUser = session.user;
-        await syncUserProfile(session.user);
-      } else {
+    // Boot sequence: check the saved session first (outside any auth callback),
+    // then listen for later changes (OAuth / magic-link redirects, sign-out).
+    async function bootAuth() {
+      try {
+        const { data: { session } } = await sb.auth.getSession();
+        if (session && session.user) {
+          currentUser = session.user;
+          dashboardStarted = true;
+          await syncUserProfile(session.user);
+        } else {
+          showView('login');
+        }
+      } catch (e) {
+        console.error("Boot error:", e);
         showView('login');
       }
-    });
 
-    // Fallback: If not logged in within 1.2s, force show login view
-    setTimeout(async () => {
-      const { data: { session } } = await supabase.auth.getSession();
-      if (!session) {
-        showView('login');
-      }
-    }, 1200);
+      // No async/await inside this callback: work is deferred so Supabase's
+      // internal auth lock is released first (this was the deadlock).
+      sb.auth.onAuthStateChange((event, session) => {
+        setTimeout(() => {
+          if (session && session.user) {
+            currentUser = session.user;
+            if (!dashboardStarted) {
+              dashboardStarted = true;
+              syncUserProfile(session.user);
+            }
+          } else if (event === 'SIGNED_OUT') {
+            dashboardStarted = false;
+            showView('login');
+          }
+        }, 0);
+      });
+    }
 
     async function handleGoogleSignIn() {
-      const { error } = await supabase.auth.signInWithOAuth({
+      const { error } = await sb.auth.signInWithOAuth({
         provider: 'google',
-        options: {
-          redirectTo: window.location.origin + '/admin.html'
-        }
+        options: { redirectTo: window.location.origin + '/admin.html' }
       });
       if (error) alert("Sign in failed: " + error.message);
     }
@@ -437,11 +426,9 @@
       submitBtn.disabled = true;
       submitBtn.innerText = "Sending Link...";
 
-      const { error } = await supabase.auth.signInWithOtp({
+      const { error } = await sb.auth.signInWithOtp({
         email: email,
-        options: {
-          emailRedirectTo: window.location.origin + '/admin.html'
-        }
+        options: { emailRedirectTo: window.location.origin + '/admin.html' }
       });
 
       submitBtn.disabled = false;
@@ -455,18 +442,18 @@
     }
 
     async function handleSignOut() {
-      await supabase.auth.signOut();
+      await sb.auth.signOut();
       window.location.reload();
     }
 
     async function loadChatMessages() {
-      const { data: msgs, error } = await supabase
+      const { data: msgs, error } = await sb
         .from('messages')
         .select('id, content, created_at, profiles(id, full_name, avatar_url, role)')
         .order('created_at', { ascending: true })
         .limit(80);
 
-      if (error) return;
+      if (error) { console.error("Load messages error:", error); return; }
       chatMessages.innerHTML = '';
       msgs.forEach(msg => appendMessage(msg));
       scrollChatToBottom();
@@ -500,7 +487,7 @@
       if (!text) return;
 
       input.value = '';
-      const { error } = await supabase.from('messages').insert({
+      const { error } = await sb.from('messages').insert({
         user_id: currentProfile.id,
         content: text
       });
@@ -509,10 +496,10 @@
     }
 
     function subscribeToChat() {
-      supabase
+      sb
         .channel('public:messages')
         .on('postgres_changes', { event: 'INSERT', schema: 'public', table: 'messages' }, async (payload) => {
-          const { data: newMsg } = await supabase
+          const { data: newMsg } = await sb
             .from('messages')
             .select('id, content, created_at, profiles(id, full_name, avatar_url, role)')
             .eq('id', payload.new.id)
@@ -531,7 +518,7 @@
     }
 
     async function loadMembers() {
-      const { data: members } = await supabase
+      const { data: members } = await sb
         .from('profiles')
         .select('*')
         .in('role', ['admin', 'super_admin'])
@@ -565,7 +552,7 @@
 
       const fileName = `${Date.now()}_${file.name.replace(/\s+/g, '_')}`;
 
-      const { data: uploadData, error: uploadErr } = await supabase.storage
+      const { error: uploadErr } = await sb.storage
         .from('admin-docs')
         .upload(fileName, file);
 
@@ -575,9 +562,9 @@
         return;
       }
 
-      const { data: publicUrlData } = supabase.storage.from('admin-docs').getPublicUrl(fileName);
+      const { data: publicUrlData } = sb.storage.from('admin-docs').getPublicUrl(fileName);
 
-      await supabase.from('admin_files').insert({
+      await sb.from('admin_files').insert({
         uploader_id: currentProfile.id,
         file_name: file.name,
         file_url: publicUrlData.publicUrl,
@@ -589,7 +576,7 @@
     }
 
     async function loadFiles() {
-      const { data: files } = await supabase
+      const { data: files } = await sb
         .from('admin_files')
         .select('*')
         .order('created_at', { ascending: false });
@@ -619,7 +606,7 @@
     }
 
     async function fetchProfiles() {
-      const { data: profiles } = await supabase
+      const { data: profiles } = await sb
         .from('profiles')
         .select('*')
         .order('created_at', { ascending: false });
@@ -666,7 +653,7 @@
     }
 
     async function updateRole(userId, newRole) {
-      const { error } = await supabase
+      const { error } = await sb
         .from('profiles')
         .update({ role: newRole })
         .eq('id', userId);
@@ -680,31 +667,37 @@
     }
 
     function switchTab(tab) {
-      document.getElementById('chatSection').classList.add('hidden');
-      document.getElementById('filesSection').classList.add('hidden');
-      document.getElementById('usersSection').classList.add('hidden');
+      const off = "px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-zinc-900 text-zinc-400 hover:text-white transition cursor-pointer";
+      const on = "px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-tc-crimson text-white transition cursor-pointer";
 
-      document.getElementById('tabBtnChat').className = "px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-zinc-900 text-zinc-400 hover:text-white transition cursor-pointer";
-      document.getElementById('tabBtnFiles').className = "px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-zinc-900 text-zinc-400 hover:text-white transition cursor-pointer";
-      document.getElementById('tabBtnUsers').className = "px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-zinc-900 text-zinc-400 hover:text-white transition cursor-pointer";
+      ['chat', 'files', 'users'].forEach(t => {
+        document.getElementById(t + 'Section').classList.add('hidden');
+      });
+      document.getElementById('tabBtnChat').className = off;
+      document.getElementById('tabBtnFiles').className = off;
+      document.getElementById('tabBtnUsers').className = off + " relative";
 
-      if (tab === 'chat') {
-        document.getElementById('chatSection').classList.remove('hidden');
-        document.getElementById('tabBtnChat').className = "px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-tc-crimson text-white transition cursor-pointer";
-      } else if (tab === 'files') {
-        document.getElementById('filesSection').classList.remove('hidden');
-        document.getElementById('tabBtnFiles').className = "px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-tc-crimson text-white transition cursor-pointer";
-      } else if (tab === 'users') {
-        document.getElementById('usersSection').classList.remove('hidden');
-        document.getElementById('tabBtnUsers').className = "px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-tc-crimson text-white transition cursor-pointer";
-      }
+      document.getElementById(tab + 'Section').classList.remove('hidden');
+      const btnId = { chat: 'tabBtnChat', files: 'tabBtnFiles', users: 'tabBtnUsers' }[tab];
+      document.getElementById(btnId).className = on + (tab === 'users' ? " relative" : "");
     }
 
     function escapeHtml(string) {
       const div = document.createElement('div');
-      div.innerText = string;
+      div.innerText = string == null ? '' : String(string);
       return div.innerHTML;
     }
+
+    // Start immediately
+    window.addEventListener('DOMContentLoaded', bootAuth);
+
+    // Safety net: never spin forever
+    setTimeout(() => {
+      if (!loadingView.classList.contains('hidden')) {
+        console.warn("Still loading after 6s, showing login.");
+        showView('login');
+      }
+    }, 6000);
   </script>
 </body>
 </html>
