@@ -114,13 +114,37 @@
         <h1 class="font-tc text-4xl text-white">LEADERSHIP LOGIN</h1>
         <p class="font-ethiopic text-xs text-zinc-400 mt-1">የቤተክርስቲያን መሪዎች እና አስተዳዳሪዎች መግቢያ</p>
         <p class="text-xs text-zinc-400 mt-3 leading-relaxed">
-          Sign in using Google or enter your church email below to receive a secure one-click login link.
+          Sign in below to access announcements, ministry files, and leadership communication.
         </p>
       </div>
 
       <div class="space-y-3 pt-2">
-        <!-- Google Sign In -->
-        <button onclick="handleGoogleSignIn()" class="w-full flex items-center justify-center gap-3 px-5 py-3.5 rounded-xl bg-white hover:bg-zinc-100 text-zinc-900 text-xs font-bold uppercase tracking-widest transition shadow-md cursor-pointer">
+        <!-- Email Magic Link Form -->
+        <form onsubmit="handleEmailSignIn(event)" class="space-y-2.5">
+          <input 
+            type="email" 
+            id="emailInput" 
+            placeholder="Enter your church email (e.g. eeccalgary@gmail.com)" 
+            required 
+            class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-3 text-xs text-white placeholder:text-zinc-600 focus:outline-none focus:border-tc-crimson"
+          />
+          <button type="submit" id="emailSubmitBtn" class="w-full py-3.5 rounded-xl bg-tc-crimson hover:bg-tc-crimsonDark text-white text-xs font-bold uppercase tracking-widest transition flex items-center justify-center gap-2">
+            <i class="fa-solid fa-paper-plane text-xs"></i>
+            <span>Send One-Click Login Link</span>
+          </button>
+        </form>
+        <div id="emailSentMsg" class="hidden p-3 rounded-xl bg-emerald-950/60 border border-emerald-800 text-xs text-emerald-300 font-mono">
+          ✓ Login link sent! Check your email inbox (and spam folder) to sign in.
+        </div>
+
+        <div class="flex items-center gap-2 py-1">
+          <div class="h-px bg-zinc-800 flex-1"></div>
+          <span class="text-[10px] font-mono text-zinc-500 uppercase">OR WITH GOOGLE</span>
+          <div class="h-px bg-zinc-800 flex-1"></div>
+        </div>
+
+        <!-- Google OAuth Button -->
+        <button onclick="handleGoogleSignIn()" class="w-full flex items-center justify-center gap-3 px-5 py-3 rounded-xl bg-white hover:bg-zinc-100 text-zinc-900 text-xs font-bold uppercase tracking-widest transition shadow-md cursor-pointer">
           <svg class="w-4 h-4" viewBox="0 0 24 24">
             <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
             <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
@@ -129,27 +153,6 @@
           </svg>
           <span>Continue with Google</span>
         </button>
-
-        <div class="flex items-center gap-2 py-1">
-          <div class="h-px bg-zinc-800 flex-1"></div>
-          <span class="text-[10px] font-mono text-zinc-500 uppercase">OR VIA EMAIL</span>
-          <div class="h-px bg-zinc-800 flex-1"></div>
-        </div>
-
-        <!-- Email Magic Link Form -->
-        <form onsubmit="handleEmailSignIn(event)" class="space-y-2">
-          <input 
-            type="email" 
-            id="emailInput" 
-            placeholder="name@gmail.com" 
-            required 
-            class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-3 text-xs text-white placeholder:text-zinc-600 focus:outline-none focus:border-tc-crimson"
-          />
-          <button type="submit" class="w-full py-3 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-zinc-200 text-xs font-bold uppercase tracking-widest transition">
-            Send Login Link
-          </button>
-        </form>
-        <span id="emailSentMsg" class="hidden text-xs text-emerald-400 font-mono block">Check your email for the login link!</span>
       </div>
 
       <div class="text-[11px] font-mono text-zinc-500 pt-2 border-t border-zinc-800">
@@ -196,7 +199,6 @@
         <button onclick="switchTab('files')" id="tabBtnFiles" class="px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-zinc-900 text-zinc-400 hover:text-white transition">
           <i class="fa-solid fa-folder-open mr-1.5"></i> Documents
         </button>
-        <!-- Approvals Tab (Visible only to Admins) -->
         <button onclick="switchTab('users')" id="tabBtnUsers" class="hidden relative px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-zinc-900 text-zinc-400 hover:text-white transition">
           <i class="fa-solid fa-user-shield mr-1.5"></i> Candidate Approval
           <span id="pendingBadgeCount" class="hidden ml-1 px-1.5 py-0.5 rounded-full bg-tc-crimson text-white text-[10px] font-mono">0</span>
@@ -206,10 +208,7 @@
 
     <!-- TAB 1: REALTIME CHAT -->
     <section id="chatSection" class="flex-1 grid grid-cols-1 lg:grid-cols-4 gap-6 min-h-[560px]">
-      
-      <!-- Chat Stream (3 Cols) -->
       <div class="lg:col-span-3 flex flex-col bg-tc-charcoal border border-tc-borderDark rounded-3xl overflow-hidden shadow-2xl">
-        <!-- Chat Channel Header -->
         <div class="px-6 py-3.5 bg-zinc-900/60 border-b border-tc-borderDark flex items-center justify-between">
           <div class="flex items-center gap-2">
             <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
@@ -218,12 +217,10 @@
           <span class="text-[11px] font-mono text-zinc-500">Encrypted Leadership Stream</span>
         </div>
 
-        <!-- Chat Messages Container -->
         <div id="chatMessages" class="flex-1 p-4 sm:p-6 overflow-y-auto space-y-4 max-h-[500px]">
           <!-- Injected via JavaScript -->
         </div>
 
-        <!-- Chat Input Bar -->
         <form id="chatForm" onsubmit="handleSendMessage(event)" class="p-4 bg-zinc-900/80 border-t border-tc-borderDark flex gap-2 sm:gap-3">
           <input 
             type="text" 
@@ -240,7 +237,7 @@
         </form>
       </div>
 
-      <!-- Active Members List (1 Col) -->
+      <!-- Active Members List -->
       <div class="bg-tc-charcoal border border-tc-borderDark rounded-3xl p-5 flex flex-col">
         <h3 class="font-tc text-2xl text-white pb-3 border-b border-zinc-800">COUNCIL MEMBERS</h3>
         <div id="membersList" class="flex-1 overflow-y-auto space-y-3 mt-3 pr-1">
@@ -285,7 +282,7 @@
       </div>
     </section>
 
-    <!-- TAB 3: USER APPROVAL MANAGEMENT (Admins only) -->
+    <!-- TAB 3: USER APPROVAL MANAGEMENT -->
     <section id="usersSection" class="hidden flex flex-col gap-6">
       <div class="p-6 rounded-3xl bg-tc-charcoal border border-tc-borderDark">
         <div class="flex items-center justify-between mb-4">
@@ -325,7 +322,7 @@
 
   <!-- ================= LOGIC & REALTIME ENGINE ================= -->
   <script>
-    // Injected with your actual Supabase credentials:
+    // Configured with your live Supabase credentials
     const SUPABASE_URL = "https://avukvosilxmlsqkqtvwm.supabase.co";
     const SUPABASE_ANON_KEY = "sb_publishable_9pdBak024D7TSWwhSANU0A_FN3i7y57";
 
@@ -432,8 +429,9 @@
         }
       });
 
-      if (error) alert("Error sending login email: " + error.message);
-      else {
+      if (error) {
+        alert("Error sending login email: " + error.message);
+      } else {
         document.getElementById('emailSentMsg').classList.remove('hidden');
       }
     }
@@ -655,8 +653,9 @@
         .update({ role: newRole })
         .eq('id', userId);
 
-      if (error) alert("Error updating status: " + error.message);
-      else {
+      if (error) {
+        alert("Error updating status: " + error.message);
+      } else {
         fetchProfiles();
         loadMembers();
       }
