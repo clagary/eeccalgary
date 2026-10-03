@@ -90,7 +90,7 @@
             <span id="userName" class="block text-xs font-bold text-white leading-none"></span>
             <span id="userRoleBadge" class="block text-[10px] font-mono text-tc-crimson uppercase tracking-wider mt-0.5">Admin</span>
           </div>
-          <button onclick="handleSignOut()" class="text-xs font-mono uppercase tracking-wider text-zinc-400 hover:text-tc-crimson ml-2 p-1.5" title="Sign Out">
+          <button onclick="handleSignOut()" class="text-xs font-mono uppercase tracking-wider text-zinc-400 hover:text-tc-crimson ml-2 p-1.5 cursor-pointer" title="Sign Out">
             <i class="fa-solid fa-right-from-bracket"></i>
           </button>
         </div>
@@ -128,7 +128,7 @@
             required 
             class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-3 text-xs text-white placeholder:text-zinc-600 focus:outline-none focus:border-tc-crimson"
           />
-          <button type="submit" id="emailSubmitBtn" class="w-full py-3.5 rounded-xl bg-tc-crimson hover:bg-tc-crimsonDark text-white text-xs font-bold uppercase tracking-widest transition flex items-center justify-center gap-2">
+          <button type="submit" id="emailSubmitBtn" class="w-full py-3.5 rounded-xl bg-tc-crimson hover:bg-tc-crimsonDark text-white text-xs font-bold uppercase tracking-widest transition flex items-center justify-center gap-2 cursor-pointer">
             <i class="fa-solid fa-paper-plane text-xs"></i>
             <span>Send One-Click Login Link</span>
           </button>
@@ -177,7 +177,7 @@
       <div class="p-3.5 rounded-xl bg-zinc-900 border border-zinc-800 text-[11px] font-mono text-zinc-400">
         Please contact the pastoral team or check back shortly after confirmation.
       </div>
-      <button onclick="handleSignOut()" class="px-5 py-2.5 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-xs font-mono uppercase text-zinc-300 transition">
+      <button onclick="handleSignOut()" class="px-5 py-2.5 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-xs font-mono uppercase text-zinc-300 transition cursor-pointer">
         Sign Out
       </button>
     </div>
@@ -193,13 +193,13 @@
         <p class="font-ethiopic text-xs text-zinc-400 mt-0.5">የአመራር የውይይት መድረክ እና የሰነዶች ማዕከል</p>
       </div>
       <div class="flex items-center gap-2">
-        <button onclick="switchTab('chat')" id="tabBtnChat" class="px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-tc-crimson text-white transition">
+        <button onclick="switchTab('chat')" id="tabBtnChat" class="px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-tc-crimson text-white transition cursor-pointer">
           <i class="fa-solid fa-comments mr-1.5"></i> Admin Chat
         </button>
-        <button onclick="switchTab('files')" id="tabBtnFiles" class="px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-zinc-900 text-zinc-400 hover:text-white transition">
+        <button onclick="switchTab('files')" id="tabBtnFiles" class="px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-zinc-900 text-zinc-400 hover:text-white transition cursor-pointer">
           <i class="fa-solid fa-folder-open mr-1.5"></i> Documents
         </button>
-        <button onclick="switchTab('users')" id="tabBtnUsers" class="hidden relative px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-zinc-900 text-zinc-400 hover:text-white transition">
+        <button onclick="switchTab('users')" id="tabBtnUsers" class="hidden relative px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-zinc-900 text-zinc-400 hover:text-white transition cursor-pointer">
           <i class="fa-solid fa-user-shield mr-1.5"></i> Candidate Approval
           <span id="pendingBadgeCount" class="hidden ml-1 px-1.5 py-0.5 rounded-full bg-tc-crimson text-white text-[10px] font-mono">0</span>
         </button>
@@ -230,7 +230,7 @@
             autocomplete="off"
             required
           />
-          <button type="submit" class="px-5 py-3 rounded-xl bg-tc-crimson hover:bg-tc-crimsonDark text-white text-xs font-bold uppercase tracking-widest transition flex-shrink-0">
+          <button type="submit" class="px-5 py-3 rounded-xl bg-tc-crimson hover:bg-tc-crimsonDark text-white text-xs font-bold uppercase tracking-widest transition flex-shrink-0 cursor-pointer">
             <i class="fa-solid fa-paper-plane sm:mr-1.5"></i>
             <span class="hidden sm:inline">Send</span>
           </button>
@@ -290,7 +290,7 @@
             <h3 class="font-tc text-3xl text-white">ACCESS CANDIDATE APPROVAL</h3>
             <p class="text-xs text-zinc-400">Review pending leadership members who registered.</p>
           </div>
-          <button onclick="fetchProfiles()" class="text-xs font-mono text-zinc-400 hover:text-white px-3 py-1.5 rounded-lg border border-zinc-800">
+          <button onclick="fetchProfiles()" class="text-xs font-mono text-zinc-400 hover:text-white px-3 py-1.5 rounded-lg border border-zinc-800 cursor-pointer">
             <i class="fa-solid fa-rotate mr-1"></i> Refresh
           </button>
         </div>
@@ -322,7 +322,6 @@
 
   <!-- ================= LOGIC & REALTIME ENGINE ================= -->
   <script>
-    // Configured with your live Supabase credentials
     const SUPABASE_URL = "https://avukvosilxmlsqkqtvwm.supabase.co";
     const SUPABASE_ANON_KEY = "sb_publishable_9pdBak024D7TSWwhSANU0A_FN3i7y57";
 
@@ -343,60 +342,54 @@
     const chatMessages = document.getElementById('chatMessages');
     const membersList = document.getElementById('membersList');
 
-    async function initAuth() {
-      const { data: { session } } = await supabase.auth.getSession();
-      
-      if (!session) {
-        showView('login');
-        return;
-      }
-
-      currentUser = session.user;
-      await syncUserProfile();
-    }
-
-    async function syncUserProfile() {
-      const { data: profile, error } = await supabase
-        .from('profiles')
-        .select('*')
-        .eq('id', currentUser.id)
-        .single();
-
-      if (error || !profile) {
-        showView('login');
-        return;
-      }
-
-      currentProfile = profile;
-
-      if (profile.role === 'pending') {
-        document.getElementById('pendingUserName').textContent = profile.full_name || profile.email;
-        showView('pending');
-        return;
-      }
-
-      showView('dashboard');
-      renderProfileUI(profile);
-      loadChatMessages();
-      subscribeToChat();
-      loadFiles();
-      loadMembers();
-
-      if (['admin', 'super_admin'].includes(profile.role)) {
-        tabBtnUsers.classList.remove('hidden');
-        fetchProfiles();
-      }
-    }
-
     function showView(view) {
-      loadingView.classList.add('hidden');
-      loginView.classList.add('hidden');
-      pendingView.classList.add('hidden');
-      adminDashboardView.classList.add('hidden');
+      if (loadingView) loadingView.classList.add('hidden');
+      if (loginView) loginView.classList.add('hidden');
+      if (pendingView) pendingView.classList.add('hidden');
+      if (adminDashboardView) adminDashboardView.classList.add('hidden');
 
-      if (view === 'login') loginView.classList.remove('hidden');
-      if (view === 'pending') pendingView.classList.remove('hidden');
-      if (view === 'dashboard') adminDashboardView.classList.remove('hidden');
+      if (view === 'login' && loginView) loginView.classList.remove('hidden');
+      if (view === 'pending' && pendingView) pendingView.classList.remove('hidden');
+      if (view === 'dashboard' && adminDashboardView) adminDashboardView.classList.remove('hidden');
+    }
+
+    async function syncUserProfile(user) {
+      try {
+        const { data: profile, error } = await supabase
+          .from('profiles')
+          .select('*')
+          .eq('id', user.id)
+          .maybeSingle();
+
+        if (error || !profile) {
+          document.getElementById('pendingUserName').textContent = user.email;
+          showView('pending');
+          return;
+        }
+
+        currentProfile = profile;
+
+        if (profile.role === 'pending') {
+          document.getElementById('pendingUserName').textContent = profile.full_name || profile.email;
+          showView('pending');
+          return;
+        }
+
+        showView('dashboard');
+        renderProfileUI(profile);
+        loadChatMessages();
+        subscribeToChat();
+        loadFiles();
+        loadMembers();
+
+        if (['admin', 'super_admin'].includes(profile.role)) {
+          tabBtnUsers.classList.remove('hidden');
+          fetchProfiles();
+        }
+      } catch (err) {
+        console.error("Profile sync error:", err);
+        showView('login');
+      }
     }
 
     function renderProfileUI(profile) {
@@ -406,6 +399,24 @@
       userRoleBadge.textContent = profile.role.replace('_', ' ');
       userAvatar.src = profile.avatar_url || `https://ui-avatars.com/api/?name=${encodeURIComponent(profile.full_name || 'Admin')}&background=E11D48&color=fff`;
     }
+
+    // Direct Auth State Listener
+    supabase.auth.onAuthStateChange(async (event, session) => {
+      if (session && session.user) {
+        currentUser = session.user;
+        await syncUserProfile(session.user);
+      } else {
+        showView('login');
+      }
+    });
+
+    // Fallback: If not logged in within 1.2s, force show login view
+    setTimeout(async () => {
+      const { data: { session } } = await supabase.auth.getSession();
+      if (!session) {
+        showView('login');
+      }
+    }, 1200);
 
     async function handleGoogleSignIn() {
       const { error } = await supabase.auth.signInWithOAuth({
@@ -422,12 +433,19 @@
       const email = document.getElementById('emailInput').value.trim();
       if (!email) return;
 
+      const submitBtn = document.getElementById('emailSubmitBtn');
+      submitBtn.disabled = true;
+      submitBtn.innerText = "Sending Link...";
+
       const { error } = await supabase.auth.signInWithOtp({
         email: email,
         options: {
           emailRedirectTo: window.location.origin + '/admin.html'
         }
       });
+
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = `<i class="fa-solid fa-paper-plane text-xs"></i> <span>Send One-Click Login Link</span>`;
 
       if (error) {
         alert("Error sending login email: " + error.message);
@@ -633,11 +651,11 @@
           </td>
           <td class="py-3 text-right space-x-2">
             ${p.role === 'pending' ? `
-              <button onclick="updateRole('${p.id}', 'admin')" class="px-3 py-1 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-mono text-[11px]">
+              <button onclick="updateRole('${p.id}', 'admin')" class="px-3 py-1 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-mono text-[11px] cursor-pointer">
                 Approve
               </button>
             ` : `
-              <button onclick="updateRole('${p.id}', 'pending')" class="px-3 py-1 rounded-lg bg-zinc-800 hover:bg-red-950 hover:text-red-400 text-zinc-400 font-mono text-[11px]">
+              <button onclick="updateRole('${p.id}', 'pending')" class="px-3 py-1 rounded-lg bg-zinc-800 hover:bg-red-950 hover:text-red-400 text-zinc-400 font-mono text-[11px] cursor-pointer">
                 Revoke
               </button>
             `}
@@ -666,19 +684,19 @@
       document.getElementById('filesSection').classList.add('hidden');
       document.getElementById('usersSection').classList.add('hidden');
 
-      document.getElementById('tabBtnChat').className = "px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-zinc-900 text-zinc-400 hover:text-white transition";
-      document.getElementById('tabBtnFiles').className = "px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-zinc-900 text-zinc-400 hover:text-white transition";
-      document.getElementById('tabBtnUsers').className = "px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-zinc-900 text-zinc-400 hover:text-white transition";
+      document.getElementById('tabBtnChat').className = "px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-zinc-900 text-zinc-400 hover:text-white transition cursor-pointer";
+      document.getElementById('tabBtnFiles').className = "px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-zinc-900 text-zinc-400 hover:text-white transition cursor-pointer";
+      document.getElementById('tabBtnUsers').className = "px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-zinc-900 text-zinc-400 hover:text-white transition cursor-pointer";
 
       if (tab === 'chat') {
         document.getElementById('chatSection').classList.remove('hidden');
-        document.getElementById('tabBtnChat').className = "px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-tc-crimson text-white transition";
+        document.getElementById('tabBtnChat').className = "px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-tc-crimson text-white transition cursor-pointer";
       } else if (tab === 'files') {
         document.getElementById('filesSection').classList.remove('hidden');
-        document.getElementById('tabBtnFiles').className = "px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-tc-crimson text-white transition";
+        document.getElementById('tabBtnFiles').className = "px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-tc-crimson text-white transition cursor-pointer";
       } else if (tab === 'users') {
         document.getElementById('usersSection').classList.remove('hidden');
-        document.getElementById('tabBtnUsers').className = "px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-tc-crimson text-white transition";
+        document.getElementById('tabBtnUsers').className = "px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-tc-crimson text-white transition cursor-pointer";
       }
     }
 
@@ -687,8 +705,6 @@
       div.innerText = string;
       return div.innerHTML;
     }
-
-    window.addEventListener('DOMContentLoaded', initAuth);
   </script>
 </body>
 </html>
