@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="bg-zinc-950 text-zinc-100">
+<html lang="en" class="bg-zinc-100 text-zinc-900">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
@@ -31,7 +31,7 @@
               crimson: '#E11D48',
               crimsonDark: '#BE123C',
               border: '#E4E4E7',
-              borderDark: '#27272A',
+              borderDark: '#D4D4D8',
               muted: '#71717A'
             }
           }
@@ -43,33 +43,35 @@
   <style>
     .font-tc { font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.03em; line-height: 0.94; }
     ::-webkit-scrollbar { width: 6px; height: 6px; }
-    ::-webkit-scrollbar-track { background: #121215; }
-    ::-webkit-scrollbar-thumb { background: #27272A; border-radius: 9999px; }
-    ::-webkit-scrollbar-thumb:hover { background: #3F3F46; }
+    ::-webkit-scrollbar-track { background: #F4F4F5; }
+    ::-webkit-scrollbar-thumb { background: #D4D4D8; border-radius: 9999px; }
+    ::-webkit-scrollbar-thumb:hover { background: #A1A1AA; }
+    .msg-in { animation: msgIn .25s ease-out; }
+    @keyframes msgIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
   </style>
 </head>
-<body class="font-sans antialiased min-h-screen bg-[#0E0E11] text-zinc-200 flex flex-col justify-between selection:bg-tc-crimson selection:text-white">
+<body class="font-sans antialiased min-h-screen bg-zinc-50 text-zinc-900 flex flex-col justify-between selection:bg-tc-crimson selection:text-white">
 
   <!-- HEADER -->
-  <header class="border-b border-tc-borderDark bg-tc-charcoal/80 backdrop-blur-md sticky top-0 z-30">
+  <header class="border-b border-zinc-200 bg-white/95 backdrop-blur-md sticky top-0 z-30 shadow-sm">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 h-16 sm:h-20 flex items-center justify-between">
       <a href="/home" class="flex items-center gap-2.5 sm:gap-3">
         <img src="/logo.png" alt="EEC Logo" class="w-8 h-8 sm:w-9 sm:h-9 object-contain rounded-full flex-shrink-0" onerror="this.src='logo.png'; this.onerror=function(){this.style.display='none'; this.nextElementSibling.style.display='flex';};" />
-        <div class="hidden w-8 h-8 sm:w-9 sm:h-9 flex-shrink-0 bg-zinc-800 text-white items-center justify-center font-display text-lg tracking-wider rounded-sm">EEC</div>
+        <div class="hidden w-8 h-8 sm:w-9 sm:h-9 flex-shrink-0 bg-zinc-900 text-white items-center justify-center font-display text-lg tracking-wider rounded-sm">EEC</div>
         <div>
-          <span class="block font-display text-xl sm:text-2xl tracking-wider text-white leading-none">EEC LEADERSHIP</span>
-          <span class="block font-ethiopic text-[10px] text-zinc-400">የአመራር እና የአስተዳደር መድረክ</span>
+          <span class="block font-display text-xl sm:text-2xl tracking-wider text-zinc-900 leading-none">EEC LEADERSHIP</span>
+          <span class="block font-ethiopic text-[10px] text-zinc-500">የአመራር እና የአስተዳደር መድረክ</span>
         </div>
       </a>
 
       <div class="flex items-center gap-3">
-        <a href="/home" class="text-xs font-mono uppercase tracking-widest text-zinc-400 hover:text-white px-3 py-1.5 rounded-lg border border-zinc-800 transition">
+        <a href="/home" class="text-xs font-mono uppercase tracking-widest text-zinc-600 hover:text-black px-3 py-1.5 rounded-lg border border-zinc-200 bg-white transition hover:bg-zinc-50">
           <i class="fa-solid fa-arrow-left mr-1"></i> Site Home
         </a>
-        <div id="userProfileBadge" class="hidden items-center gap-2.5 pl-3 border-l border-zinc-800">
-          <img id="userAvatar" src="" class="w-8 h-8 rounded-full border border-zinc-700 object-cover" />
+        <div id="userProfileBadge" class="hidden items-center gap-2.5 pl-3 border-l border-zinc-200">
+          <img id="userAvatar" src="" class="w-8 h-8 rounded-full border border-zinc-300 object-cover" />
           <div class="hidden sm:block text-left">
-            <span id="userName" class="block text-xs font-bold text-white leading-none"></span>
+            <span id="userName" class="block text-xs font-bold text-zinc-900 leading-none"></span>
             <span id="userRoleBadge" class="block text-[10px] font-mono text-tc-crimson uppercase tracking-wider mt-0.5">Admin</span>
           </div>
           <button onclick="handleSignOut()" class="text-xs font-mono uppercase tracking-wider text-zinc-400 hover:text-tc-crimson ml-2 p-1.5 cursor-pointer" title="Sign Out">
@@ -83,48 +85,53 @@
   <!-- STATE 1: LOADING -->
   <main id="loadingView" class="flex-1 flex flex-col items-center justify-center p-8 text-center">
     <div class="w-10 h-10 border-2 border-tc-crimson border-t-transparent rounded-full animate-spin mb-4"></div>
-    <p class="font-mono text-xs uppercase tracking-widest text-zinc-400">Connecting to EECCalgary Portal...</p>
+    <p class="font-mono text-xs uppercase tracking-widest text-zinc-500">Connecting to EECCalgary Portal...</p>
   </main>
 
   <!-- STATE 2: LOGIN -->
   <main id="loginView" class="hidden flex-1 flex flex-col items-center justify-center p-6 text-center">
-    <div class="max-w-md w-full p-8 rounded-3xl bg-tc-charcoal border border-tc-borderDark shadow-2xl space-y-6">
-      <div class="w-14 h-14 rounded-2xl bg-zinc-900 border border-zinc-700 mx-auto flex items-center justify-center text-tc-crimson text-2xl">
+    <div class="max-w-md w-full p-8 rounded-3xl bg-white border border-zinc-200 shadow-xl space-y-6">
+      <div class="w-14 h-14 rounded-2xl bg-zinc-100 border border-zinc-200 mx-auto flex items-center justify-center text-tc-crimson text-2xl">
         <i class="fa-solid fa-shield-halved"></i>
       </div>
       <div>
-        <h1 class="font-tc text-4xl text-white">LEADERSHIP LOGIN</h1>
-        <p class="font-ethiopic text-xs text-zinc-400 mt-1">የቤተክርስቲያን መሪዎች እና አስተዳዳሪዎች መግቢያ</p>
-        <p class="text-xs text-zinc-400 mt-3 leading-relaxed">
-          Sign in below to access announcements, ministry files, and leadership communication.
+        <h1 class="font-tc text-4xl text-zinc-900">LEADERSHIP LOGIN</h1>
+        <p class="font-ethiopic text-xs text-zinc-500 mt-1">የቤተክርስቲያን መሪዎች እና አስተዳዳሪዎች መግቢያ</p>
+        <p class="text-xs text-zinc-600 mt-2.5 leading-relaxed">
+          Enter your approved church leadership email to sign in directly.
         </p>
       </div>
 
-      <div class="space-y-3 pt-2">
-        <form onsubmit="handleEmailSignIn(event)" class="space-y-2.5">
-          <input
-            type="email"
-            id="emailInput"
-            placeholder="Enter your church email (e.g. eeccalgary@gmail.com)"
-            required
-            class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-3 text-xs text-white placeholder:text-zinc-600 focus:outline-none focus:border-tc-crimson"
-          />
-          <button type="submit" id="emailSubmitBtn" class="w-full py-3.5 rounded-xl bg-tc-crimson hover:bg-tc-crimsonDark text-white text-xs font-bold uppercase tracking-widest transition flex items-center justify-center gap-2 cursor-pointer">
-            <i class="fa-solid fa-paper-plane text-xs"></i>
-            <span>Send One-Click Login Link</span>
+      <div class="space-y-3 pt-1">
+        <form onsubmit="handleEmailSignIn(event)" class="space-y-3">
+          <div class="text-left">
+            <label for="emailInput" class="block text-[10px] font-mono uppercase tracking-wider text-zinc-600 mb-1.5 ml-1">Email Address</label>
+            <input
+              type="email"
+              id="emailInput"
+              placeholder="e.g. chale.eshetu@gmail.com"
+              required
+              class="w-full bg-zinc-50 border border-zinc-300 rounded-xl px-4 py-3 text-xs text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:border-tc-crimson focus:bg-white transition"
+            />
+          </div>
+          <button type="submit" id="emailSubmitBtn" class="w-full py-3.5 rounded-xl bg-tc-crimson hover:bg-tc-crimsonDark text-white text-xs font-bold uppercase tracking-widest transition flex items-center justify-center gap-2 cursor-pointer shadow-md">
+            <i class="fa-solid fa-right-to-bracket text-xs"></i>
+            <span>Sign In to Leadership Portal</span>
           </button>
         </form>
-        <div id="emailSentMsg" class="hidden p-3 rounded-xl bg-emerald-950/60 border border-emerald-800 text-xs text-emerald-300 font-mono">
-          ✓ Login link sent! Check your email inbox (and spam folder) to sign in.
+
+        <div id="emailSentMsg" class="hidden p-3.5 rounded-xl bg-emerald-50 border border-emerald-200 text-xs text-emerald-800 font-mono text-left space-y-1">
+          <p class="font-bold flex items-center gap-1.5"><i class="fa-solid fa-circle-check text-emerald-600"></i> Sign-In Email Sent!</p>
+          <p class="text-[11px] text-emerald-700">Check your inbox and tap the secure link to enter. No password required.</p>
         </div>
 
         <div class="flex items-center gap-2 py-1">
-          <div class="h-px bg-zinc-800 flex-1"></div>
-          <span class="text-[10px] font-mono text-zinc-500 uppercase">OR WITH GOOGLE</span>
-          <div class="h-px bg-zinc-800 flex-1"></div>
+          <div class="h-px bg-zinc-200 flex-1"></div>
+          <span class="text-[10px] font-mono text-zinc-400 uppercase">OR</span>
+          <div class="h-px bg-zinc-200 flex-1"></div>
         </div>
 
-        <button onclick="handleGoogleSignIn()" class="w-full flex items-center justify-center gap-3 px-5 py-3 rounded-xl bg-white hover:bg-zinc-100 text-zinc-900 text-xs font-bold uppercase tracking-widest transition shadow-md cursor-pointer">
+        <button onclick="handleGoogleSignIn()" class="w-full flex items-center justify-center gap-3 px-5 py-3 rounded-xl bg-white border border-zinc-300 hover:bg-zinc-50 text-zinc-800 text-xs font-bold uppercase tracking-widest transition cursor-pointer">
           <svg class="w-4 h-4" viewBox="0 0 24 24">
             <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
             <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
@@ -135,29 +142,29 @@
         </button>
       </div>
 
-      <div class="text-[11px] font-mono text-zinc-500 pt-2 border-t border-zinc-800">
-        New candidates will be placed on pending status until approved by a church elder.
+      <div class="text-[11px] font-mono text-zinc-400 pt-3 border-t border-zinc-100">
+        Pre-approved council members gain instant access upon confirming their email.
       </div>
     </div>
   </main>
 
   <!-- STATE 3: PENDING -->
   <main id="pendingView" class="hidden flex-1 flex flex-col items-center justify-center p-6 text-center">
-    <div class="max-w-md w-full p-8 rounded-3xl bg-tc-charcoal border border-amber-600/30 shadow-2xl space-y-5">
-      <div class="w-14 h-14 rounded-2xl bg-amber-500/10 border border-amber-500/30 mx-auto flex items-center justify-center text-amber-500 text-2xl">
+    <div class="max-w-md w-full p-8 rounded-3xl bg-white border border-amber-300 shadow-xl space-y-5">
+      <div class="w-14 h-14 rounded-2xl bg-amber-50 border border-amber-200 mx-auto flex items-center justify-center text-amber-600 text-2xl">
         <i class="fa-solid fa-hourglass-half animate-pulse"></i>
       </div>
       <div>
-        <h1 class="font-tc text-3xl text-white">ACCESS PENDING APPROVAL</h1>
-        <p class="font-ethiopic text-xs text-amber-400 mt-1">የማረጋገጫ ሂደት በመጠባበቅ ላይ</p>
+        <h1 class="font-tc text-3xl text-zinc-900">ACCESS PENDING APPROVAL</h1>
+        <p class="font-ethiopic text-xs text-amber-700 mt-1">የማረጋገጫ ሂደት በመጠባበቅ ላይ</p>
       </div>
-      <p class="text-xs text-zinc-300 leading-relaxed">
-        Hello <strong id="pendingUserName" class="text-white"></strong>. Your account has been registered, but leadership access requires approval from an active church administrator or elder.
+      <p class="text-xs text-zinc-600 leading-relaxed">
+        Hello <strong id="pendingUserName" class="text-zinc-900"></strong>. Your account has been registered, but leadership access requires approval from an active church administrator or elder.
       </p>
-      <div class="p-3.5 rounded-xl bg-zinc-900 border border-zinc-800 text-[11px] font-mono text-zinc-400">
+      <div class="p-3.5 rounded-xl bg-zinc-50 border border-zinc-200 text-[11px] font-mono text-zinc-600">
         Please contact the pastoral team or check back shortly after confirmation.
       </div>
-      <button onclick="handleSignOut()" class="px-5 py-2.5 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-xs font-mono uppercase text-zinc-300 transition cursor-pointer">
+      <button onclick="handleSignOut()" class="px-5 py-2.5 rounded-xl bg-zinc-100 hover:bg-zinc-200 text-xs font-mono uppercase text-zinc-700 transition cursor-pointer">
         Sign Out
       </button>
     </div>
@@ -166,89 +173,104 @@
   <!-- STATE 4: DASHBOARD -->
   <main id="adminDashboardView" class="hidden flex-1 max-w-7xl w-full mx-auto p-4 sm:p-6 lg:p-8 flex flex-col gap-6">
 
-    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-tc-borderDark pb-4">
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-zinc-200 pb-4">
       <div>
-        <h1 class="font-tc text-3xl sm:text-5xl text-white">PORTAL DASHBOARD</h1>
-        <p class="font-ethiopic text-xs text-zinc-400 mt-0.5">የአመራር የውይይት መድረክ እና የሰነዶች ማዕከል</p>
+        <h1 class="font-tc text-3xl sm:text-5xl text-zinc-900">PORTAL DASHBOARD</h1>
+        <p class="font-ethiopic text-xs text-zinc-500 mt-0.5">የአመራር የውይይት መድረክ እና የሰነዶች ማዕከል</p>
       </div>
       <div class="flex items-center gap-2">
-        <button onclick="switchTab('chat')" id="tabBtnChat" class="px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-tc-crimson text-white transition cursor-pointer">
+        <button onclick="switchTab('chat')" id="tabBtnChat" class="px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-tc-crimson text-white transition cursor-pointer shadow-sm">
           <i class="fa-solid fa-comments mr-1.5"></i> Admin Chat
         </button>
-        <button onclick="switchTab('files')" id="tabBtnFiles" class="px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-zinc-900 text-zinc-400 hover:text-white transition cursor-pointer">
+        <button onclick="switchTab('files')" id="tabBtnFiles" class="px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-white text-zinc-600 border border-zinc-200 hover:text-black transition cursor-pointer shadow-sm">
           <i class="fa-solid fa-folder-open mr-1.5"></i> Documents
         </button>
-        <button onclick="switchTab('users')" id="tabBtnUsers" class="hidden relative px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-zinc-900 text-zinc-400 hover:text-white transition cursor-pointer">
+        <button onclick="switchTab('users')" id="tabBtnUsers" class="hidden relative px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-white text-zinc-600 border border-zinc-200 hover:text-black transition cursor-pointer shadow-sm">
           <i class="fa-solid fa-user-shield mr-1.5"></i> Candidate Approval
           <span id="pendingBadgeCount" class="hidden ml-1 px-1.5 py-0.5 rounded-full bg-tc-crimson text-white text-[10px] font-mono">0</span>
         </button>
       </div>
     </div>
 
-    <!-- TAB 1: CHAT -->
-    <section id="chatSection" class="flex-1 grid grid-cols-1 lg:grid-cols-4 gap-6 min-h-[560px]">
-      <div class="lg:col-span-3 flex flex-col bg-tc-charcoal border border-tc-borderDark rounded-3xl overflow-hidden shadow-2xl">
-        <div class="px-6 py-3.5 bg-zinc-900/60 border-b border-tc-borderDark flex items-center justify-between">
-          <div class="flex items-center gap-2">
-            <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
-            <span class="font-mono text-xs uppercase tracking-wider text-zinc-300 font-bold">#leadership-board</span>
+    <!-- TAB 1: CHAT (redesigned, bright) -->
+    <section id="chatSection" class="flex-1 grid grid-cols-1 lg:grid-cols-4 gap-6 min-h-[600px]">
+      <div class="lg:col-span-3 flex flex-col bg-white border border-zinc-200 rounded-3xl overflow-hidden shadow-lg">
+
+        <!-- Chat header -->
+        <div class="px-5 sm:px-6 py-4 bg-white border-b border-zinc-100 flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-2xl bg-rose-50 text-tc-crimson flex items-center justify-center text-lg border border-rose-100">
+              <i class="fa-solid fa-hashtag"></i>
+            </div>
+            <div>
+              <span class="block text-sm font-bold text-zinc-900 leading-tight">Leadership Board</span>
+              <span class="flex items-center gap-1.5 text-[11px] text-zinc-500">
+                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> Live conversation
+              </span>
+            </div>
           </div>
-          <span class="text-[11px] font-mono text-zinc-500">Encrypted Leadership Stream</span>
+          <span class="hidden sm:inline-flex items-center gap-1.5 text-[11px] font-mono text-zinc-500 bg-zinc-50 px-3 py-1.5 rounded-full border border-zinc-200">
+            <i class="fa-solid fa-lock text-[10px] text-zinc-400"></i> Private to council
+          </span>
         </div>
 
-        <div id="chatMessages" class="flex-1 p-4 sm:p-6 overflow-y-auto space-y-4 max-h-[500px]"></div>
+        <!-- Messages -->
+        <div id="chatMessages" class="flex-1 px-4 sm:px-6 py-5 overflow-y-auto max-h-[520px] bg-gradient-to-b from-rose-50/50 via-white to-zinc-50"></div>
 
-        <form id="chatForm" onsubmit="handleSendMessage(event)" class="p-4 bg-zinc-900/80 border-t border-tc-borderDark flex gap-2 sm:gap-3">
-          <input
-            type="text"
-            id="chatInput"
-            placeholder="Write a message to fellow church admins..."
-            class="flex-1 bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-3 text-xs sm:text-sm text-white focus:outline-none focus:border-tc-crimson transition placeholder:text-zinc-600"
-            autocomplete="off"
-            required
-          />
-          <button type="submit" class="px-5 py-3 rounded-xl bg-tc-crimson hover:bg-tc-crimsonDark text-white text-xs font-bold uppercase tracking-widest transition flex-shrink-0 cursor-pointer">
-            <i class="fa-solid fa-paper-plane sm:mr-1.5"></i>
-            <span class="hidden sm:inline">Send</span>
-          </button>
+        <!-- Composer -->
+        <form id="chatForm" onsubmit="handleSendMessage(event)" class="p-3 sm:p-4 bg-white border-t border-zinc-100">
+          <div class="flex items-center gap-2 bg-zinc-100 border border-zinc-200 focus-within:border-tc-crimson focus-within:bg-white focus-within:ring-4 focus-within:ring-rose-100 rounded-full pl-5 pr-1.5 py-1.5 transition">
+            <input
+              type="text"
+              id="chatInput"
+              placeholder="Write a message to fellow church admins..."
+              class="flex-1 bg-transparent text-sm text-zinc-900 focus:outline-none placeholder:text-zinc-400 py-2"
+              autocomplete="off"
+              required
+            />
+            <button type="submit" class="w-10 h-10 rounded-full bg-tc-crimson hover:bg-tc-crimsonDark text-white flex items-center justify-center transition flex-shrink-0 cursor-pointer shadow-md" title="Send">
+              <i class="fa-solid fa-paper-plane text-sm"></i>
+            </button>
+          </div>
         </form>
       </div>
 
-      <div class="bg-tc-charcoal border border-tc-borderDark rounded-3xl p-5 flex flex-col">
-        <h3 class="font-tc text-2xl text-white pb-3 border-b border-zinc-800">COUNCIL MEMBERS</h3>
-        <div id="membersList" class="flex-1 overflow-y-auto space-y-3 mt-3 pr-1"></div>
+      <!-- Council members -->
+      <div class="bg-white border border-zinc-200 rounded-3xl p-5 flex flex-col shadow-lg">
+        <h3 class="font-tc text-2xl text-zinc-900 pb-3 border-b border-zinc-100">COUNCIL MEMBERS</h3>
+        <div id="membersList" class="flex-1 overflow-y-auto space-y-2.5 mt-3 pr-1"></div>
       </div>
     </section>
 
     <!-- TAB 2: FILES -->
     <section id="filesSection" class="hidden flex flex-col gap-6">
-      <div class="p-6 sm:p-8 rounded-3xl bg-tc-charcoal border-2 border-dashed border-zinc-800 hover:border-tc-crimson transition text-center flex flex-col items-center justify-center">
-        <div class="w-12 h-12 rounded-full bg-zinc-900 text-zinc-400 flex items-center justify-center text-xl mb-3">
+      <div class="p-6 sm:p-8 rounded-3xl bg-white border-2 border-dashed border-zinc-300 hover:border-tc-crimson transition text-center flex flex-col items-center justify-center">
+        <div class="w-12 h-12 rounded-full bg-zinc-100 text-zinc-600 flex items-center justify-center text-xl mb-3 border border-zinc-200">
           <i class="fa-solid fa-cloud-arrow-up"></i>
         </div>
-        <h3 class="font-tc text-2xl text-white">UPLOAD LEADERSHIP FILE</h3>
-        <p class="text-xs text-zinc-400 mt-1 max-w-sm">
+        <h3 class="font-tc text-2xl text-zinc-900">UPLOAD LEADERSHIP FILE</h3>
+        <p class="text-xs text-zinc-500 mt-1 max-w-sm">
           Upload church schedules, minutes, bulletins, or financial spreadsheets for admins.
         </p>
-        <label class="mt-4 inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-xs font-mono uppercase tracking-wider text-white transition cursor-pointer">
+        <label class="mt-4 inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-zinc-900 hover:bg-black text-xs font-mono uppercase tracking-wider text-white transition cursor-pointer shadow-sm">
           <i class="fa-solid fa-paperclip"></i> Select File
           <input type="file" id="fileUploadInput" onchange="handleFileUpload(event)" class="hidden" />
         </label>
         <span id="uploadProgress" class="hidden text-xs font-mono text-tc-crimson mt-2">Uploading file...</span>
       </div>
 
-      <div class="p-6 rounded-3xl bg-tc-charcoal border border-tc-borderDark overflow-hidden">
-        <h3 class="font-tc text-2xl text-white mb-4">SHARED DOCUMENTS ARCHIVE</h3>
+      <div class="p-6 rounded-3xl bg-white border border-zinc-200 overflow-hidden shadow-sm">
+        <h3 class="font-tc text-2xl text-zinc-900 mb-4">SHARED DOCUMENTS ARCHIVE</h3>
         <div class="overflow-x-auto">
           <table class="w-full text-left text-xs">
-            <thead class="font-mono uppercase tracking-wider text-zinc-500 border-b border-zinc-800">
+            <thead class="font-mono uppercase tracking-wider text-zinc-500 border-b border-zinc-200">
               <tr>
                 <th class="pb-3">File Name</th>
                 <th class="pb-3">Uploaded Date</th>
                 <th class="pb-3 text-right">Action</th>
               </tr>
             </thead>
-            <tbody id="filesTableBody" class="divide-y divide-zinc-800/60 font-mono text-zinc-300"></tbody>
+            <tbody id="filesTableBody" class="divide-y divide-zinc-100 font-mono text-zinc-700"></tbody>
           </table>
         </div>
       </div>
@@ -256,20 +278,20 @@
 
     <!-- TAB 3: USER APPROVAL -->
     <section id="usersSection" class="hidden flex flex-col gap-6">
-      <div class="p-6 rounded-3xl bg-tc-charcoal border border-tc-borderDark">
+      <div class="p-6 rounded-3xl bg-white border border-zinc-200 shadow-sm">
         <div class="flex items-center justify-between mb-4">
           <div>
-            <h3 class="font-tc text-3xl text-white">ACCESS CANDIDATE APPROVAL</h3>
-            <p class="text-xs text-zinc-400">Review pending leadership members who registered.</p>
+            <h3 class="font-tc text-3xl text-zinc-900">ACCESS CANDIDATE APPROVAL</h3>
+            <p class="text-xs text-zinc-500">Review pending leadership members who registered.</p>
           </div>
-          <button onclick="fetchProfiles()" class="text-xs font-mono text-zinc-400 hover:text-white px-3 py-1.5 rounded-lg border border-zinc-800 cursor-pointer">
+          <button onclick="fetchProfiles()" class="text-xs font-mono text-zinc-600 hover:text-black px-3 py-1.5 rounded-lg border border-zinc-200 hover:bg-zinc-50 cursor-pointer transition">
             <i class="fa-solid fa-rotate mr-1"></i> Refresh
           </button>
         </div>
 
         <div class="overflow-x-auto">
           <table class="w-full text-left text-xs">
-            <thead class="font-mono uppercase tracking-wider text-zinc-500 border-b border-zinc-800">
+            <thead class="font-mono uppercase tracking-wider text-zinc-500 border-b border-zinc-200">
               <tr>
                 <th class="pb-3">Candidate</th>
                 <th class="pb-3">Email</th>
@@ -277,7 +299,7 @@
                 <th class="pb-3 text-right">Decision</th>
               </tr>
             </thead>
-            <tbody id="candidatesTableBody" class="divide-y divide-zinc-800/60 text-zinc-300"></tbody>
+            <tbody id="candidatesTableBody" class="divide-y divide-zinc-100 text-zinc-700"></tbody>
           </table>
         </div>
       </div>
@@ -286,7 +308,7 @@
   </main>
 
   <!-- FOOTER -->
-  <footer class="border-t border-tc-borderDark bg-tc-black text-zinc-600 py-6 px-4 text-center text-xs font-mono">
+  <footer class="border-t border-zinc-200 bg-white text-zinc-500 py-6 px-4 text-center text-xs font-mono">
     EECCalgary Secure Leadership Gateway • Calgary, AB, Canada
   </footer>
 
@@ -295,12 +317,14 @@
     const SUPABASE_URL = "https://avukvosilxmlsqkqtvwm.supabase.co";
     const SUPABASE_ANON_KEY = "sb_publishable_9pdBak024D7TSWwhSANU0A_FN3i7y57";
 
-    // FIX 1: renamed from "supabase" to "sb" so it no longer shadows the library global
     const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
     let currentUser = null;
     let currentProfile = null;
     let dashboardStarted = false;
+    let chatSubscribed = false;
+    let lastSenderId = null;
+    let lastDayLabel = null;
 
     const loadingView = document.getElementById('loadingView');
     const loginView = document.getElementById('loginView');
@@ -374,8 +398,6 @@
       userAvatar.src = profile.avatar_url || `https://ui-avatars.com/api/?name=${encodeURIComponent(profile.full_name || 'Admin')}&background=E11D48&color=fff`;
     }
 
-    // Boot sequence: check the saved session first (outside any auth callback),
-    // then listen for later changes (OAuth / magic-link redirects, sign-out).
     async function bootAuth() {
       try {
         const { data: { session } } = await sb.auth.getSession();
@@ -391,8 +413,6 @@
         showView('login');
       }
 
-      // No async/await inside this callback: work is deferred so Supabase's
-      // internal auth lock is released first (this was the deadlock).
       sb.auth.onAuthStateChange((event, session) => {
         setTimeout(() => {
           if (session && session.user) {
@@ -424,7 +444,7 @@
 
       const submitBtn = document.getElementById('emailSubmitBtn');
       submitBtn.disabled = true;
-      submitBtn.innerText = "Sending Link...";
+      submitBtn.innerHTML = `<i class="fa-solid fa-spinner animate-spin text-xs"></i> <span>Verifying...</span>`;
 
       const { error } = await sb.auth.signInWithOtp({
         email: email,
@@ -432,7 +452,7 @@
       });
 
       submitBtn.disabled = false;
-      submitBtn.innerHTML = `<i class="fa-solid fa-paper-plane text-xs"></i> <span>Send One-Click Login Link</span>`;
+      submitBtn.innerHTML = `<i class="fa-solid fa-right-to-bracket text-xs"></i> <span>Sign In to Leadership Portal</span>`;
 
       if (error) {
         alert("Error sending login email: " + error.message);
@@ -446,6 +466,7 @@
       window.location.reload();
     }
 
+    // ---------- CHAT ----------
     async function loadChatMessages() {
       const { data: msgs, error } = await sb
         .from('messages')
@@ -455,29 +476,83 @@
 
       if (error) { console.error("Load messages error:", error); return; }
       chatMessages.innerHTML = '';
+      lastSenderId = null;
+      lastDayLabel = null;
+
+      if (!msgs || msgs.length === 0) {
+        chatMessages.innerHTML = `
+          <div id="emptyChat" class="h-full min-h-[300px] flex flex-col items-center justify-center text-center text-zinc-400">
+            <div class="w-14 h-14 rounded-full bg-rose-50 text-tc-crimson flex items-center justify-center text-2xl mb-3 border border-rose-100">
+              <i class="fa-regular fa-comments"></i>
+            </div>
+            <p class="text-sm font-semibold text-zinc-600">No messages yet</p>
+            <p class="text-xs mt-1">Start the conversation with your fellow leaders.</p>
+          </div>`;
+        return;
+      }
       msgs.forEach(msg => appendMessage(msg));
       scrollChatToBottom();
     }
 
+    function dayLabelFor(dateStr) {
+      const d = new Date(dateStr);
+      const today = new Date();
+      const yesterday = new Date(); yesterday.setDate(today.getDate() - 1);
+      if (d.toDateString() === today.toDateString()) return 'Today';
+      if (d.toDateString() === yesterday.toDateString()) return 'Yesterday';
+      return d.toLocaleDateString([], { weekday: 'long', month: 'short', day: 'numeric' });
+    }
+
     function appendMessage(msg) {
-      const avatar = msg.profiles?.avatar_url || `https://ui-avatars.com/api/?name=${encodeURIComponent(msg.profiles?.full_name || 'Admin')}&background=27272A&color=fff`;
+      const empty = document.getElementById('emptyChat');
+      if (empty) empty.remove();
+
+      const senderId = msg.profiles?.id || 'unknown';
+      const mine = currentProfile && senderId === currentProfile.id;
+      const name = msg.profiles?.full_name || 'Leader';
+      const avatar = msg.profiles?.avatar_url || `https://ui-avatars.com/api/?name=${encodeURIComponent(name)}&background=${mine ? 'E11D48&color=fff' : 'F4F4F5&color=3F3F46'}`;
       const timeStr = new Date(msg.created_at).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
 
-      const bubble = document.createElement('div');
-      bubble.className = "flex gap-3 items-start group";
-      bubble.innerHTML = `
-        <img src="${avatar}" class="w-8 h-8 rounded-full border border-zinc-800 object-cover mt-0.5 flex-shrink-0" />
-        <div class="flex-1">
-          <div class="flex items-center gap-2">
-            <span class="text-xs font-bold text-white">${escapeHtml(msg.profiles?.full_name || 'Leader')}</span>
-            <span class="text-[10px] font-mono text-zinc-500">${timeStr}</span>
-          </div>
-          <div class="text-xs sm:text-sm text-zinc-300 mt-1 bg-zinc-900/90 border border-zinc-800/80 rounded-2xl px-4 py-2.5 inline-block max-w-xl break-words">
-            ${escapeHtml(msg.content)}
-          </div>
+      // Day divider
+      const dayLabel = dayLabelFor(msg.created_at);
+      if (dayLabel !== lastDayLabel) {
+        const divider = document.createElement('div');
+        divider.className = "flex items-center justify-center my-4";
+        divider.innerHTML = `<span class="text-[10px] font-mono uppercase tracking-wider text-zinc-500 bg-white border border-zinc-200 px-3 py-1 rounded-full shadow-sm">${escapeHtml(dayLabel)}</span>`;
+        chatMessages.appendChild(divider);
+        lastDayLabel = dayLabel;
+        lastSenderId = null;
+      }
+
+      const showHead = senderId !== lastSenderId;
+      lastSenderId = senderId;
+
+      const row = document.createElement('div');
+      row.className = `msg-in flex gap-2.5 items-end ${mine ? 'flex-row-reverse' : ''} ${showHead ? 'mt-4' : 'mt-1'}`;
+
+      const avatarHtml = showHead
+        ? `<img src="${avatar}" class="w-8 h-8 rounded-full border border-white object-cover flex-shrink-0 shadow-sm" />`
+        : `<div class="w-8 flex-shrink-0"></div>`;
+
+      const headHtml = showHead
+        ? `<div class="flex items-center gap-2 mb-1 px-1 ${mine ? 'flex-row-reverse' : ''}">
+             <span class="text-xs font-bold text-zinc-800">${mine ? 'You' : escapeHtml(name)}</span>
+             <span class="text-[10px] font-mono text-zinc-400">${timeStr}</span>
+           </div>`
+        : '';
+
+      const bubbleClass = mine
+        ? 'bg-tc-crimson text-white rounded-2xl rounded-br-md shadow-md'
+        : 'bg-white text-zinc-800 border border-zinc-200 rounded-2xl rounded-bl-md shadow-sm';
+
+      row.innerHTML = `
+        ${avatarHtml}
+        <div class="max-w-[78%] flex flex-col ${mine ? 'items-end' : 'items-start'}">
+          ${headHtml}
+          <div title="${timeStr}" class="${bubbleClass} px-4 py-2.5 text-sm leading-relaxed break-words whitespace-pre-wrap">${escapeHtml(msg.content)}</div>
         </div>
       `;
-      chatMessages.appendChild(bubble);
+      chatMessages.appendChild(row);
     }
 
     async function handleSendMessage(e) {
@@ -496,6 +571,8 @@
     }
 
     function subscribeToChat() {
+      if (chatSubscribed) return;
+      chatSubscribed = true;
       sb
         .channel('public:messages')
         .on('postgres_changes', { event: 'INSERT', schema: 'public', table: 'messages' }, async (payload) => {
@@ -517,6 +594,7 @@
       chatMessages.scrollTop = chatMessages.scrollHeight;
     }
 
+    // ---------- MEMBERS ----------
     async function loadMembers() {
       const { data: members } = await sb
         .from('profiles')
@@ -528,14 +606,14 @@
       membersList.innerHTML = '';
       members.forEach(m => {
         const item = document.createElement('div');
-        item.className = "flex items-center gap-2.5 p-2 rounded-xl bg-zinc-900/50 border border-zinc-800/60";
+        item.className = "flex items-center gap-2.5 p-2 rounded-xl bg-zinc-50 border border-zinc-200/80";
         item.innerHTML = `
           <div class="relative">
-            <img src="${m.avatar_url || 'https://ui-avatars.com/api/?name=Admin'}" class="w-7 h-7 rounded-full object-cover" />
-            <span class="w-2 h-2 rounded-full bg-emerald-500 absolute bottom-0 right-0 border border-black"></span>
+            <img src="${m.avatar_url || 'https://ui-avatars.com/api/?name=' + encodeURIComponent(m.full_name || 'Admin') + '&background=E4E4E7&color=18181B'}" class="w-7 h-7 rounded-full object-cover" />
+            <span class="w-2 h-2 rounded-full bg-emerald-500 absolute bottom-0 right-0 border border-white"></span>
           </div>
           <div class="truncate">
-            <span class="block text-xs font-semibold text-zinc-200 truncate">${escapeHtml(m.full_name || m.email)}</span>
+            <span class="block text-xs font-semibold text-zinc-900 truncate">${escapeHtml(m.full_name || m.email)}</span>
             <span class="block text-[10px] font-mono text-zinc-500 capitalize">${m.role.replace('_', ' ')}</span>
           </div>
         `;
@@ -543,6 +621,7 @@
       });
     }
 
+    // ---------- FILES ----------
     async function handleFileUpload(e) {
       const file = e.target.files[0];
       if (!file) return;
@@ -585,18 +664,18 @@
       tbody.innerHTML = '';
 
       if (!files || files.length === 0) {
-        tbody.innerHTML = `<tr><td colspan="3" class="py-4 text-center text-zinc-600">No documents uploaded yet.</td></tr>`;
+        tbody.innerHTML = `<tr><td colspan="3" class="py-4 text-center text-zinc-400">No documents uploaded yet.</td></tr>`;
         return;
       }
 
       files.forEach(f => {
         const tr = document.createElement('tr');
-        tr.className = "hover:bg-zinc-900/40";
+        tr.className = "hover:bg-zinc-50";
         tr.innerHTML = `
-          <td class="py-3 font-semibold text-zinc-200">${escapeHtml(f.file_name)} <span class="text-zinc-600 text-[10px]">(${f.file_size})</span></td>
+          <td class="py-3 font-semibold text-zinc-800">${escapeHtml(f.file_name)} <span class="text-zinc-400 text-[10px]">(${f.file_size})</span></td>
           <td class="py-3 text-zinc-500">${new Date(f.created_at).toLocaleDateString()}</td>
           <td class="py-3 text-right">
-            <a href="${f.file_url}" target="_blank" download class="px-3 py-1.5 rounded-lg bg-zinc-800 hover:bg-zinc-700 text-white text-[11px] font-mono inline-flex items-center gap-1">
+            <a href="${f.file_url}" target="_blank" download class="px-3 py-1.5 rounded-lg bg-zinc-100 hover:bg-zinc-200 text-zinc-900 border border-zinc-200 text-[11px] font-mono inline-flex items-center gap-1">
               <i class="fa-solid fa-download"></i> Download
             </a>
           </td>
@@ -605,6 +684,7 @@
       });
     }
 
+    // ---------- APPROVALS ----------
     async function fetchProfiles() {
       const { data: profiles } = await sb
         .from('profiles')
@@ -627,22 +707,22 @@
 
       profiles.forEach(p => {
         const tr = document.createElement('tr');
-        tr.className = "hover:bg-zinc-900/40";
+        tr.className = "hover:bg-zinc-50";
         tr.innerHTML = `
-          <td class="py-3 font-semibold text-white">${escapeHtml(p.full_name || 'New Leader')}</td>
-          <td class="py-3 text-zinc-400 font-mono text-[11px]">${escapeHtml(p.email)}</td>
+          <td class="py-3 font-semibold text-zinc-900">${escapeHtml(p.full_name || 'New Leader')}</td>
+          <td class="py-3 text-zinc-500 font-mono text-[11px]">${escapeHtml(p.email)}</td>
           <td class="py-3 font-mono uppercase text-[10px]">
-            <span class="px-2 py-0.5 rounded-full ${p.role === 'pending' ? 'bg-amber-500/20 text-amber-400' : 'bg-emerald-500/20 text-emerald-400'}">
+            <span class="px-2 py-0.5 rounded-full ${p.role === 'pending' ? 'bg-amber-100 text-amber-800 border border-amber-200' : 'bg-emerald-100 text-emerald-800 border border-emerald-200'}">
               ${p.role}
             </span>
           </td>
           <td class="py-3 text-right space-x-2">
             ${p.role === 'pending' ? `
-              <button onclick="updateRole('${p.id}', 'admin')" class="px-3 py-1 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-mono text-[11px] cursor-pointer">
+              <button onclick="updateRole('${p.id}', 'admin')" class="px-3 py-1 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-mono text-[11px] cursor-pointer">
                 Approve
               </button>
             ` : `
-              <button onclick="updateRole('${p.id}', 'pending')" class="px-3 py-1 rounded-lg bg-zinc-800 hover:bg-red-950 hover:text-red-400 text-zinc-400 font-mono text-[11px] cursor-pointer">
+              <button onclick="updateRole('${p.id}', 'pending')" class="px-3 py-1 rounded-lg bg-zinc-100 hover:bg-red-50 hover:text-red-600 hover:border-red-200 border border-zinc-200 text-zinc-600 font-mono text-[11px] cursor-pointer transition">
                 Revoke
               </button>
             `}
@@ -667,8 +747,8 @@
     }
 
     function switchTab(tab) {
-      const off = "px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-zinc-900 text-zinc-400 hover:text-white transition cursor-pointer";
-      const on = "px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-tc-crimson text-white transition cursor-pointer";
+      const off = "px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-white text-zinc-600 border border-zinc-200 hover:text-black transition cursor-pointer shadow-sm";
+      const on = "px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-tc-crimson text-white transition cursor-pointer shadow-sm";
 
       ['chat', 'files', 'users'].forEach(t => {
         document.getElementById(t + 'Section').classList.add('hidden');
@@ -688,16 +768,14 @@
       return div.innerHTML;
     }
 
-    // Start immediately
     window.addEventListener('DOMContentLoaded', bootAuth);
 
-    // Safety net: never spin forever
     setTimeout(() => {
       if (!loadingView.classList.contains('hidden')) {
-        console.warn("Still loading after 6s, showing login.");
+        console.warn("Fallback: Showing login screen.");
         showView('login');
       }
-    }, 6000);
+    }, 4000);
   </script>
 </body>
 </html>
