@@ -722,28 +722,28 @@
       <div class="lg:col-span-5 grid grid-cols-2 gap-3 sm:gap-4">
         <!-- 220+ Members -->
         <div class="p-5 sm:p-6 rounded-2xl bg-white border border-tc-border">
-          <div class="font-tc text-4xl sm:text-5xl text-tc-black leading-none">220+</div>
+          <div class="count-up font-tc text-4xl sm:text-5xl text-tc-black leading-none tabular-nums" data-target="220" data-suffix="+">220+</div>
           <div class="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-zinc-500 mt-1">Church Members</div>
           <div class="font-ethiopic text-[10px] text-zinc-400">120 አዋቂዎች • 100 ልጆች</div>
         </div>
 
         <!-- 80+ Newcomer Families -->
         <div class="p-5 sm:p-6 rounded-2xl bg-white border border-tc-border">
-          <div class="font-tc text-4xl sm:text-5xl text-tc-crimson leading-none">80+</div>
+          <div class="count-up font-tc text-4xl sm:text-5xl text-tc-crimson leading-none tabular-nums" data-target="80" data-suffix="+">80+</div>
           <div class="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-zinc-500 mt-1">Newcomers Supported</div>
           <div class="font-ethiopic text-[10px] text-zinc-400">አዲስ ገቢ ቤተሰቦች</div>
         </div>
 
         <!-- 35+ Years in Calgary -->
         <div class="p-5 sm:p-6 rounded-2xl bg-white border border-tc-border">
-          <div class="font-tc text-4xl sm:text-5xl text-tc-black leading-none">35+</div>
+          <div class="count-up font-tc text-4xl sm:text-5xl text-tc-black leading-none tabular-nums" data-target="35" data-suffix="+">35+</div>
           <div class="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-zinc-500 mt-1">Years in Calgary</div>
           <div class="font-ethiopic text-[10px] text-zinc-400">ከግንቦት 1991 ጀምሮ</div>
         </div>
 
         <!-- Expanded Volunteer Base -->
         <div class="p-5 sm:p-6 rounded-2xl bg-white border border-tc-border">
-          <div class="font-tc text-4xl sm:text-5xl text-tc-crimson leading-none">100+</div>
+          <div class="count-up font-tc text-4xl sm:text-5xl text-tc-crimson leading-none tabular-nums" data-target="100" data-suffix="+">100+</div>
           <div class="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-zinc-500 mt-1">Active Volunteers</div>
           <div class="font-ethiopic text-[10px] text-zinc-400">በበጎ ፈቃድ የሚያገለግሉ</div>
         </div>
@@ -754,7 +754,7 @@
 
   <!-- ================= SECTION 6: GIVING ================= -->
   <section id="give" class="bg-white py-16 sm:py-24 px-4 sm:px-6 lg:px-12 border-b border-tc-border">
-    <div class="max-w-4xl mx-auto text-center">
+    <div class="max-w-6xl mx-auto text-center">
       <span class="text-xs font-mono text-tc-crimson uppercase tracking-widest font-semibold">Stewardship</span>
       <h2 class="font-tc text-4xl sm:text-6xl lg:text-7xl text-tc-black mt-1 sm:mt-2">SUPPORT THE VISION</h2>
       <p class="font-ethiopic text-xs text-zinc-500 font-semibold mt-0.5">የመስጠትና የድጋፍ መረጃ</p>
@@ -763,13 +763,15 @@
         Your financial gifts support weekly services, community pastoral care, church facility completion, and charitable outreach across Calgary.
       </p>
 
-      <div class="mt-8 sm:mt-12 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 text-left">
+      <div class="mt-8 sm:mt-12 grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 text-left">
+
         <!-- Option 1: Interac E-Transfer -->
         <div class="p-6 sm:p-8 rounded-2xl border border-tc-border bg-zinc-50/50 flex flex-col justify-between">
           <div>
             <div class="w-10 h-10 rounded-lg bg-zinc-200 text-zinc-800 flex items-center justify-center text-lg mb-4 sm:mb-6">
               <i class="fa-solid fa-money-bill-transfer"></i>
             </div>
+            <span class="text-[11px] font-mono text-tc-crimson uppercase tracking-widest font-semibold">Option 1</span>
             <h3 class="font-tc text-2xl sm:text-3xl text-tc-black">INTERAC E-TRANSFER</h3>
             <p class="text-xs sm:text-sm text-zinc-600 mt-2 leading-relaxed">
               Zero processing fees through any Canadian online banking app.
@@ -780,31 +782,53 @@
           </div>
         </div>
 
-        <!-- Option 2: Scan to Give (QR Code Placeholder) -->
+        <!-- Option 2: Scan to Give (QR) -->
         <div class="p-6 sm:p-8 rounded-2xl border border-tc-border bg-zinc-50/50 flex flex-col items-center justify-between text-center">
           <div class="w-full">
-            <div class="w-10 h-10 rounded-lg bg-zinc-200 text-zinc-800 flex items-center justify-center text-lg mb-4 sm:mb-6 mx-auto sm:mx-0">
+            <div class="w-10 h-10 rounded-lg bg-zinc-200 text-zinc-800 flex items-center justify-center text-lg mb-4 sm:mb-6 mx-auto md:mx-0">
               <i class="fa-solid fa-qrcode"></i>
             </div>
-            <h3 class="font-tc text-2xl sm:text-3xl text-tc-black text-center sm:text-left">SCAN TO GIVE</h3>
-            <p class="text-xs sm:text-sm text-zinc-600 mt-2 leading-relaxed text-center sm:text-left">
-              Scan with your mobile camera or banking app to complete your donation quickly and securely.
+            <span class="text-[11px] font-mono text-tc-crimson uppercase tracking-widest font-semibold block md:text-left">Option 2</span>
+            <h3 class="font-tc text-2xl sm:text-3xl text-tc-black md:text-left">SCAN TO GIVE</h3>
+            <p class="text-xs sm:text-sm text-zinc-600 mt-2 leading-relaxed md:text-left">
+              On a computer? Point your phone camera at the code to give securely.
             </p>
           </div>
-
-          <!-- QR Code Image Frame -->
-          <div class="mt-6 w-full max-w-[200px] aspect-square rounded-2xl bg-white border border-zinc-200 p-3 shadow-xs flex items-center justify-center relative overflow-hidden group">
-            <img 
-              src="/giving-qr.png" 
-              onerror="this.src='giving-qr.png'" 
-              alt="Scan QR code to donate to EEC Calgary" 
+          <div class="mt-6 w-full max-w-[200px] aspect-square rounded-2xl bg-white border border-zinc-200 p-3 shadow-xs flex items-center justify-center overflow-hidden group">
+            <img
+              src="/giving-qr.png"
+              onerror="this.src='giving-qr.png'"
+              alt="Scan QR code to donate to EEC Calgary"
               class="w-full h-full object-contain transition group-hover:scale-105"
             />
           </div>
           <span class="text-[11px] font-mono text-zinc-400 mt-3 uppercase tracking-wider">Point camera to scan</span>
         </div>
-      </div>
 
+        <!-- Option 3: Pushpay button (same destination as the QR) -->
+        <div class="p-6 sm:p-8 rounded-2xl border border-tc-border bg-zinc-50/50 flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-lg bg-zinc-200 text-zinc-800 flex items-center justify-center text-lg mb-4 sm:mb-6">
+              <i class="fa-solid fa-credit-card"></i>
+            </div>
+            <span class="text-[11px] font-mono text-tc-crimson uppercase tracking-widest font-semibold">Option 3</span>
+            <h3 class="font-tc text-2xl sm:text-3xl text-tc-black">GIVE ONLINE</h3>
+            <p class="text-xs sm:text-sm text-zinc-600 mt-2 leading-relaxed">
+              On your phone or tablet? Tap the button to give by card or bank through our secure Pushpay page.
+            </p>
+          </div>
+          <a
+            href="https://pushpay.com/g/eeccalgary?fnd=GkUTcVGPmsVaQ_K3tKujiw&lang=en&src=qrcode"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="mt-6 w-full inline-flex items-center justify-center gap-2.5 px-5 py-4 rounded-xl bg-tc-crimson hover:bg-tc-crimsonDark text-white font-bold text-xs uppercase tracking-widest transition shadow-sm active:scale-95"
+          >
+            <i class="fa-solid fa-heart"></i>
+            <span>Give with Pushpay</span>
+          </a>
+        </div>
+
+      </div>
     </div>
   </section>
 
@@ -879,6 +903,10 @@
 
   <!-- ================= SCRIPTS ================= -->
   <script>
+    // Modal element references (declared first so both modals can check each other)
+    const modal = document.getElementById('ministryModal');
+    const calendarModal = document.getElementById('calendarModal');
+
     // Mobile Drawer Navigation
     const navToggle = document.getElementById('navToggle');
     const navMenu = document.getElementById('navMenu');
@@ -907,7 +935,6 @@
       });
     });
 
-    const calendarModal = document.getElementById('calendarModal');
     const calendarBackdrop = document.getElementById('calendarBackdrop');
 
     function openCalendarModal() {
@@ -1072,7 +1099,6 @@
       }
     };
 
-    const modal = document.getElementById('ministryModal');
     const modalBackdrop = document.getElementById('modalBackdrop');
     const modalCloseBtn = document.getElementById('modalCloseBtn');
     const modalSubhead = document.getElementById('modalSubhead');
@@ -1137,6 +1163,46 @@
         colorObserver.observe(img);
       });
     }
+
+    // Count-up animation for stats
+    (function () {
+      const counters = document.querySelectorAll('.count-up');
+      if (!counters.length) return;
+
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const duration = 2000; // ms
+      const easeOutCubic = t => 1 - Math.pow(1 - t, 3);
+
+      function animate(el) {
+        const target = parseInt(el.dataset.target, 10);
+        const suffix = el.dataset.suffix || '';
+        const start = performance.now();
+
+        function tick(now) {
+          const progress = Math.min((now - start) / duration, 1);
+          const value = Math.round(easeOutCubic(progress) * target);
+          el.textContent = value + suffix;
+          if (progress < 1) requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+      }
+
+      // Keep the final numbers if motion is reduced or observer is unsupported
+      if (reduceMotion || !('IntersectionObserver' in window)) return;
+
+      counters.forEach(el => { el.textContent = '0' + (el.dataset.suffix || ''); });
+
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            animate(entry.target);
+            obs.unobserve(entry.target); // run once
+          }
+        });
+      }, { threshold: 0.5 });
+
+      counters.forEach(el => observer.observe(el));
+    })();
   </script>
 </body>
 </html>
