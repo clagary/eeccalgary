@@ -57,7 +57,7 @@
       pointer-events: none;
     }
     #navMenu.menu-open {
-      max-height: 520px;
+      max-height: 580px;
       opacity: 1;
       pointer-events: auto;
     }
@@ -114,10 +114,15 @@
         <a href="/home#give" class="text-xs font-bold uppercase tracking-widest px-4 lg:px-5 py-2.5 rounded-full bg-tc-crimson hover:bg-tc-crimsonDark text-white transition shadow-sm">
           Give Online
         </a>
+        <!-- Admin Portal Desktop Button -->
+        <a href="/admin.html" class="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest px-3.5 lg:px-4 py-2.5 rounded-full bg-zinc-900 hover:bg-black text-zinc-200 hover:text-white transition border border-zinc-700 shadow-sm" title="Church Leadership & Admin Portal">
+          <i class="fa-solid fa-lock text-[10px] text-zinc-400"></i>
+          <span>Admin</span>
+        </a>
       </div>
 
       <!-- Hamburger Button -->
-      <button id="navToggle" class="md:hidden w-12 h-12 flex items-center justify-center text-zinc-800 text-2xl focus:outline-none focus:ring-2 focus:ring-tc-crimson rounded-lg" aria-label="Toggle Menu">
+      <button id="navToggle" class="md:hidden w-12 h-12 flex items-center justify-center text-zinc-800 text-2xl focus:outline-none focus:ring-2 focus:ring-tc-crimson rounded-lg" aria-label="Toggle Menu" aria-expanded="false">
         <i id="navIcon" class="fa-solid fa-bars"></i>
       </button>
     </div>
@@ -135,6 +140,11 @@
       <div class="pt-4 pb-2 flex flex-col gap-2.5">
         <a href="/home#service" class="mobile-nav-link w-full text-center py-3.5 border border-zinc-300 text-zinc-900 font-bold uppercase text-xs tracking-widest rounded-xl active:bg-zinc-100">Plan Visit</a>
         <a href="/home#give" class="mobile-nav-link w-full text-center py-3.5 bg-tc-crimson text-white font-bold uppercase text-xs tracking-widest rounded-xl shadow-md active:bg-tc-crimsonDark">Give Online</a>
+        <!-- Admin Portal Mobile Drawer Button -->
+        <a href="/admin.html" class="mobile-nav-link w-full flex items-center justify-center gap-2 py-3 bg-zinc-900 hover:bg-black text-zinc-200 font-bold uppercase text-xs tracking-widest rounded-xl border border-zinc-800 transition active:bg-zinc-800">
+          <i class="fa-solid fa-lock text-[11px] text-zinc-400"></i>
+          <span>Admin Portal Login</span>
+        </a>
       </div>
     </div>
   </header>
@@ -188,25 +198,25 @@
       <!-- Statistics Counters -->
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mb-12 sm:mb-16">
         <div class="p-6 rounded-2xl bg-white border border-tc-border shadow-xs">
-          <div class="font-tc text-4xl sm:text-5xl text-tc-black leading-none">220+</div>
+          <div class="count-up font-tc text-4xl sm:text-5xl text-tc-black leading-none tabular-nums" data-target="220" data-suffix="+">220+</div>
           <div class="text-xs font-bold uppercase tracking-wider text-zinc-600 mt-2">Active Family</div>
           <div class="text-[11px] text-zinc-400 mt-0.5">120 Adults • 100 Children</div>
         </div>
 
         <div class="p-6 rounded-2xl bg-white border border-tc-border shadow-xs">
-          <div class="font-tc text-4xl sm:text-5xl text-tc-crimson leading-none">80+</div>
+          <div class="count-up font-tc text-4xl sm:text-5xl text-tc-crimson leading-none tabular-nums" data-target="80" data-suffix="+">80+</div>
           <div class="text-xs font-bold uppercase tracking-wider text-zinc-600 mt-2">Newcomers Welcomed</div>
           <div class="text-[11px] text-zinc-400 mt-0.5">Transition &amp; settlement care</div>
         </div>
 
         <div class="p-6 rounded-2xl bg-white border border-tc-border shadow-xs">
-          <div class="font-tc text-4xl sm:text-5xl text-tc-black leading-none">35+</div>
+          <div class="count-up font-tc text-4xl sm:text-5xl text-tc-black leading-none tabular-nums" data-target="35" data-suffix="+">35+</div>
           <div class="text-xs font-bold uppercase tracking-wider text-zinc-600 mt-2">Years of Ministry</div>
           <div class="text-[11px] text-zinc-400 mt-0.5">Faithfully serving since 1991</div>
         </div>
 
         <div class="p-6 rounded-2xl bg-white border border-tc-border shadow-xs">
-          <div class="font-tc text-4xl sm:text-5xl text-tc-crimson leading-none">100+</div>
+          <div class="count-up font-tc text-4xl sm:text-5xl text-tc-crimson leading-none tabular-nums" data-target="100" data-suffix="+">100+</div>
           <div class="text-xs font-bold uppercase tracking-wider text-zinc-600 mt-2">Mobilized Volunteers</div>
           <div class="text-[11px] text-zinc-400 mt-0.5">Serving across all ministries</div>
         </div>
@@ -641,6 +651,8 @@
           <li><a href="/home#ministries" class="hover:text-white transition py-1 block">Ministries</a></li>
           <li><a href="/home#impact" class="hover:text-white transition py-1 block">Impact</a></li>
           <li><a href="/home#give" class="hover:text-white transition py-1 block">Give</a></li>
+          <!-- Admin Portal Footer Link -->
+          <li><a href="/admin.html" class="inline-flex items-center gap-1.5 text-zinc-300 hover:text-tc-crimson transition py-1"><i class="fa-solid fa-lock text-[10px]"></i> Admin Portal</a></li>
           <li class="pt-2 border-t border-tc-borderDark"><a href="/privacy-policy.html" class="hover:text-white transition py-1 block text-zinc-400 font-normal">Privacy &amp; Cookies</a></li>
           <li><a href="/terms-of-use.html" class="hover:text-white transition py-1 block text-zinc-400 font-normal">Terms of Use</a></li>
           <li><a href="/donation-policy.html" class="hover:text-white transition py-1 block text-zinc-400 font-normal">Donations &amp; Receipts</a></li>
@@ -735,6 +747,46 @@
 
       mobileQuery.addEventListener('change', handleViewportChange);
       if (mobileQuery.matches) enableScrollFocus();
+    })();
+
+    // Count-up animation for stats
+    (function () {
+      const counters = document.querySelectorAll('.count-up');
+      if (!counters.length) return;
+
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const duration = 2000; // ms
+      const easeOutCubic = t => 1 - Math.pow(1 - t, 3);
+
+      function animate(el) {
+        const target = parseInt(el.dataset.target, 10);
+        const suffix = el.dataset.suffix || '';
+        const start = performance.now();
+
+        function tick(now) {
+          const progress = Math.min((now - start) / duration, 1);
+          const value = Math.round(easeOutCubic(progress) * target);
+          el.textContent = value + suffix;
+          if (progress < 1) requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+      }
+
+      // Keep the final numbers if motion is reduced or observer is unsupported
+      if (reduceMotion || !('IntersectionObserver' in window)) return;
+
+      counters.forEach(el => { el.textContent = '0' + (el.dataset.suffix || ''); });
+
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            animate(entry.target);
+            obs.unobserve(entry.target); // run once
+          }
+        });
+      }, { threshold: 0.5 });
+
+      counters.forEach(el => observer.observe(el));
     })();
   </script>
 </body>
